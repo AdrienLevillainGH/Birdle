@@ -107,7 +107,7 @@ function handleGuess(choice) {
     { label: "Mass", value: `${guess.Mass} g ${massArrow}`, score: compareMass(guess.Mass, targetBird.Mass) },
     { label: "Beak Index", 
       value: `${guess["Beak.Index"]?.toFixed(2)} ${beakArrow}`, 
-      score: compareBeak(guess["Beak.Index"], targetBird["Beak.Index"]) },
+    score: compareBeak(guess["Beak.Index"], targetBird["Beak.Index"]) },
     { label: "Realm", value: guess.Realm, score: compareRealm(guess.Realm, targetBird.Realm) },
     { label: "Habitat", value: guess.Habitat, score: compareExact(guess.Habitat, targetBird.Habitat) },
     { label: "Migration", value: guess.Migration, score: compareExact(guess.Migration, targetBird.Migration) },
@@ -328,7 +328,7 @@ function setupAutocomplete() {
     const items = Array.from(list.querySelectorAll(".autocomplete-item"));
     const count = items.length;
 
-    // QUICK CLEAR
+    // QUICK CLEAR if value came from suggestion
     if (e.key === "Backspace" && input.dataset.fromSuggestion === "true") {
       e.preventDefault();
       input.value = "";
@@ -337,7 +337,7 @@ function setupAutocomplete() {
       return;
     }
 
-    // DOWN
+    // ARROW DOWN: move highlight AND update input text
     if (e.key === "ArrowDown") {
       e.preventDefault();
       if (!count) return;
@@ -345,13 +345,17 @@ function setupAutocomplete() {
       activeIndex = (activeIndex + 1) % count;
 
       items.forEach(el => el.classList.remove("active"));
-      items[activeIndex].classList.add("active");
-      items[activeIndex].scrollIntoView({ block: "nearest" });
+      const activeItem = items[activeIndex];
+      activeItem.classList.add("active");
+      activeItem.scrollIntoView({ block: "nearest" });
 
+      // show selected suggestion in the input
+      input.value = activeItem.dataset.name;
+      input.dataset.fromSuggestion = "true";
       return;
     }
 
-    // UP
+    // ARROW UP: move highlight AND update input text
     if (e.key === "ArrowUp") {
       e.preventDefault();
       if (!count) return;
@@ -359,37 +363,30 @@ function setupAutocomplete() {
       activeIndex = (activeIndex - 1 + count) % count;
 
       items.forEach(el => el.classList.remove("active"));
-      items[activeIndex].classList.add("active");
-      items[activeIndex].scrollIntoView({ block: "nearest" });
+      const activeItem = items[activeIndex];
+      activeItem.classList.add("active");
+      activeItem.scrollIntoView({ block: "nearest" });
 
+      // show selected suggestion in the input
+      input.value = activeItem.dataset.name;
+      input.dataset.fromSuggestion = "true";
       return;
     }
 
-    // ENTER = SUBMIT GUESS
+    // ENTER = always submit what's in the input box
     if (e.key === "Enter") {
       e.preventDefault();
 
-      // With arrows
-      if (activeIndex >= 0 && items[activeIndex]) {
-        input.value = items[activeIndex].dataset.name;
-        input.dataset.fromSuggestion = "true";
-        list.style.display = "none";
+      const finalChoice = input.value.trim();
+      if (!finalChoice) return;
 
-        handleGuess(input.value);
-        input.value = "";
-        return;
-      }
+      handleGuess(finalChoice);
 
-      // No arrow → choose first
-      const first = list.querySelector(".autocomplete-item");
-      if (first) {
-        input.value = first.dataset.name;
-        input.dataset.fromSuggestion = "true";
-        list.style.display = "none";
-
-        handleGuess(input.value);
-        input.value = "";
-      }
+      input.value = "";
+      input.dataset.fromSuggestion = "false";
+      list.style.display = "none";
+      activeIndex = -1;
+      return;
     }
   });
 
