@@ -1,0 +1,250 @@
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.top-buttons {
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-standard {
+  background: white;
+  color: black;
+  padding: 0 22px;          /* horizontal only */
+  border-radius: 10px;
+  border: 2px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  height: 45px;             /* fixed height */
+  display: flex;
+  align-items: center;      /* vertical centering of text */
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between search bar + button */
+  margin-top: 80px;
+}
+
+.status-text {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.rules-panel {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Guess rows */
+.guess-row {
+  background: #1A1A1A;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+/* reveal row on top – green background */
+.reveal-row {
+  background: #2ECC71;
+  color: black;
+}
+
+/* Container layout */
+.guess-container {
+  display: grid;
+  grid-template-columns: 260px auto;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Image */
+.image-section {
+  position: relative;
+  width: 260px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-section iframe {
+  width: 260px !important;
+  height: 180px !important;
+  border-radius: 10px;
+}
+
+/* Info button + panel */
+.info-toggle {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.extra-info {
+  background: #1a1a1a;
+  color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.extra-info p {
+  margin: 4px 0;
+}
+
+/* 4 x 2 tile grid */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* Tiles */
+.tile {
+  padding: 10px;
+  border-radius: 8px;
+  background: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  overflow-wrap: break-word;
+}
+
+.tile-label {
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.tile-value {
+  font-weight: bold;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.tile b,
+.tile div {
+  white-space: normal;
+}
+
+/* coloured states for guesses */
+.correct { background: #2ECC71 !important; }
+.partial { background: #F1C40F !important; }
+.wrong   { background: #444 !important; }
+
+/* final reveal box (not used now, but safe to keep if needed elsewhere) */
+.reveal-box {
+  margin-top: 30px;
+  background: #2ECC71;
+  padding: 20px;
+  border-radius: 15px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* green background for reveal row (already present, but keep) */
+.reveal-row {
+  background: #1a1a1a;
+  color: #1a1a1a;
+}
+
+/* tiles in the reveal row styled like buttons */
+.reveal-tile {
+  background: #2ECC71 !important;
+  color: white;
+  border: none;
+}
+
+.reveal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.autocomplete-container {
+  position: relative;
+  width: 400;
+}
+
+#guessInput {
+  width: 350px;
+  height: 28px; /* Matches submit button height */
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+
+#guessInput:focus {
+  border-color: white;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: white;
+  color: black;
+  max-height: 250px;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  z-index: 9999;
+  display: none;
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.autocomplete-item:hover {
+  background: #eee;
+}
+
+.highlight {
+  background: lightpink;
+  font-weight: bold;
+}
+
+.autocomplete-item.active {
+  background: lightgrey;
+  font-weight: bold;
+}

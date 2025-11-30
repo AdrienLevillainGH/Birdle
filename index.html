@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🦜 Birdle</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="title">🦜 BIRDLE</div>
+
+<div class="top-buttons">
+  <button id="restartBtn" class="btn-standard">🔄 Restart Game</button>
+  <button id="rulesBtn" class="btn-standard">❓ Rules</button>
+</div>
+
+<div class="input-row">
+  <div class="autocomplete-container">
+    <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+    <div id="autocompleteList" class="autocomplete-list"></div>
+  </div>
+
+  <button id="submitGuess" class="btn-standard">Submit Guess</button>
+</div>
+
+<div id="status" class="status-text">Loading...</div>
+
+<div id="rulesPanel" class="rules-panel hidden">
+  <b>Guess the bird in 10 tries.</b><br><br>
+  Each guess reveals attributes...
+</div>
+
+<div id="history"></div>
+<div id="reveal"></div>
+
+<script src="birdle.js"></script>
+</body>
+</html>
