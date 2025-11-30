@@ -15,20 +15,34 @@
   <button id="rulesBtn" class="btn-standard">❓ Rules</button>
 </div>
 
-<div class="input-row">
-  <div class="autocomplete-container">
-    <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
-    <div id="autocompleteList" class="autocomplete-list"></div>
+<div id="search-block">
+  <div class="input-row">
+    <div class="autocomplete-container">
+      <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+      <div id="autocompleteList"></div>
+    </div>
   </div>
 
-  <button id="submitGuess" class="btn-standard">Submit Guess</button>
+  <div id="status">Guesses remaining...</div>
 </div>
-
-<div id="status" class="status-text">Loading...</div>
 
 <div id="rulesPanel" class="rules-panel hidden">
   <b>Guess the bird in 10 tries.</b><br><br>
-  Each guess reveals attributes...
+  Each guess reveals attributes of the mystery bird. Tile colors indicate how close your guess is.<br><br>
+  <b>Attributes:</b><br>
+  <ul>
+    <li><b>Taxa</b><br>Phylogenetic Order > Family.🟩 Match, 🟧 Order match but not family, ⬛ No match.</li><br> 
+    <li><b>Mass (g)</b><br>Average body mass. 🟩 Exact, 🟧 Same category (0–100g, 100–1000g, 1000–3000g, >3000g), ⬛ Other. Arrow ↑/↓ shows direction.</li><br>
+    <li><b>Beak Index</b><br>Index of beak length relative to the specie body mass. Species with a long beak have a high index. Range from 0 to 1. 🟩 Exact, 🟧 ±0.125 of mystery bird. Arrow ↑/↓ shows direction.</li><br>
+    <li><b>Habitat</b><br>Habitat type in breeding ground. Options are: Marine, Wetland, Forest, Grassland, Dry plains.</li><br>
+    <li><b>Migration</b><br>Migratory, Partial migrant or Sedentary species.</li><br>
+    <li><b>Nest</b><br>Nest type. Options are: Open (cup, plateform, scrape), Closed (sphere, dome), Cavity (tree cavity, burrow, crevice), Mound, Other (Brood parasitism, No nest).</li><br>
+    <li><b>Realm</b><br>🟩 Exact match, 🟧 Partial overlap, ⬛ No overlap. Options are: Afrotropical, Indomalayn, Neartic, Neotropical, Oceania, Palearctic, South Polar.</li><br>
+    <li><b>Primary Diet</b><br>Frugivore or Granivore, Nectarivore, Herbivore (most food resources from plants material such as leaves, buds, flowers; include algaes), Carnivore (obtain most food resources from live animals), Scavenger (obtained most food resources from carrion or refuse), Omnivore (obtain food resources from multiple trophic levels in roughly equal proportion). </b></li>
+
+  </ul>
+
+
 </div>
 
 <div id="history"></div>

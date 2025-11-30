@@ -38,8 +38,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* spacing between search bar + button */
-  margin-top: 80px;
+}
+
+#search-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;   /* <--- adjust value to increase/decrease spacing */
+  height: 180px;
 }
 
 .status-text {
@@ -142,6 +150,14 @@ body {
   justify-content: center; /* vertical centering */
   align-items: center;     /* horizontal centering */
   overflow-wrap: break-word;
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: column; /* forces line break */
+  align-items: center;    /* centers text vertically */
+  justify-content: center;
+  height: 100%;
 }
 
 .tile-label {

@@ -1,15 +1,12 @@
-/* ============================================
-   BIRDLE — Full Revised JS
-============================================ */
-
+//-------------------------------------------------------
+//  GLOBAL GAME STATE
+//-------------------------------------------------------
 let birds = [];
 let targetBird = null;
 let guessesRemaining = 10;
 let usedNames = new Set();
+let guessHistory = [];
 
-/* =============================
-   MASS CATEGORIES
-============================= */
 const MASS_CATEGORIES = [
   { max: 100, label: "0-100" },
   { max: 1000, label: "100-1000" },
@@ -17,42 +14,40 @@ const MASS_CATEGORIES = [
   { max: Infinity, label: ">3000" }
 ];
 
-/* =============================
-   LOAD BIRDS DATA
-============================= */
+//-------------------------------------------------------
+//  LOAD BIRDS.JSON
+//-------------------------------------------------------
 fetch("birds.json")
   .then(res => res.json())
   .then(data => {
     birds = data;
+    birds.sort((a, b) => a.Name.localeCompare(b.Name));
     setupAutocomplete();
     startGame();
   });
 
-/* =============================
-   START A NEW GAME
-============================= */
+//-------------------------------------------------------
+//  START / RESET GAME
+//-------------------------------------------------------
 function startGame() {
   targetBird = birds[Math.floor(Math.random() * birds.length)];
   guessesRemaining = 10;
   usedNames.clear();
+  guessHistory = [];
 
   document.getElementById("history").innerHTML = "";
   document.getElementById("reveal").innerHTML = "";
-
   updateStatus();
 }
 
-/* =============================
-   STATUS UPDATE
-============================= */
 function updateStatus() {
   document.getElementById("status").innerText =
     `Guesses remaining: ${guessesRemaining}`;
 }
 
-/* =============================
-   COMPARISON HELPERS
-============================= */
+//-------------------------------------------------------
+//  COMPARISON HELPERS
+//-------------------------------------------------------
 function compareTaxa(g, t) {
   if (g.Order === t.Order && g.Family === t.Family) return "correct";
   if (g.Order === t.Order) return "partial";
@@ -76,8 +71,8 @@ function compareBeak(g, t) {
 function compareRealm(g, t) {
   const gArr = g.split(",").map(s => s.trim());
   const tArr = t.split(",").map(s => s.trim());
-
-  if (gArr.length === tArr.length && gArr.every(v => tArr.includes(v))) return "correct";
+  if (gArr.length === tArr.length && gArr.every(v => tArr.includes(v)))
+    return "correct";
   return gArr.some(v => tArr.includes(v)) ? "partial" : "wrong";
 }
 
@@ -85,62 +80,222 @@ function compareExact(g, t) {
   return g === t ? "correct" : "wrong";
 }
 
-/* =============================
-   CUSTOM AUTOCOMPLETE
-============================= */
+//-------------------------------------------------------
+//  HANDLE GUESS
+//-------------------------------------------------------
+function handleGuess(choice) {
+  if (!choice || usedNames.has(choice)) return;
+
+  const guess = birds.find(b => b.Name === choice);
+  if (!guess) return;
+
+  usedNames.add(choice);
+  guessesRemaining--;
+  updateStatus();
+
+  // ---- Direction arrows ----
+    const massArrow =
+    guess.Mass < targetBird.Mass ? "↑" :
+    guess.Mass > targetBird.Mass ? "↓" : "";
+
+  const beakArrow =
+    guess["Beak.Index"] < targetBird["Beak.Index"] ? "↑" :
+    guess["Beak.Index"] > targetBird["Beak.Index"] ? "↓" : "";
+
+  const tiles = [
+    { label: "Taxa", value: `${guess.Order} > ${guess.Family}`, score: compareTaxa(guess, targetBird) },
+    { label: "Mass", value: `${guess.Mass} g ${massArrow}`, score: compareMass(guess.Mass, targetBird.Mass) },
+    { label: "Beak Index", 
+      value: `${guess["Beak.Index"]?.toFixed(2)} ${beakArrow}`, 
+      score: compareBeak(guess["Beak.Index"], targetBird["Beak.Index"]) },
+    { label: "Realm", value: guess.Realm, score: compareRealm(guess.Realm, targetBird.Realm) },
+    { label: "Habitat", value: guess.Habitat, score: compareExact(guess.Habitat, targetBird.Habitat) },
+    { label: "Migration", value: guess.Migration, score: compareExact(guess.Migration, targetBird.Migration) },
+    { label: "Nest", value: guess.Nest, score: compareExact(guess.Nest, targetBird.Nest) },
+    { label: "Diet", value: guess.Diet, score: compareExact(guess.Diet, targetBird.Diet) }
+  ];
+
+  displayGuess(choice, tiles);
+
+  if (choice === targetBird.Name || guessesRemaining === 0) {
+    revealFinal();
+  }
+}
+
+//-------------------------------------------------------
+//  DISPLAY GUESS BLOCK
+//-------------------------------------------------------
+function displayGuess(name, tiles) {
+  const history = document.getElementById("history");
+  const row = document.createElement("div");
+  row.className = "guess-row";
+
+  const bird = birds.find(b => b.Name === name);
+
+  row.innerHTML = `
+    <div class="guess-container">
+
+      <!-- IMAGE -->
+      <div class="image-section">
+        ${bird.Picture ? bird.Picture : "<div>No image</div>"}
+
+        <button class="info-toggle">ℹ️</button>
+
+        <div class="extra-info hidden">
+          <p><b>${bird.Vname}</b> · <i>${bird.Sname}</i></p>
+
+          ${bird["ML.Code"] ? `<p>🖼 Macaulay Library: <b>${bird["ML.Code"]}</b></p>` : ""}
+          ${bird["eBird.Code"] ? `<p>🕊 eBird Checklist: <b>${bird["eBird.Code"]}</b></p>` : ""}
+
+          <p style="margin-top:8px;">
+            <a href="${bird.Doi}" target="_blank">🔗 Species Page (DOI)</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- TILE GRID -->
+      <div class="tile-grid"></div>
+
+    </div>
+  `;
+
+  const grid = row.querySelector(".tile-grid");
+  tiles.forEach(t => {
+    grid.innerHTML += `
+      <div class="tile ${t.score}">
+        <div class="tile-content">
+          <span class="attr-label">${t.label}</span>
+          <span class="attr-value"><b>${t.value}</b></span>
+        </div>
+      </div>`;
+  });
+
+  row.querySelector(".info-toggle").addEventListener("click", () => {
+    row.querySelector(".extra-info").classList.toggle("hidden");
+  });
+
+  history.prepend(row);
+}
+
+//-------------------------------------------------------
+//  FINAL REVEAL (same layout as guess)
+//-------------------------------------------------------
+function revealFinal() {
+  const container = document.getElementById("reveal");
+  container.innerHTML = "";
+
+  const row = document.createElement("div");
+  row.className = "guess-row";
+  row.style.background = "#2ECC71"; // green reveal
+
+  const bird = targetBird;
+
+  row.innerHTML = `
+    <div class="guess-container">
+
+      <div class="image-section">
+        ${bird.Picture}
+
+        <button class="info-toggle">ℹ️</button>
+
+        <div class="extra-info hidden">
+          <p><b>${bird.Vname}</b> · <i>${bird.Sname}</i></p>
+
+          ${bird["ML.Code"] ? `<p>🖼 Macaulay Library: <b>${bird["ML.Code"]}</b></p>` : ""}
+          ${bird["eBird.Code"] ? `<p>🕊 eBird Checklist: <b>${bird["eBird.Code"]}</b></p>` : ""}
+
+          <p style="margin-top:8px;">
+            <a href="${bird.Doi}" target="_blank">🔗 Species Page (DOI)</a>
+          </p>
+        </div>
+      </div>
+
+      <h2 class="reveal-title">🦜 The Mystery Bird Was:<br>${bird.Name}</h2>
+
+      <div class="tile-grid"></div>
+
+    </div>
+  `;
+
+  const tiles = [
+    { label: "Taxa", value: `${bird.Order} > ${bird.Family}`, score: "" },
+    { label: "Mass", value: `${bird.Mass} g`, score: "" },
+    { label: "Beak Index", value: bird["Beak.Index"].toFixed(2), score: "" },
+    { label: "Realm", value: bird.Realm, score: "" },
+    { label: "Habitat", value: bird.Habitat, score: "" },
+    { label: "Migration", value: bird.Migration, score: "" },
+    { label: "Nest", value: bird.Nest, score: "" },
+    { label: "Diet", value: bird.Diet, score: "" }
+  ];
+
+  const grid = row.querySelector(".tile-grid");
+  tiles.forEach(t => {
+    grid.innerHTML += `
+      <div class="tile reveal-tile">
+        <div class="tile-content">
+          <span class="attr-label">${t.label}</span>
+          <span class="attr-value"><b>${t.value}</b></span>
+        </div>
+      </div>`;
+  });
+
+  row.querySelector(".info-toggle").addEventListener("click", () => {
+    row.querySelector(".extra-info").classList.toggle("hidden");
+  });
+
+  container.prepend(row);
+}
+
+//-------------------------------------------------------
+//  AUTOCOMPLETE SYSTEM (with arrow-key navigation)
+//-------------------------------------------------------
 function setupAutocomplete() {
   const input = document.getElementById("guessInput");
+  const wrapper = document.querySelector(".autocomplete-container");
 
   const list = document.createElement("div");
   list.id = "autocompleteList";
   list.className = "autocomplete-list";
-  document.querySelector(".autocomplete-container").appendChild(list);
+  wrapper.appendChild(list);
 
-  let activeIndex = -1; // ⭐ keeps track of keyboard-selected item
-  input.dataset.fromSuggestion = "false";
+  let activeIndex = -1;
 
-  /* ---------------------------
-     RENDER LIST ITEMS
-  --------------------------- */
-  function renderList(matches, query) {
-    list.innerHTML = matches
-      .map((b, i) => {
-        const highlighted =
-          query === ""
-            ? b.Name
-            : b.Name.replace(
-                new RegExp(query, "gi"),
-                m => `<span class="highlight">${m}</span>`
-              );
-        return `
-          <div class="autocomplete-item" 
-               data-index="${i}" 
-               data-name="${b.Name}">
-            ${highlighted}
-          </div>`;
-      })
-      .join("");
+  //---------------------------------------------------
+  // RENDER AUTOCOMPLETE LIST
+  //---------------------------------------------------
+  function renderList(matches, q) {
+    list.innerHTML = matches.map((b, i) => {
+      const highlighted =
+        q === ""
+          ? b.Name
+          : b.Name.replace(new RegExp(q, "gi"),
+              m => `<span class="highlight">${m}</span>`);
+
+      return `
+        <div class="autocomplete-item"
+             data-index="${i}"
+             data-name="${b.Name}">
+          ${highlighted}
+        </div>`;
+    }).join("");
 
     list.style.display = "block";
-    activeIndex = -1; // reset selection
+    activeIndex = -1;
   }
 
-  /* ---------------------------
-     FILTER ON INPUT
-  --------------------------- */
+  //---------------------------------------------------
+  // FILTER LIST ON INPUT
+  //---------------------------------------------------
   input.addEventListener("input", () => {
     const q = input.value.trim().toLowerCase();
     input.dataset.fromSuggestion = "false";
 
     let matches;
-
-    // empty → show full list
     if (!q) {
       matches = birds.slice(0, 50);
     } else {
-      matches = birds
-        .filter(b => b.Name.toLowerCase().includes(q))
-        .slice(0, 50);
+      matches = birds.filter(b =>
+        b.Name.toLowerCase().includes(q)).slice(0, 50);
     }
 
     if (matches.length === 0) {
@@ -151,9 +306,9 @@ function setupAutocomplete() {
     renderList(matches, q);
   });
 
-  /* ---------------------------
-     CLICK SELECT
-  --------------------------- */
+  //---------------------------------------------------
+  // CLICK → SELECT
+  //---------------------------------------------------
   list.addEventListener("click", e => {
     const item = e.target.closest(".autocomplete-item");
     if (!item) return;
@@ -166,14 +321,14 @@ function setupAutocomplete() {
     input.setSelectionRange(input.value.length, input.value.length);
   });
 
-  /* ---------------------------
-     KEYBOARD NAVIGATION
-  --------------------------- */
+  //---------------------------------------------------
+  // KEYBOARD NAVIGATION
+  //---------------------------------------------------
   input.addEventListener("keydown", e => {
     const items = Array.from(list.querySelectorAll(".autocomplete-item"));
     const count = items.length;
 
-    /* --- ONE BACKSPACE QUICK CLEAR --- */
+    // QUICK CLEAR
     if (e.key === "Backspace" && input.dataset.fromSuggestion === "true") {
       e.preventDefault();
       input.value = "";
@@ -182,77 +337,65 @@ function setupAutocomplete() {
       return;
     }
 
-    /* --- DOWN ARROW --- */
+    // DOWN
     if (e.key === "ArrowDown") {
       e.preventDefault();
-
-      if (list.style.display !== "block" || count === 0) return;
+      if (!count) return;
 
       activeIndex = (activeIndex + 1) % count;
 
       items.forEach(el => el.classList.remove("active"));
       items[activeIndex].classList.add("active");
-
-      // auto-scroll
       items[activeIndex].scrollIntoView({ block: "nearest" });
 
       return;
     }
 
-    /* --- UP ARROW --- */
+    // UP
     if (e.key === "ArrowUp") {
       e.preventDefault();
-
-      if (list.style.display !== "block" || count === 0) return;
+      if (!count) return;
 
       activeIndex = (activeIndex - 1 + count) % count;
 
       items.forEach(el => el.classList.remove("active"));
       items[activeIndex].classList.add("active");
-
       items[activeIndex].scrollIntoView({ block: "nearest" });
 
       return;
     }
 
-    /* --- ENTER selects current --- */
+    // ENTER = SUBMIT GUESS
     if (e.key === "Enter") {
       e.preventDefault();
 
-      // if arrow was used
+      // With arrows
       if (activeIndex >= 0 && items[activeIndex]) {
-        const picked = items[activeIndex];
-        input.value = picked.dataset.name;
+        input.value = items[activeIndex].dataset.name;
         input.dataset.fromSuggestion = "true";
-
         list.style.display = "none";
 
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-
-        document.getElementById("submitGuess").click();
+        handleGuess(input.value);
+        input.value = "";
         return;
       }
 
-      // if no active item → pick first
+      // No arrow → choose first
       const first = list.querySelector(".autocomplete-item");
       if (first) {
         input.value = first.dataset.name;
         input.dataset.fromSuggestion = "true";
-
         list.style.display = "none";
 
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-
-        document.getElementById("submitGuess").click();
+        handleGuess(input.value);
+        input.value = "";
       }
     }
   });
 
-  /* ---------------------------
-     CLICK OUTSIDE → CLOSE LIST
-  --------------------------- */
+  //---------------------------------------------------
+  // CLICK OUTSIDE → CLOSE LIST
+  //---------------------------------------------------
   document.addEventListener("click", e => {
     if (!e.target.closest(".autocomplete-container")) {
       list.style.display = "none";
@@ -260,157 +403,12 @@ function setupAutocomplete() {
   });
 }
 
-
-/* =============================
-   SUBMIT GUESS
-============================= */
-document.getElementById("submitGuess").addEventListener("click", () => {
-  const input = document.getElementById("guessInput");
-  const choice = input.value.trim();
-
-  if (!choice || usedNames.has(choice)) return;
-
-  const guess = birds.find(b => b.Name === choice);
-  if (!guess) return;
-
-  usedNames.add(choice);
-  guessesRemaining--;
-  updateStatus();
-  input.value = "";
-
-  const arrowMass =
-    guess.Mass < targetBird.Mass ? "↑" :
-    guess.Mass > targetBird.Mass ? "↓" : "";
-
-  const guessBeak = guess["Beak.Index"];
-  const targetBeak = targetBird["Beak.Index"];
-
-  const arrowBeak =
-    guessBeak < targetBeak ? "↑" :
-    guessBeak > targetBeak ? "↓" : "";
-
-  const beakText =
-    typeof guessBeak === "number"
-      ? `${guessBeak.toFixed(2)} ${arrowBeak}`
-      : "NA";
-
-  const tiles = [
-    { label: "Taxa", value: `${guess.Order} > ${guess.Family}`, score: compareTaxa(guess, targetBird) },
-    { label: "Mass", value: `${guess.Mass} g ${arrowMass}`, score: compareMass(guess.Mass, targetBird.Mass) },
-    { label: "Beak Index", value: beakText, score: compareBeak(guessBeak, targetBeak) },
-    { label: "Realm", value: guess.Realm, score: compareRealm(guess.Realm, targetBird.Realm) },
-    { label: "Habitat", value: guess.Habitat, score: compareExact(guess.Habitat, targetBird.Habitat) },
-    { label: "Migration", value: guess.Migration, score: compareExact(guess.Migration, targetBird.Migration) },
-    { label: "Nest", value: guess.Nest, score: compareExact(guess.Nest, targetBird.Nest) },
-    { label: "Diet", value: guess.Diet, score: compareExact(guess.Diet, targetBird.Diet) }
-  ];
-
-  displayGuess(choice, tiles);
-
-  if (choice === targetBird.Name || guessesRemaining === 0) {
-    reveal();
-  }
-});
-
-/* =============================
-   DISPLAY GUESS
-============================= */
-function displayGuess(name, tiles) {
-  const history = document.getElementById("history");
-  const bird = birds.find(b => b.Name === name);
-
-  const row = document.createElement("div");
-  row.className = "guess-row";
-
-  row.innerHTML = `
-    <div class="guess-container">
-      <div class="image-section">
-        ${bird.Picture || "<div>No image</div>"}
-        <button class="info-toggle">ℹ️</button>
-        <div class="extra-info hidden">
-          <p><b>${bird.Vname}</b> · <i>${bird.Sname}</i></p>
-          ${bird["ML.Code"] ? `<p><b>ML:</b> ${bird["ML.Code"]}</p>` : ""}
-          ${bird["eBird.Code"] ? `<p><b>eBird:</b> ${bird["eBird.Code"]}</p>` : ""}
-          <p><a href="${bird.Doi}" target="_blank">🔗 DOI Page</a></p>
-        </div>
-      </div>
-      <div class="tile-grid"></div>
-    </div>
-  `;
-
-  const tileGrid = row.querySelector(".tile-grid");
-
-  tiles.forEach(t => {
-    tileGrid.innerHTML += `
-      <div class="tile ${t.score}">
-        <div class="tile-label">${t.label}</div>
-        <div class="tile-value">${t.value}</div>
-      </div>
-    `;
-  });
-
-  row.querySelector(".info-toggle").addEventListener("click", () => {
-    row.querySelector(".extra-info").classList.toggle("hidden");
-  });
-
-  history.prepend(row); // newest on top
-}
-
-/* =============================
-   REVEAL ANSWER
-============================= */
-function reveal() {
-  if (document.querySelector(".reveal-row")) return;
-
-  const history = document.getElementById("history");
-  const bird = targetBird;
-
-  const row = document.createElement("div");
-  row.className = "guess-row reveal-row";
-
-  const tiles = [
-    { label: "Taxa", value: `${bird.Order} > ${bird.Family}` },
-    { label: "Mass", value: `${bird.Mass} g` },
-    { label: "Beak Index", value: bird["Beak.Index"]?.toFixed(2) || "NA" },
-    { label: "Realm", value: bird.Realm },
-    { label: "Habitat", value: bird.Habitat },
-    { label: "Migration", value: bird.Migration },
-    { label: "Nest", value: bird.Nest },
-    { label: "Diet", value: bird.Diet }
-  ];
-
-  row.innerHTML = `
-    <div class="guess-container">
-      <div class="image-section">
-        ${bird.Picture}
-      </div>
-      <div>
-        <div class="reveal-title">
-          🦜 The Mystery Bird Was: ${bird.Name}
-        </div>
-        <div class="tile-grid"></div>
-      </div>
-    </div>
-  `;
-
-  const tileGrid = row.querySelector(".tile-grid");
-  tiles.forEach(t => {
-    tileGrid.innerHTML += `
-      <div class="tile reveal-tile">
-        <div class="tile-label">${t.label}</div>
-        <div class="tile-value">${t.value}</div>
-      </div>
-    `;
-  });
-
-  history.prepend(row);
-}
-
-/* =============================
-   RULES PANEL
-============================= */
-document.getElementById("rulesBtn").onclick = () => {
-  document.getElementById("rulesPanel").classList.toggle("hidden");
-};
-
+//-------------------------------------------------------
+//  RULES & RESTART
+//-------------------------------------------------------
 document.getElementById("restartBtn").onclick = startGame;
+
+document.getElementById("rulesBtn").onclick = () => {
+  const panel = document.getElementById("rulesPanel");
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
+};
