@@ -1,9 +1,89 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('Geist-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+}
+
 body {
   background: #111;
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Geist", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+
+/* Center the whole hero block (title + subtitle + search) */
+.hero {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;              /* centers the entire block */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* centers children horizontally */
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------
+      FIXED HEADBAND (like Spotle)
+--------------------------------------------------- */
+.top-buttons {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; /* ensures full width */
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 20px;
+    background: #111; /* matches site background */
+    z-index: 9999;
+
+    box-sizing: border-box;
+}
+
+/* Ensure page content is not hidden under fixed bar */
+body {
+  padding-top: 70px;
+}
+
+.lang-menu {
+    position: absolute;
+    top: 60px;          /* appears below header */
+    right: 20px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    font-size: 15px;
+    z-index: 9999;
+}
+
+.lang-menu div {
+    padding: 10px 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.lang-menu div:hover {
+    background: #eee;
+}
+
+.lang-menu.hidden {
+    display: none;
 }
 
 .title {
@@ -13,47 +93,239 @@ body {
   font-weight: bold;
 }
 
-.top-buttons {
-  position: fixed;
-  right: 20px;
-  top: 15px;
-  display: flex;
-  gap: 15px;
+.subtitle {
+    text-align: center;
+    font-size: 25px;
+    color: white;          /* soft grey text */
+    margin-top: 0px;    /* pull it closer to the title */
+    margin-bottom: 25px;  /* spacing before search bar */
+    font-weight: 300;     /* light/clean look */
 }
 
+/* ---------------------------------------------------
+   SPOTLE-STYLE FULLSCREEN MODAL
+--------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* above the top-buttons */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #000;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Fine control of line spacing inside Rules modal */
+
+
+.modal-content h3,
+.modal-content p.rules-text {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    line-height: 1.4;
+}
+
+
+
+/* Close icon */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.close-btn i {
+  font-size: 28px;
+}
+
+/* Content formatting */
+.modal-inner h2 {
+  margin-top: 8px;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.modal-inner ul {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.modal-inner li {
+  margin: 10px 0;
+}
+
+/* ---------------------------------------------------
+   RULES ATTRIBUTES GRID (Spotle Style)
+--------------------------------------------------- */
+.rules-attribute-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.rules-attr-tile {
+  height: 55px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #333;
+  transition: 0.2s;
+  white-space: nowrap;
+
+  /* FIX CENTERING */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules-attr-tile:hover {
+  background: #333;
+}
+
+.rules-attr-tile.active {
+  background: #444;
+  border-color: #666;
+}
+
+/* Expanded detail section */
+.rules-details {
+  font-size: 15px;
+  margin-top: 15px;
+  background: #111;
+  padding: 18px;
+  border-radius: 12px;
+  color: white;
+  border: 2px solid #333;
+}
+
+.rule-detail-buttons {
+  display: flex;
+  justify-content: center;   /* centers buttons horizontally */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.rule-button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+
+  height: 45px;
+  width: 70px;     /* <— use width instead of max-width + flex */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rule-button.incorrect {
+  background: #555;
+}
+
+.rule-button.partial {
+  background: #b8a50a;
+}
+
+.rule-button.correct {
+  background: #2ecc71;
+}
+
+/* -------------------------------------
+   ICON BUTTON (restart, help, language)
+--------------------------------------- */
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  border: 0px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-btn i {
+  font-size: 20px;
+  color: black;
+}
+
+.icon-btn:hover {
+  background: #e8e8e8;
+}
+
+/* Language icon specifically */
+.lang-btn i {
+  font-size: 26px;
+}
+
+/* -------------------------------
+   STANDARD BUTTON (unchanged)
+-------------------------------- */
 .btn-standard {
   background: white;
   color: black;
-  padding: 0 22px;          /* horizontal only */
-  border-radius: 10px;
-  border: 2px solid black;
+  padding: 0 22px;
+  border: none;
   font-weight: bold;
   cursor: pointer;
-  height: 45px;             /* fixed height */
+  height: 45px;
   display: flex;
-  align-items: center;      /* vertical centering of text */
+  align-items: center;
 }
 
+/* Input + layout */
 .input-row {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Search block layout */
 #search-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 15px;   /* <--- adjust value to increase/decrease spacing */
-  height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .status-text {
   text-align: center;
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .rules-panel {
@@ -61,21 +333,46 @@ body {
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
+  font-size: 13px;
 }
 
-.hidden {
-  display: none;
+.hidden { display: none; }
+
+/* Bird names */
+.bird-name-display {
+  margin-bottom: 10px;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.bird-name-display .common-name {
+  font-size: 16px;
+  font-weight: 350;
+  color: white;
+}
+
+.bird-name-display .scientific-name {
+  font-size: 16px;
+  font-weight: 350;
+  font-style: italic;
+  color: white;
+  opacity: 1;
 }
 
 /* Guess rows */
 .guess-row {
   background: #1A1A1A;
   padding: 15px;
-  border-radius: 12px;
-  margin-top: 18px;
+  border-radius: 15px;
+  margin: 15px auto;
+  max-width: 500px;
+  width: 100%;
 }
 
-/* reveal row on top – green background */
 .reveal-row {
   background: #2ECC71;
   color: black;
@@ -83,105 +380,137 @@ body {
 
 /* Container layout */
 .guess-container {
-  display: grid;
-  grid-template-columns: 260px auto;
-  gap: 20px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  gap: 15px;
 }
 
 /* Image */
 .image-section {
   position: relative;
-  width: 260px;
-  overflow: hidden;
-  border-radius: 10px;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.image-section iframe {
-  width: 260px !important;
-  height: 180px !important;
+.bird-photo {
+  width: 100%;
+  max-width: 260px;
   border-radius: 10px;
+  height: auto;
+  display: block;
 }
 
-/* Info button + panel */
+/* Info button */
 .info-toggle {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background: rgba(0, 0, 0, 0.7);
+  background: none;
   color: white;
-  border: none;
+  border: #1A1A1A;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-toggle i {
+  font-size: 22px;
 }
 
 .extra-info {
   background: #1a1a1a;
   color: #eee;
-  padding: 10px;
+  padding: 4px;
   border-radius: 10px;
-  margin-top: 10px;
-  font-size: 13px;
-  line-height: 1.4;
+  margin-top: 4px;
+  font-size: 10px;
+  line-height: 1.2;
 }
 
 .extra-info p {
-  margin: 4px 0;
+  margin: 0;
 }
 
-/* 4 x 2 tile grid */
-.tile-grid {
+.info-link {
+  color: lightgrey !important;
+  font-weight: normal !important;
+  text-decoration: none !important;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+/* Tile grids */
+.tile-grids-wrapper {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-top,
+.grid-bottom {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.grid-bottom {
+  margin-top: 8px;
 }
 
 /* Tiles */
 .tile {
   padding: 10px;
   border-radius: 8px;
+  min-height: 70px;
   background: #333;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  overflow-wrap: break-word;
+  justify-content: center;
+  align-items: center;
 }
 
 .tile-content {
   display: flex;
-  flex-direction: column; /* forces line break */
-  align-items: center;    /* centers text vertically */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
-.tile-label {
-  font-weight: normal;
-  font-size: 13px;
+.attr-label {
+  font-weight: 400;
+  font-size: 16px;
 }
 
-.tile-value {
-  font-weight: bold;
+.attr-value {
+  font-weight: 500;
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
-.tile b,
-.tile div {
-  white-space: normal;
-}
-
-/* coloured states for guesses */
+/* Tile colors */
 .correct { background: #2ECC71 !important; }
 .partial { background: #F1C40F !important; }
 .wrong   { background: #444 !important; }
 
-/* final reveal box (not used now, but safe to keep if needed elsewhere) */
+/* Reveal box */
 .reveal-box {
   margin-top: 30px;
   background: #2ECC71;
@@ -192,13 +521,11 @@ body {
   text-align: center;
 }
 
-/* green background for reveal row (already present, but keep) */
 .reveal-row {
   background: #1a1a1a;
   color: #1a1a1a;
 }
 
-/* tiles in the reveal row styled like buttons */
 .reveal-tile {
   background: #2ECC71 !important;
   color: white;
@@ -212,43 +539,79 @@ body {
   color: white;
 }
 
-.autocomplete-container {
-  position: relative;
-  width: 400;
-}
-
+/* The input itself */
 #guessInput {
-  width: 350px;
-  height: 28px; /* Matches submit button height */
-  font-size: 16px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  border: 2px solid #ccc;
-  outline: none;
+    width: 500px;
+    max-width: 80vw;            /* responsive */
+    height: 50px;
+    padding: 0 16px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background: white;
+    color: #000;
+    display: block;
+    margin: 0 auto;             /* centers inside container */
 }
 
 #guessInput:focus {
   border-color: white;
 }
 
-.autocomplete-list {
-  position: absolute;
-  top: 50px;
+/* Dice button inside input */
+.input-icon-btn {
+    position: absolute;
+    right: 12px;        /* distance from right of input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-icon-btn:hover i {
+    color: #222;
+}
+
+/* Autocomplete */
+.autocomplete-container {
+  position: relative;
   width: 100%;
-  background: white;
-  color: black;
-  max-height: 250px;
-  overflow-y: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  z-index: 9999;
-  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* The dropdown aligned perfectly under the input */
+.autocomplete-list {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%); /* centers under the input */
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    color: black;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    z-index: 9999;
+    display: none;
 }
 
 .autocomplete-item {
   padding: 10px;
   cursor: pointer;
   font-size: 16px;
+  text-align: left;
 }
 
 .autocomplete-item:hover {
@@ -257,10 +620,138 @@ body {
 
 .highlight {
   background: lightpink;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .autocomplete-item.active {
   background: lightgrey;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+/* Greyed-out disabled search bar */
+#guessInput.disabled {
+  background-color: #555 !important;
+  color: #999 !important;
+  border: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+#status.disabled {
+    color: #777;   /* greyed-out text */
+}
+
+.autocomplete-list.disabled {
+  display: none !important;
+}
+
+/* Hide scrollbar on desktop */
+@media (hover: hover) and (pointer: fine) {
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    body {
+        scrollbar-width: none;   /* Firefox */
+    }
+}
+
+/* -------------------------------------
+   MOBILE LAYOUT
+-------------------------------------- */
+@media (max-width: 600px) {
+
+  .title {
+    font-size: 32px;
+  }
+
+  .btn-standard {
+    padding: 0 14px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #search-block {
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .autocomplete-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  #guessInput {
+    width: 80vw;
+    max-width: 360px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 16px;
+    border-radius: 25px;
+    margin: 0 auto;
+  }
+
+  .autocomplete-list {
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .autocomplete-item {
+    font-size: 14px;
+    padding: 10px
+  }
+
+  #status {
+    width: 350px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .guess-row {
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+  }
+
+  .guess-container {
+    max-width: 360px;
+  }
+
+  .bird-photo {
+    width: 260px;
+    height: auto;
+  }
+
+  .tile-grids-wrapper {
+    width: 98%;
+    max-width: 360px;
+  }
+
+  .grid-top,
+  .grid-bottom {
+    width: 100%;
+  }
+
+  .bird-name-display .common-name,
+  .bird-name-display .scientific-name {
+    font-size: 16px;
+  }
+
+  .tile .attr-label,
+  .tile .attr-value {
+    font-size: 14px !important;
+    line-height: 1.2;
+  }
+
+  .tile {
+    padding: 8px;
+    min-height: 60px;
+  }
 }
