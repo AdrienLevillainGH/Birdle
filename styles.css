@@ -587,16 +587,20 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  overflow: visible !important;
 }
 
 /* The dropdown aligned perfectly under the input */
 .autocomplete-list {
     position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translateX(-50%); /* centers under the input */
+    top: calc(100% + 6px);
+    left: 0;            /* align with the input */
+    right: 0;           /* stretch to input width */
+    transform: none;    /* remove problematic centering */
+
     width: 100%;
-    max-width: 500px;
+    max-width: none;    /* ensures full input width */
+    
     background: white;
     color: black;
     max-height: 250px;
@@ -606,7 +610,6 @@ body {
     z-index: 9999;
     display: none;
 }
-
 .autocomplete-item {
   padding: 10px;
   cursor: pointer;

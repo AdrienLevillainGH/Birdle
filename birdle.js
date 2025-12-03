@@ -172,7 +172,7 @@ const ATTRIBUTE_INFO = {
   },
   mass: {
     title: "Body Mass (in g)",
-    desc: "Body mass classes: 0-100g / 100-1000g / 1000-3000g / >3000g.\nArrows show direction",
+    desc: "Body mass classes: 0-100g / 100-1000g / 1000-3000g / >3000g. Arrows show direction.",
     buttons: [
       { cls: "incorrect", label: "Incorrect" },
       { cls: "partial", label: "Same\nclass" },
@@ -181,7 +181,7 @@ const ATTRIBUTE_INFO = {
   },
   beak: {
     title: "Beak",
-    desc: "Length of the beak relative to the specie body mass. Varies between 0 and 1. High values suggest a long beak.\nArrows show direction.",
+    desc: "Length of the beak relative to the specie body mass. Varies between 0 and 1. High values suggest a long beak. Arrows show direction.",
     buttons: [
       { cls: "incorrect", label: "Incorrect" },
       { cls: "partial", label: "Close\n(±0.125)" },
@@ -575,11 +575,10 @@ function setupAutocomplete() {
 
     let matches;
     if (!q) {
-      matches = birds.slice(0, 50);
+    matches = birds;   
     } else {
-      matches = birds.filter(b =>
-        getDisplayName(b).toLowerCase().includes(q)
-      ).slice(0, 50);
+      matches = birds
+   .filter(b => getDisplayName(b).toLowerCase().includes(q));
     }
 
     if (matches.length === 0) {
@@ -595,7 +594,7 @@ function setupAutocomplete() {
     const q = input.value.trim();
 
     if (q === "") {
-        const matches = birds.slice(0, 50);  // show first 50 birds
+        const matches = birds;  // show first 50 birds
         renderList(matches, "");
         list.style.display = "block";
     }
@@ -609,14 +608,16 @@ function setupAutocomplete() {
     if (!item) return;
 
     const bird = birds.find(b => b.Name === item.dataset.name);
+    if (!bird) return;
 
-    input.value = getDisplayName(bird);
-    input.dataset.fromSuggestion = "true";
+    // Immediately submit the guess
+    handleGuess(bird.Name);
+
+    // Clear input & close list
+    input.value = "";
+    input.dataset.fromSuggestion = "false";
     list.style.display = "none";
-
-    input.focus();
-    input.setSelectionRange(input.value.length, input.value.length);
-  });
+    });
 
   //---------------------------------------------------
   // KEYBOARD NAVIGATION
