@@ -13,10 +13,6 @@
 <!-- FIXED HEADER (matches your CSS .top-buttons rules) -->
 <div class="top-buttons">
 
-    <button id="restartBtn" class="icon-btn" title="Restart">
-        <i class="bi bi-arrow-repeat"></i>
-    </button>
-
     <button id="rulesBtn" class="icon-btn" title="Rules">
         <i class="bi bi-question"></i>
     </button>
@@ -48,6 +44,10 @@
       <h2>Today's mystery bird was...</h2>
 
       <div id="finalBirdBox" style="text-align:center; margin-top:15px;"></div>
+
+        <button id="bowLinkBtn" class="modal-btn botw-btn">Birds of the World</button>
+
+        <div id="nextBirdleTimer" class="next-birdle-timer">Next Birdle: <span id="countdown">--:--:--</span></div>
   </div>
 
 </div>
@@ -100,21 +100,6 @@
       <!-- EXPANDED ATTRIBUTE PANEL -->
       <div id="rulesDetails" class="rules-details hidden"></div>
 
-  </div>
-
-</div>
-
-<!-- FINAL RESULT MODAL -->
-<div id="finalModal" class="modal-overlay hidden">
-
-  <div class="modal-content">
-      <button id="closeFinal" class="close-btn">
-          <i class="bi bi-x-lg"></i>
-      </button>
-
-      <h2>Today's mystery bird was...</h2>
-
-      <div id="finalBirdBox" style="text-align:center; margin-top:15px;"></div>
   </div>
 
 </div>

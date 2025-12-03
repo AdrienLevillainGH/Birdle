@@ -123,16 +123,18 @@ body {
 }
 
 .modal-content {
-  background: #ffffff;
+  background: white;
   color: #000;
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
   border-radius: 12px;
-  padding: 25px;
+  padding: 15px;
   position: relative;
   overflow-y: auto;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Fine control of line spacing inside Rules modal */
@@ -176,6 +178,39 @@ body {
 
 .modal-inner li {
   margin: 10px 0;
+}
+
+/* ---------------------------------------------------
+   Reveal tile and décompte
+--------------------------------------------------- */
+
+.modal-btn {
+    padding: 12px 20px;
+    width: auto;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+
+    display: block;         /* treat button as a block */
+    align-self: center;     /* also centers if parent is flex */
+}
+
+.botw-btn {
+    background-color: #1b73e8; /* Google blue */
+    border: none;
+    margin: 0 auto; 
+    margin-top: 4px;
+}
+
+.next-birdle-timer {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
 }
 
 /* ---------------------------------------------------

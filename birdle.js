@@ -8,6 +8,54 @@ let usedNames = new Set();
 let guessHistory = [];
 let gameOver = false;
 
+// Deterministic pseudo-random generator (Mulberry32)
+function mulberry32(seed) {
+    return function () {
+        seed |= 0;
+        seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t ^= t + Math.imul(t ^ t >>> 7, 61 | t);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+}
+
+// Convert today's date → integer seed
+function getDailySeed() {
+    const today = new Date();
+    const y = today.getUTCFullYear();
+    const m = today.getUTCMonth() + 1;
+    const d = today.getUTCDate();
+
+    return parseInt(`${y}${m}${d}`);  
+}
+
+function startNextBirdleCountdown() {
+    function update() {
+        const now = new Date();
+
+        // Next UTC midnight
+        const next = new Date(Date.UTC(
+            now.getUTCFullYear(),
+            now.getUTCMonth(),
+            now.getUTCDate() + 1,
+            0, 0, 0
+        ));
+
+        const diff = next - now;
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("countdown").textContent =
+            `${String(hours).padStart(2, "0")}:` +
+            `${String(minutes).padStart(2, "0")}:` +
+            `${String(seconds).padStart(2, "0")}`;
+    }
+
+    update();
+    setInterval(update, 1000);
+}
 
 let currentLang = "en";   // default language
 
@@ -97,7 +145,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     });
 
+    // Decompte & DOI dans la final tile
+    document.addEventListener("DOMContentLoaded", () => {
+    const botw = document.getElementById("botwButton");
+
+    if (botw) {
+        botw.addEventListener("click", () => {
+        const link = targetBird.Doi || "https://birdsoftheworld.org";
+    window.open(link, "_blank");
+      });
+    }
+    });
   });
+
 
 // Translation icon mechanisms
 
@@ -127,6 +187,14 @@ document.addEventListener("click", e => {
     }
 });
 
+// Button BOTW
+
+document.getElementById("bowLinkBtn").onclick = () => {
+    if (selectedBird && selectedBird.Doi) {
+        window.open(selectedBird.Doi, "_blank");
+      }
+    };
+
 // Reval mystery bird modal tile
 
 function showFinalModal() {
@@ -149,8 +217,13 @@ function showFinalModal() {
             : "<div>No image available</div>"
         }
     `;
+    
+    const bowBtn = document.getElementById("bowLinkBtn");
+    bowBtn.onclick = () => window.open(bird.Doi, "_blank");
+
 
     document.getElementById("finalModal").classList.remove("hidden");
+    startNextBirdleCountdown(); 
 }
 
 // ---------------------------------------
@@ -287,7 +360,12 @@ function disableSearchBar() {
 }
 
 function startGame() {
-  targetBird = birds[Math.floor(Math.random() * birds.length)];
+  // Daily seed
+  const seed = getDailySeed();
+  const rand = mulberry32(seed);
+
+  // Pick deterministic daily bird
+  targetBird = birds[Math.floor(rand() * birds.length)];
   guessesRemaining = 10;
   usedNames.clear();
   guessHistory = [];
@@ -449,7 +527,7 @@ function displayGuess(name, tiles) {
               : "";
 
             const doiPart = bird.Doi
-              ? `<a href="${bird.Doi}" target="_blank" class="info-link">Learn more</a>`
+              ? `<a href="${bird.Doi}" target="_blank" class="info-link">Birds of the World.</a>`
               : "";
 
             if (mlPart || doiPart) {
