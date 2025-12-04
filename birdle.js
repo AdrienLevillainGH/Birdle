@@ -382,46 +382,77 @@ function disableSearchBar() {
 }
 
 function startGame() {
-  gameOver = false;
+
   // Daily seed
   const seed = getDailySeed();
   const rand = mulberry32(seed);
 
   // Pick deterministic daily bird
   targetBird = birds[Math.floor(rand() * birds.length)];
-  guessesRemaining = 10;
-  usedNames.clear();
 
   // Try loading previous game state
   const stored = loadGameState();
+  const isSameDay = stored && stored.day === seed;
 
-  if (stored && stored.day === getDailySeed()) {
-    guessHistory = stored.guesses || [];
-    } else {
-    guessHistory = [];
-    }
+  if (isSameDay) {
+      console.log("Restoring previous Birdle...");
 
-// Clear UI
-document.getElementById("history").innerHTML = "";
+      // Restore guess history
+      guessHistory = stored.guesses || [];
 
-// Re-render guesses from storage
-guessHistory.forEach(entry => {
-    displayGuess(entry.name, entry.tiles);
-});
+      // Reset used names from history
+      usedNames.clear();
+      guessHistory.forEach(g => usedNames.add(g.name));
 
+      // Compute remaining guesses
+      guessesRemaining = 10 - guessHistory.length;
+      gameOver = guessesRemaining <= 0 ||
+                 guessHistory.some(g => g.name === targetBird.Name);
 
-  // Re-enable search bar
+      // Restore UI
+      const historyEl = document.getElementById("history");
+      historyEl.innerHTML = "";
+      guessHistory.forEach(entry => {
+          displayGuess(entry.name, entry.tiles);
+      });
+
+      updateStatus();
+
+      // If user already solved the bird earlier
+      if (gameOver) {
+          disableSearchBar();
+          showFinalModal();
+      }
+
+  } else {
+      console.log("New Birdle day — starting fresh");
+
+      // Reset for fresh game
+      guessHistory = [];
+      usedNames.clear();
+      guessesRemaining = 10;
+      gameOver = false;
+
+      // Clear storage for new day
+      localStorage.removeItem("birdle_state");
+
+      document.getElementById("history").innerHTML = "";
+      document.getElementById("reveal").innerHTML = "";
+      updateStatus();
+  }
+
+  // If the game is not over, enable the search bar
   const input = document.getElementById("guessInput");
   const list = document.getElementById("autocomplete-list");
-  input.classList.remove("disabled");
-  input.removeAttribute("disabled");
-  list.classList.remove("disabled");
-  document.getElementById("status").classList.remove("disabled");
 
-  document.getElementById("history").innerHTML = "";
-  document.getElementById("reveal").innerHTML = "";
-  updateStatus();
+  if (!gameOver) {
+      input.classList.remove("disabled");
+      input.removeAttribute("disabled");
+      list.classList.remove("disabled");
+      document.getElementById("status").classList.remove("disabled");
+  }
 }
+
 
 function updateStatus() {
   document.getElementById("status").innerText =
