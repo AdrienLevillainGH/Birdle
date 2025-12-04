@@ -106,7 +106,7 @@ fetch("birds.json")
     birds = data;
     birds.sort((a, b) => a.Name.localeCompare(b.Name));
     setupAutocomplete();
-    startGame();
+    // startGame();  // ❌ NOT here anymore
   });
 
 
@@ -253,6 +253,24 @@ function showFinalModal() {
     document.getElementById("finalModal").classList.remove("hidden");
     startNextBirdleCountdown(); 
 }
+
+// ---------------------------------------
+// Landing screen
+// ---------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+    const landing = document.getElementById("landingScreen");
+    const game = document.getElementById("gameScreen");
+    const playBtn = document.getElementById("startPlayBtn");
+
+    playBtn.addEventListener("click", () => {
+        landing.classList.add("hidden");  // hide landing
+        game.classList.remove("hidden");   // show game
+        startGame();                       // start daily puzzle
+    });
+});
+
+
 
 // ---------------------------------------
 // RULES ATTRIBUTE SYSTEM (Spotle style)
@@ -530,12 +548,37 @@ function handleGuess(choice) {
   // -----------------------------------------
   if (choice === targetBird.Name) {
 
-    revealFinal(true);    // your existing win reveal UI
+    const bird = targetBird;
+
+    const finalTiles = [
+        { label: "Taxa", value: `${bird.Order}<br>&gt;&nbsp;${bird.Family}`, score: "correct" },
+        { label: "Mass", value: `${bird.Mass} g`, score: "correct" },
+        { label: "Beak", value: bird["Beak.Index"].toFixed(2), score: "correct" },
+        { label: "Realm", value: bird.Realm, score: "correct" },
+        { label: "Habitat", value: bird.Habitat, score: "correct" },
+        { label: "Migration", value: bird.Migration, score: "correct" },
+        { label: "Nest", value: bird.Nest, score: "correct" },
+        { label: "Diet", value: bird.Diet, score: "correct" }
+    ];
+
+    // 1️⃣ Save reveal tile to history
+    guessHistory.push({
+        name: bird.Name,
+        tiles: finalTiles,
+        finalReveal: true
+    });
+
+    saveGameState();
+
+    // 2️⃣ Show reveal card in UI
+    revealFinal(true);
+
+    // 3️⃣ Lock game & show modal
     gameOver = true;
     disableSearchBar();
     showFinalModal();
     return;
-  }
+}
 
   // -----------------------------------------
   // NORMAL (INCORRECT) GUESS BEHAVIOUR
@@ -576,7 +619,7 @@ function handleGuess(choice) {
     const finalTiles = [
         { label: "Taxa", value: `${bird.Order}<br>&gt;&nbsp;${bird.Family}`, score: "correct" },
         { label: "Mass", value: `${bird.Mass} g`, score: "correct" },
-        { label: "Beak Index", value: bird["Beak.Index"].toFixed(2), score: "correct" },
+        { label: "Beak", value: bird["Beak.Index"].toFixed(2), score: "correct" },
         { label: "Realm", value: bird.Realm, score: "correct" },
         { label: "Habitat", value: bird.Habitat, score: "correct" },
         { label: "Migration", value: bird.Migration, score: "correct" },

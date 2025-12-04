@@ -19,6 +19,47 @@ body {
 }
 
 
+.landing-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    inset: 0;
+    background: #111;
+
+    z-index: 9998;
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.landing-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.landing-play-btn {
+    padding: 14px 40px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 40px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    background: #2ecc71;
+    color: black;
+}
+
 /* Center the whole hero block (title + subtitle + search) */
 .hero {
     width: 100%;
