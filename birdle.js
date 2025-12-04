@@ -418,8 +418,15 @@ function startGame() {
       // Restore UI
       const historyEl = document.getElementById("history");
       historyEl.innerHTML = "";
+
       guessHistory.forEach(entry => {
-          displayGuess(entry.name, entry.tiles);
+      displayGuess(entry.name, entry.tiles);
+
+      if (entry.finalReveal) {
+        gameOver = true;
+        disableSearchBar();
+        showFinalModal();
+      }
       });
 
       updateStatus();
@@ -562,11 +569,39 @@ function handleGuess(choice) {
   // CHECK IF OUT OF GUESSES → END GAME
   // -----------------------------------------
   if (guessesRemaining === 0) {
+
+    // 1️⃣ Build tiles exactly like revealFinal() does
+    const bird = targetBird;
+
+    const finalTiles = [
+        { label: "Taxa", value: `${bird.Order}<br>&gt;&nbsp;${bird.Family}`, score: "correct" },
+        { label: "Mass", value: `${bird.Mass} g`, score: "correct" },
+        { label: "Beak Index", value: bird["Beak.Index"].toFixed(2), score: "correct" },
+        { label: "Realm", value: bird.Realm, score: "correct" },
+        { label: "Habitat", value: bird.Habitat, score: "correct" },
+        { label: "Migration", value: bird.Migration, score: "correct" },
+        { label: "Nest", value: bird.Nest, score: "correct" },
+        { label: "Diet", value: bird.Diet, score: "correct" }
+    ];
+
+    // 2️⃣ Store it in guess history
+    guessHistory.push({
+        name: targetBird.Name,
+        tiles: finalTiles,
+        finalReveal: true
+    });
+
+    saveGameState();
+
+    // 3️⃣ Show UI version (this calls displayGuess)
     revealFinal();
+
+    // 4️⃣ Lock game
     gameOver = true;
     disableSearchBar();
     showFinalModal();
-  }
+}
+
 }
 
 //-------------------------------------------------------
