@@ -181,32 +181,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-// Translation icon mechanisms
+// Translation icon mechanisms (MUST WAIT FOR DOM)
+document.addEventListener("DOMContentLoaded", () => {
 
-  const langBtn = document.getElementById("langBtn");
-const langMenu = document.getElementById("langMenu");
+    const langBtn  = document.getElementById("langBtn");
+    const langMenu = document.getElementById("langMenu");
 
-langBtn.addEventListener("click", () => {
-    langMenu.classList.toggle("hidden");
-});
+    langBtn.addEventListener("click", () => {
+        langMenu.classList.toggle("hidden");
+    });
 
-langMenu.addEventListener("click", (e) => {
-    if (!e.target.dataset.lang) return;
+    // FIX: robust click detection
+    langMenu.addEventListener("click", (e) => {
+        const item = e.target.closest("[data-lang]");
+        if (!item) return;
 
-    const lang = e.target.dataset.lang;
-    document.getElementById("langSelect").value = lang;
+        const lang = item.dataset.lang;
+        const select = document.getElementById("langSelect");
 
-    // trigger existing language change logic
-    document.getElementById("langSelect").dispatchEvent(new Event("change"));
+        select.value = lang;
+        select.dispatchEvent(new Event("change")); // triggers your existing logic
 
-    langMenu.classList.add("hidden");
-});
-
-// Close menu when clicking outside
-document.addEventListener("click", e => {
-    if (!e.target.closest(".icon-btn") && !e.target.closest(".lang-menu")) {
         langMenu.classList.add("hidden");
-    }
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", e => {
+        if (!e.target.closest(".icon-btn") &&
+            !e.target.closest(".lang-menu")) {
+            langMenu.classList.add("hidden");
+        }
+    });
+
 });
 
 // Button BOTW
@@ -851,9 +857,8 @@ function setupAutocomplete() {
 }
 
 //-------------------------------------------------------
-//  RULES & RESTART
+//  RULES 
 //-------------------------------------------------------
-document.getElementById("restartBtn").onclick = startGame;
 
 document.getElementById("rulesBtn").onclick = () => {
   const panel = document.getElementById("rulesPanel");
