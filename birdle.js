@@ -573,6 +573,12 @@ function handleGuess(choice) {
     // 2️⃣ Show reveal card in UI
     revealFinal(true);
 
+    // SEND ANALYTICS EVENT — PLAYER WON
+  gtag('event', 'win', {
+  guesses_used: 10 - guessesRemaining,
+  day: getDailySeed()
+  });
+
     // 3️⃣ Lock game & show modal
     gameOver = true;
     disableSearchBar();
@@ -638,6 +644,12 @@ function handleGuess(choice) {
 
     // 3️⃣ Show UI version (this calls displayGuess)
     revealFinal();
+    
+    // SEND ANALYTICS EVENT — PLAYER LOST
+    gtag('event', 'loss', {
+    guesses_used: 10,
+    day: getDailySeed()
+    });
 
     // 4️⃣ Lock game
     gameOver = true;
