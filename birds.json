@@ -158,7 +158,7 @@
     "Beak.Index": 0.32,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.bahgoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/181031211/embed\" height=\"504\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/144866781/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
     "Fr.Name": "Oie à tête barrée"
   },
   {
@@ -1465,14 +1465,14 @@
     "Family": "Accipitrid.",
     "Mass": 2400,
     "Realm": "Afrotropical",
-    "Habitat": "Forest",
+    "Habitat": "Dry Plains",
     "Migration": "Sedentary",
     "Nest": "Open",
     "IUCN": "EN",
     "Beak.Index": 0.33,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.batele1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204922691/embed\" height=\"526\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/206029371/embed\" height=\"344\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
     "Fr.Name": "Bateleur des savanes"
   },
   {
