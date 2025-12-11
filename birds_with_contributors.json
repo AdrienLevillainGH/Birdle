@@ -14,8 +14,9 @@
     "Beak.Index": 0.16,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.ostric2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204565301/embed\" height=\"524\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Autruche d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204565301/embed\" height=\"524\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Autruche d'Afrique",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Lesser Rhea (Rhea pennata)",
@@ -32,8 +33,9 @@
     "Beak.Index": 0.21,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.lesrhe2.02.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/309272341/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Nandou de Darwin"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/309272341/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Nandou de Darwin",
+    "Contributor": "Pablo Gutiérrez Maier"
   },
   {
     "Name": "Little Spotted Kiwi (Apteryx owenii)",
@@ -50,8 +52,9 @@
     "Beak.Index": 0.54,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.liskiw1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/107853011/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Kiwi d'Owen"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/107853011/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Kiwi d'Owen",
+    "Contributor": "Shane Sumasgutner"
   },
   {
     "Name": "Southern Cassowary (Casuarius casuarius)",
@@ -68,8 +71,9 @@
     "Beak.Index": 0.29,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.soucas1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/239413811/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Casoar à casque"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/239413811/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Casoar à casque",
+    "Contributor": "Dom Chaplin"
   },
   {
     "Name": "Common Emu (Dromaius novaehollandiae)",
@@ -86,8 +90,9 @@
     "Beak.Index": 0.23,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.emu1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66349431/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Émeu d'Australie"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66349431/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Émeu d'Australie",
+    "Contributor": "Stefan Hirsch"
   },
   {
     "Name": "Great Tinamou (Tinamus major)",
@@ -104,8 +109,9 @@
     "Beak.Index": 0.3,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.gretin1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/628211475/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Tinamou"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/628211475/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Tinamou",
+    "Contributor": "Cameron Hunter"
   },
   {
     "Name": "Little Tinamou (Crypturellus soui)",
@@ -122,8 +128,9 @@
     "Beak.Index": 0.29,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.littin1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/629132029/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Tinamou soui"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/629132029/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Tinamou soui",
+    "Contributor": "Jeff Hapeman"
   },
   {
     "Name": "Horned Screamer (Anhima cornuta)",
@@ -140,8 +147,9 @@
     "Beak.Index": 0.25,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.horscr1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/419704291/embed\" height=\"510\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Kamichi cornu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/419704291/embed\" height=\"510\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Kamichi cornu",
+    "Contributor": "Joshua van der Meulen"
   },
   {
     "Name": "Magpie Goose (Anseranas semipalmata)",
@@ -158,8 +166,9 @@
     "Beak.Index": 0.48,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.maggoo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/534223241/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Canaroie semipalmée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/534223241/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Canaroie semipalmée",
+    "Contributor": "Cary Lewis"
   },
   {
     "Name": "Barnacle Goose (Branta leucopsis)",
@@ -176,8 +185,9 @@
     "Beak.Index": 0.26,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.bargoo.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63891461/embed\" height=\"483\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bernache nonnette"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63891461/embed\" height=\"483\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bernache nonnette",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "Bar-headed Goose (Anser indicus)",
@@ -194,8 +204,9 @@
     "Beak.Index": 0.32,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.bahgoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/144866781/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Oie à tête barrée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/144866781/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Oie à tête barrée",
+    "Contributor": "Nitin Chandra"
   },
   {
     "Name": "Black Swan (Cygnus atratus)",
@@ -212,8 +223,9 @@
     "Beak.Index": 0.35,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.blkswa.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/120705851/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cygne noir"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/120705851/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cygne noir",
+    "Contributor": "Terence Alexander"
   },
   {
     "Name": "White-headed Steamerduck (Tachyeres leucocephalus)",
@@ -230,8 +242,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.whhstd1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/554356781/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Brassemer à tête blanche"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/554356781/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Brassemer à tête blanche",
+    "Contributor": "August Davidson-Onsgard"
   },
   {
     "Name": "Knob-billed Duck (Sarkidiornis melanotos)",
@@ -248,8 +261,9 @@
     "Beak.Index": 0.3,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.comduc2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/74436361/embed\" height=\"513\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Canard à bosse"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/74436361/embed\" height=\"513\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Canard à bosse",
+    "Contributor": "Sam Woods/Tropical Birding Tours"
   },
   {
     "Name": "Green Pygmy-goose (Nettapus pulchellus)",
@@ -266,8 +280,9 @@
     "Beak.Index": 0.3,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.grnpyg1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/67258081/embed\" height=\"533\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Anserelle élégante"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/67258081/embed\" height=\"533\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Anserelle élégante",
+    "Contributor": "Michael Rutkowski"
   },
   {
     "Name": "Mallard (Anas platyrhynchos)",
@@ -284,8 +299,9 @@
     "Beak.Index": 0.45,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.mallar3.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63736171/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Canard colvert"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63736171/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Canard colvert",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "King Eider (Somateria spectabilis)",
@@ -302,8 +318,9 @@
     "Beak.Index": 0.22,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.kineid.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/53346581/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Eider à tête grise"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/53346581/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Eider à tête grise",
+    "Contributor": "Scott Martin"
   },
   {
     "Name": "Surf Scoter (Melanitta perspicillata)",
@@ -320,8 +337,9 @@
     "Beak.Index": 0.43,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.sursco.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/519807861/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Macreuse à front blanc"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/519807861/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Macreuse à front blanc",
+    "Contributor": "Frank Lin"
   },
   {
     "Name": "Hooded Merganser (Lophodytes cucullatus)",
@@ -338,8 +356,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.hoomer.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/80085821/embed\" height=\"435\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Harle couronné"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/80085821/embed\" height=\"435\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Harle couronné",
+    "Contributor": "Ryan Schain"
   },
   {
     "Name": "Musk Duck (Biziura lobata)",
@@ -356,8 +375,9 @@
     "Beak.Index": 0.27,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.musduc1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/90394081/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Érismature à barbillons"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/90394081/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Érismature à barbillons",
+    "Contributor": "Margot Oorebeek"
   },
   {
     "Name": "Malleefowl (Leipoa ocellata)",
@@ -374,8 +394,9 @@
     "Beak.Index": 0.19,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.mallee1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/615927764/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Léipoa ocellé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/615927764/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Léipoa ocellé",
+    "Contributor": "JJ Harrison"
   },
   {
     "Name": "Maleo (Macrocephalon maleo)",
@@ -392,8 +413,9 @@
     "Beak.Index": 0.3,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.maleo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/626125381/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mégapode maléo"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/626125381/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mégapode maléo",
+    "Contributor": "Boas Emmanuel"
   },
   {
     "Name": "Horned Guan (Oreophasis derbianus)",
@@ -410,8 +432,9 @@
     "Beak.Index": 0.27,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.horgua1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/404186991/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Oréophase cornu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/404186991/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Oréophase cornu",
+    "Contributor": "Ana Paula Oxom"
   },
   {
     "Name": "Helmeted Guineafowl (Numida meleagris)",
@@ -428,8 +451,9 @@
     "Beak.Index": 0.16,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.helgui.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/104176471/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pintade de Numidie"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/104176471/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pintade de Numidie",
+    "Contributor": "Peter Hosner"
   },
   {
     "Name": "Himalayan Monal (Lophophorus impejanus)",
@@ -446,8 +470,9 @@
     "Beak.Index": 0.34,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.himmon1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617732567/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Lophophore resplendissant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617732567/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Lophophore resplendissant",
+    "Contributor": "Chris Venetz | Ornis Birding Expeditions"
   },
   {
     "Name": "Lesser Prairie-chicken (Tympanuchus pallidicinctus)",
@@ -464,8 +489,9 @@
     "Beak.Index": 0.19,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.lepchi.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/466930601/embed\" height=\"497\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Tétras pâle"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/466930601/embed\" height=\"497\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Tétras pâle",
+    "Contributor": "Dorian Anderson"
   },
   {
     "Name": "Western Capercaillie (Tetrao urogallus)",
@@ -482,8 +508,9 @@
     "Beak.Index": 0.29,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.wescap1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/315693211/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Tétras"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/315693211/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Tétras",
+    "Contributor": "Örjan Sjögren"
   },
   {
     "Name": "Golden Pheasant (Chrysolophus pictus)",
@@ -500,8 +527,9 @@
     "Beak.Index": 0.28,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.golphe.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/128398391/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Faisan doré"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/128398391/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Faisan doré",
+    "Contributor": "Vincent Wang"
   },
   {
     "Name": "Indian Peafowl (Pavo cristatus)",
@@ -518,8 +546,9 @@
     "Beak.Index": 0.26,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.compea.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/24278321/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Paon bleu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/24278321/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Paon bleu",
+    "Contributor": "Ting-Wei (廷維) HUNG (洪)"
   },
   {
     "Name": "Common Poorwill (Phalaenoptilus nuttallii)",
@@ -536,8 +565,9 @@
     "Beak.Index": 0.25,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.compoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/158579151/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Engoulevent de Nuttall"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/158579151/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Engoulevent de Nuttall",
+    "Contributor": "Blair Dudeck"
   },
   {
     "Name": "Egyptian Nightjar (Caprimulgus aegyptius)",
@@ -554,8 +584,9 @@
     "Beak.Index": 0.29,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.egynig1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/84722901/embed\" height=\"497\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Engoulevent du désert"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/84722901/embed\" height=\"497\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Engoulevent du désert",
+    "Contributor": "Markus Craig"
   },
   {
     "Name": "Oilbird (Steatornis caripensis)",
@@ -572,8 +603,9 @@
     "Beak.Index": 0.37,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.oilbir1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/495565471/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Guacharo des cavernes"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/495565471/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Guacharo des cavernes",
+    "Contributor": "Óscar Meneses Cerón"
   },
   {
     "Name": "Common Potoo (Nyctibius griseus)",
@@ -590,8 +622,9 @@
     "Beak.Index": 0.37,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.compot1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614816791/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ibijau gris"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614816791/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ibijau gris",
+    "Contributor": "Martjan Lammertink"
   },
   {
     "Name": "Tawny Frogmouth (Podargus strigoides)",
@@ -608,8 +641,9 @@
     "Beak.Index": 0.44,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.tawfro1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614556490/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Podarge gris"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614556490/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Podarge gris",
+    "Contributor": "Dana Cameron"
   },
   {
     "Name": "Whiskered Treeswift (Hemiprocne comata)",
@@ -625,9 +659,10 @@
     "IUCN": "LC",
     "Beak.Index": 0.04,
     "Diet": "Invertebrate",
-    "Doi": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
+    "Doi": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
     "Picture": "https://doi.org/10.2173/bow.whitre1.01",
-    "Fr.Name": "Hémiprocné coiffé"
+    "Fr.Name": "Hémiprocné coiffé",
+    "Contributor": ""
   },
   {
     "Name": "Common Swift (Apus apus)",
@@ -644,8 +679,9 @@
     "Beak.Index": 0.17,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.comswi.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/454002541/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Martinet noir"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/454002541/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Martinet noir",
+    "Contributor": "Milosz Cousens"
   },
   {
     "Name": "Sword-billed Hummingbird (Ensifera ensifera)",
@@ -662,8 +698,9 @@
     "Beak.Index": 1,
     "Diet": "Nectar",
     "Doi": "https://doi.org/10.2173/bow.swbhum1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/100407881/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Colibri porte-épée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/100407881/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Colibri porte-épée",
+    "Contributor": "Drew Weber"
   },
   {
     "Name": "Bee Hummingbird (Mellisuga helenae)",
@@ -680,8 +717,9 @@
     "Beak.Index": 0.48,
     "Diet": "Nectar",
     "Doi": "https://doi.org/10.2173/bow.beehum1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/89854291/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Colibri d'Elena"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/89854291/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Colibri d'Elena",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "Costa's Hummingbird (Calypte costae)",
@@ -698,8 +736,9 @@
     "Beak.Index": 0.6,
     "Diet": "Nectar",
     "Doi": "https://doi.org/10.2173/bow.coshum.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/540993901/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Colibri de Costa"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/540993901/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Colibri de Costa",
+    "Contributor": "Grigory Heaton"
   },
   {
     "Name": "Great Blue Turaco (Corythaeola cristata)",
@@ -716,8 +755,9 @@
     "Beak.Index": 0.31,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.grbtur1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/445232621/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Touraco géant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/445232621/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Touraco géant",
+    "Contributor": "Michael Rosen"
   },
   {
     "Name": "Great Bustard (Otis tarda)",
@@ -734,8 +774,9 @@
     "Beak.Index": 0.29,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.grebus1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/638895389/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grande Outarde"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/638895389/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grande Outarde",
+    "Contributor": "Maxime Légaré-Vézina"
   },
   {
     "Name": "Kori Bustard (Ardeotis kori)",
@@ -752,8 +793,9 @@
     "Beak.Index": 0.46,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.korbus1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204282791/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Outarde kori"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204282791/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Outarde kori",
+    "Contributor": "Holger Teichmann"
   },
   {
     "Name": "Lesser Florican (Sypheotides indicus)",
@@ -770,8 +812,9 @@
     "Beak.Index": 0.4,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.lesflo2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/479412061/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Outarde passarage"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/479412061/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Outarde passarage",
+    "Contributor": "Tushar Bhagwat"
   },
   {
     "Name": "Greater Roadrunner (Geococcyx californianus)",
@@ -788,8 +831,9 @@
     "Beak.Index": 0.52,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.greroa.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/570856251/embed\" height=\"461\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Géocoucou"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/570856251/embed\" height=\"461\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Géocoucou",
+    "Contributor": "Cyrus Allen"
   },
   {
     "Name": "Crested Coua (Coua cristata)",
@@ -806,8 +850,9 @@
     "Beak.Index": 0.34,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.crecou1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/185670961/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Coua huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/185670961/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Coua huppé",
+    "Contributor": "Alen Lin"
   },
   {
     "Name": "Channel-billed Cuckoo (Scythrops novaehollandiae)",
@@ -824,8 +869,9 @@
     "Beak.Index": 0.58,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.chbcuc2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/371987231/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Coucou présageur"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/371987231/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Coucou présageur",
+    "Contributor": "Cary Lewis"
   },
   {
     "Name": "Common Cuckoo (Cuculus canorus)",
@@ -842,8 +888,9 @@
     "Beak.Index": 0.37,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.comcuc.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/374239981/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Coucou gris"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/374239981/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Coucou gris",
+    "Contributor": "Albin Jacob"
   },
   {
     "Name": "Subdesert Mesite (Monias benschi)",
@@ -860,8 +907,9 @@
     "Beak.Index": 0.47,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.submes1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/223495901/embed\" height=\"506\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mésite monias"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/223495901/embed\" height=\"506\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mésite monias",
+    "Contributor": "John C. Mittermeier"
   },
   {
     "Name": "European Turtle-dove (Streptopelia turtur)",
@@ -878,8 +926,9 @@
     "Beak.Index": 0.31,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.eutdov.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/279371521/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Tourterelle des bois"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/279371521/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Tourterelle des bois",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Crested Quail-Dove (Geotrygon versicolor)",
@@ -896,8 +945,9 @@
     "Beak.Index": 0.3,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.crqdov1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/555705341/embed\" height=\"528\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Colombe versicolore"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/555705341/embed\" height=\"528\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Colombe versicolore",
+    "Contributor": "Patrick Maurice"
   },
   {
     "Name": "Nicobar Pigeon (Caloenas nicobarica)",
@@ -914,8 +964,9 @@
     "Beak.Index": 0.29,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.nicpig1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204577211/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Nicobar à camail"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204577211/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Nicobar à camail",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Victoria Crowned-pigeon (Goura victoria)",
@@ -932,8 +983,9 @@
     "Beak.Index": 0.28,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.vicpig1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/47132441/embed\" height=\"464\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Goura de Victoria"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/47132441/embed\" height=\"464\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Goura de Victoria",
+    "Contributor": "Nigel Voaden"
   },
   {
     "Name": "Pink-headed Fruit-dove (Ptilinopus porphyreus)",
@@ -950,8 +1002,9 @@
     "Beak.Index": 0.26,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.phfdov1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66102841/embed\" height=\"385\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ptilope porphyre"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66102841/embed\" height=\"385\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ptilope porphyre",
+    "Contributor": "Chaiyan Kasorndorkbua"
   },
   {
     "Name": "African Finfoot (Podica senegalensis)",
@@ -968,8 +1021,9 @@
     "Beak.Index": 0.4,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.afrfin1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/616862827/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grébifoulque d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/616862827/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grébifoulque d'Afrique",
+    "Contributor": "Daniel Engelbrecht - Birding Ecotours"
   },
   {
     "Name": "Giant Wood-rail (Aramides ypecaha)",
@@ -986,8 +1040,9 @@
     "Beak.Index": 0.56,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.giwrai1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/205522311/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Râle ypécaha"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/205522311/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Râle ypécaha",
+    "Contributor": "Daniel Field"
   },
   {
     "Name": "Common Moorhen (Gallinula chloropus)",
@@ -1004,8 +1059,9 @@
     "Beak.Index": 0.36,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.commoo3.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/308540351/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Gallinule poule-d'eau"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/308540351/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Gallinule poule-d'eau",
+    "Contributor": "Ben Lucking"
   },
   {
     "Name": "Eurasian Coot (Fulica atra)",
@@ -1022,8 +1078,9 @@
     "Beak.Index": 0.33,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.eurcoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/303953581/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Foulque macroule"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/303953581/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Foulque macroule",
+    "Contributor": "Kuzey Cem Kulaçoğlu"
   },
   {
     "Name": "Azure Gallinule (Porphyrio flavirostris)",
@@ -1040,8 +1097,9 @@
     "Beak.Index": 0.38,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.azugal1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/41925301/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Talève favorite"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/41925301/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Talève favorite",
+    "Contributor": "Luiz Carlos Ramassotti"
   },
   {
     "Name": "South Island Takahe (Porphyrio hochstetteri)",
@@ -1058,8 +1116,9 @@
     "Beak.Index": 0.42,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.takahe3.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/445343311/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Talève takahé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/445343311/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Talève takahé",
+    "Contributor": "Aaron Skelton"
   },
   {
     "Name": "Grey Crowned Crane (Balearica regulorum)",
@@ -1076,8 +1135,9 @@
     "Beak.Index": 0.36,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.grccra1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/206441431/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grue royale"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/206441431/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grue royale",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Little Grebe (Tachybaptus ruficollis)",
@@ -1094,8 +1154,9 @@
     "Beak.Index": 0.31,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.litgre1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/621835664/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grèbe castagneux"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/621835664/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grèbe castagneux",
+    "Contributor": "Shashidhar Joshi"
   },
   {
     "Name": "Titicaca Grebe (Rollandia microptera)",
@@ -1112,8 +1173,9 @@
     "Beak.Index": 0.36,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.titgre1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204968711/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grèbe microptère"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204968711/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grèbe microptère",
+    "Contributor": "Marc FASOL"
   },
   {
     "Name": "Great Grebe (Podiceps major)",
@@ -1130,8 +1192,9 @@
     "Beak.Index": 0.5,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.gregre1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/478936981/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Grèbe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/478936981/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Grèbe",
+    "Contributor": "Ethan Rising"
   },
   {
     "Name": "Great Crested Grebe (Podiceps cristatus)",
@@ -1148,8 +1211,9 @@
     "Beak.Index": 0.46,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.grcgre1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/144916411/embed\" height=\"454\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grèbe huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/144916411/embed\" height=\"454\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grèbe huppé",
+    "Contributor": "Pierre Montieth"
   },
   {
     "Name": "Greater Flamingo (Phoenicopterus roseus)",
@@ -1166,8 +1230,9 @@
     "Beak.Index": 0.58,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.grefla3.03",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/388949541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Flamant rose"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/388949541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Flamant rose",
+    "Contributor": "Yeray Seminario"
   },
   {
     "Name": "Chilean Flamingo (Phoenicopterus chilensis)",
@@ -1184,8 +1249,9 @@
     "Beak.Index": 0.56,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.chifla1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77592801/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Flamant du Chili"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77592801/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Flamant du Chili",
+    "Contributor": "Chris Wood"
   },
   {
     "Name": "Snowy Sheathbill (Chionis albus)",
@@ -1202,8 +1268,9 @@
     "Beak.Index": 0.29,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.snoshe2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/51753341/embed\" height=\"376\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Chionis blanc"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/51753341/embed\" height=\"376\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Chionis blanc",
+    "Contributor": "Noah Strycker"
   },
   {
     "Name": "Red-necked Avocet (Recurvirostra novaehollandiae)",
@@ -1220,8 +1287,9 @@
     "Beak.Index": 0.69,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.renavo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/40043511/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Avocette d'Australie"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/40043511/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Avocette d'Australie",
+    "Contributor": "Chris Wiley"
   },
   {
     "Name": "Northern Lapwing (Vanellus vanellus)",
@@ -1238,8 +1306,9 @@
     "Beak.Index": 0.34,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.norlap.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/530705741/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Vanneau huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/530705741/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Vanneau huppé",
+    "Contributor": "Abhishek Das"
   },
   {
     "Name": "Wattled Jacana (Jacana jacana)",
@@ -1256,8 +1325,9 @@
     "Beak.Index": 0.46,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.watjac1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/27855281/embed\" height=\"490\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Jacana noir"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/27855281/embed\" height=\"490\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Jacana noir",
+    "Contributor": "Jay McGowan"
   },
   {
     "Name": "Eurasian Curlew (Numenius arquata)",
@@ -1274,8 +1344,9 @@
     "Beak.Index": 0.75,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.eurcur.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66351051/embed\" height=\"511\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Courlis cendré"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/66351051/embed\" height=\"511\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Courlis cendré",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "Spoon-billed Sandpiper (Calidris pygmaea)",
@@ -1292,8 +1363,9 @@
     "Beak.Index": 0.45,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.spbsan1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/643034701/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bécasseau spatule"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/643034701/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bécasseau spatule",
+    "Contributor": "Gichan Ryu"
   },
   {
     "Name": "Crab-plover (Dromas ardeola)",
@@ -1310,8 +1382,9 @@
     "Beak.Index": 0.56,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.craplo1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/463185851/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Drome ardéole"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/463185851/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Drome ardéole",
+    "Contributor": "Natthaphat Chotjuckdikul"
   },
   {
     "Name": "Black Skimmer (Rynchops niger)",
@@ -1328,8 +1401,9 @@
     "Beak.Index": 0.66,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.blkski.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/31451381/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bec-en-ciseaux noir"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/31451381/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bec-en-ciseaux noir",
+    "Contributor": "Ian Davies"
   },
   {
     "Name": "Blue Noddy (Anous ceruleus)",
@@ -1346,8 +1420,9 @@
     "Beak.Index": 0.46,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.bugnod.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/223123581/embed\" height=\"451\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Noddi bleu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/223123581/embed\" height=\"451\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Noddi bleu",
+    "Contributor": "Eric VanderWerf"
   },
   {
     "Name": "Arctic Tern (Sterna paradisaea)",
@@ -1364,8 +1439,9 @@
     "Beak.Index": 0.49,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.arcter.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/94969901/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Sterne arctique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/94969901/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Sterne arctique",
+    "Contributor": "Keenan Yakola"
   },
   {
     "Name": "Little Gull (Hydrocoloeus minutus)",
@@ -1382,8 +1458,9 @@
     "Beak.Index": 0.38,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.litgul.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/81499311/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mouette pygmée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/81499311/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mouette pygmée",
+    "Contributor": "Cameron Eckert"
   },
   {
     "Name": "Black-legged Kittiwake (Rissa tridactyla)",
@@ -1400,8 +1477,9 @@
     "Beak.Index": 0.43,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.bklkit.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/64889231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mouette tridactyle"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/64889231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mouette tridactyle",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "Pacific Gull (Larus pacificus)",
@@ -1418,8 +1496,9 @@
     "Beak.Index": 0.46,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.pacgul1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44766261/embed\" height=\"430\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Goéland austral"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44766261/embed\" height=\"430\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Goéland austral",
+    "Contributor": "Luke Seitz"
   },
   {
     "Name": "Common Gull (Larus canus)",
@@ -1436,8 +1515,9 @@
     "Beak.Index": 0.45,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.mewgul.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/195654021/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Goéland cendré"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/195654021/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Goéland cendré",
+    "Contributor": "Andreas Boe"
   },
   {
     "Name": "Atlantic Puffin (Fratercula arctica)",
@@ -1454,8 +1534,9 @@
     "Beak.Index": 0.44,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.atlpuf.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/170149381/embed\" height=\"527\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Macareux moine"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/170149381/embed\" height=\"527\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Macareux moine",
+    "Contributor": "Simon Boivin"
   },
   {
     "Name": "Least Auklet (Aethia pusilla)",
@@ -1472,8 +1553,9 @@
     "Beak.Index": 0.22,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.leaauk.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/622240162/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Starique minuscule"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/622240162/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Starique minuscule",
+    "Contributor": "Chris Venetz | Ornis Birding Expeditions"
   },
   {
     "Name": "Razorbill (Alca torda)",
@@ -1490,8 +1572,9 @@
     "Beak.Index": 0.37,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.razorb.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/169133571/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pingouin torda"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/169133571/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pingouin torda",
+    "Contributor": "Simon Boivin"
   },
   {
     "Name": "Little Auk (Alle alle)",
@@ -1508,8 +1591,9 @@
     "Beak.Index": 0.25,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.doveki.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63887481/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mergule nain"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/63887481/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mergule nain",
+    "Contributor": "Christoph Moning"
   },
   {
     "Name": "Kagu (Rhynochetos jubatus)",
@@ -1526,8 +1610,9 @@
     "Beak.Index": 0.5,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.kagu1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/194253301/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Kagou huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/194253301/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Kagou huppé",
+    "Contributor": "David Irving"
   },
   {
     "Name": "Sunbittern (Eurypyga helias)",
@@ -1544,8 +1629,9 @@
     "Beak.Index": 0.6,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.sunbit1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/86412201/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Caurale soleil"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/86412201/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Caurale soleil",
+    "Contributor": "Cory Gregory"
   },
   {
     "Name": "Arctic Loon (Gavia arctica)",
@@ -1562,8 +1648,9 @@
     "Beak.Index": 0.43,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.arcloo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/115694441/embed\" height=\"329\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Plongeon arctique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/115694441/embed\" height=\"329\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Plongeon arctique",
+    "Contributor": "Gerrit Vyn"
   },
   {
     "Name": "Emperor Penguin (Aptenodytes forsteri)",
@@ -1580,8 +1667,9 @@
     "Beak.Index": 0.28,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.emppen1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/127144651/embed\" height=\"376\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Manchot empereur"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/127144651/embed\" height=\"376\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Manchot empereur",
+    "Contributor": "Noah Strycker"
   },
   {
     "Name": "Adelie Penguin (Pygoscelis adeliae)",
@@ -1598,8 +1686,9 @@
     "Beak.Index": 0.3,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.adepen1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/32274081/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Manchot d'Adélie"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/32274081/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Manchot d'Adélie",
+    "Contributor": "Brian Sullivan"
   },
   {
     "Name": "Little Penguin (Eudyptula minor)",
@@ -1616,8 +1705,9 @@
     "Beak.Index": 0.36,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.litpen1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/81473581/embed\" height=\"456\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Manchot pygmée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/81473581/embed\" height=\"456\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Manchot pygmée",
+    "Contributor": "John  Van Doorn"
   },
   {
     "Name": "African Penguin (Spheniscus demersus)",
@@ -1634,8 +1724,9 @@
     "Beak.Index": 0.35,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.jacpen1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/624428068/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Manchot du Cap"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/624428068/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Manchot du Cap",
+    "Contributor": "Daniel Engelbrecht - Birding Ecotours"
   },
   {
     "Name": "Royal Penguin (Eudyptes schlegeli)",
@@ -1652,8 +1743,9 @@
     "Beak.Index": 0.37,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.roypen1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/55736051/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Gorfou de Schlegel"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/55736051/embed\" height=\"509\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Gorfou de Schlegel",
+    "Contributor": "Santiago Imberti"
   },
   {
     "Name": "Polynesian Storm-petrel (Nesofregetta fuliginosa)",
@@ -1670,8 +1762,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.pospet1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/175355401/embed\" height=\"462\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Océanite à gorge blanche"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/175355401/embed\" height=\"462\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Océanite à gorge blanche",
+    "Contributor": "Eric VanderWerf"
   },
   {
     "Name": "Snowy Albatross (Diomedea exulans)",
@@ -1688,8 +1781,9 @@
     "Beak.Index": 0.58,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.wanalb1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/262999041/embed\" height=\"529\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Albatros hurleur"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/262999041/embed\" height=\"529\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Albatros hurleur",
+    "Contributor": "Paul Brooks"
   },
   {
     "Name": "Sooty Albatross (Phoebetria fusca)",
@@ -1706,8 +1800,9 @@
     "Beak.Index": 0.55,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.sooalb1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/123194961/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Albatros brun"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/123194961/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Albatros brun",
+    "Contributor": "Alan Henry"
   },
   {
     "Name": "Southern Giant Petrel (Macronectes giganteus)",
@@ -1724,8 +1819,9 @@
     "Beak.Index": 0.47,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.angpet1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/623066073/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pétrel géant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/623066073/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pétrel géant",
+    "Contributor": "JJ Harrison"
   },
   {
     "Name": "Southern Fulmar (Fulmarus glacialoides)",
@@ -1742,8 +1838,9 @@
     "Beak.Index": 0.38,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.souful1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/365316891/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Fulmar argenté"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/365316891/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Fulmar argenté",
+    "Contributor": "Paul Brooks"
   },
   {
     "Name": "Balearic Shearwater (Puffinus mauretanicus)",
@@ -1760,8 +1857,9 @@
     "Beak.Index": 0.42,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.balshe1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/231893461/embed\" height=\"499\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Puffin des Baléares"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/231893461/embed\" height=\"499\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Puffin des Baléares",
+    "Contributor": "Jorge López Álvarez"
   },
   {
     "Name": "South Georgia Diving-petrel (Pelecanoides georgicus)",
@@ -1778,8 +1876,9 @@
     "Beak.Index": 0.3,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.sgdpet1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636387751/embed\" height=\"512\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Puffinure de Géorgie du Sud"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636387751/embed\" height=\"512\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Puffinure de Géorgie du Sud",
+    "Contributor": "Yann Muzika"
   },
   {
     "Name": "Asian Openbill (Anastomus oscitans)",
@@ -1796,8 +1895,9 @@
     "Beak.Index": 0.71,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.asiope1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77860381/embed\" height=\"470\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bec-ouvert indien"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77860381/embed\" height=\"470\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bec-ouvert indien",
+    "Contributor": "mathew thekkethala"
   },
   {
     "Name": "Marabou Stork (Leptoptilos crumenifer)",
@@ -1814,8 +1914,9 @@
     "Beak.Index": 0.82,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.marsto1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/275448991/embed\" height=\"503\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Marabout d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/275448991/embed\" height=\"503\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Marabout d'Afrique",
+    "Contributor": "Zak Pohlen"
   },
   {
     "Name": "White Stork (Ciconia ciconia)",
@@ -1832,8 +1933,9 @@
     "Beak.Index": 0.7,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.whisto1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/71534021/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cigogne blanche"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/71534021/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cigogne blanche",
+    "Contributor": "Mohith Shenoy"
   },
   {
     "Name": "Magnificent Frigatebird (Fregata magnificens)",
@@ -1850,8 +1952,9 @@
     "Beak.Index": 0.64,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.magfri.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/238577491/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Frégate superbe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/238577491/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Frégate superbe",
+    "Contributor": "Daniel Irons"
   },
   {
     "Name": "Northern Gannet (Morus bassanus)",
@@ -1868,8 +1971,9 @@
     "Beak.Index": 0.51,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.norgan.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/345123631/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Fou de Bassan"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/345123631/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Fou de Bassan",
+    "Contributor": "Blair Dudeck"
   },
   {
     "Name": "Blue-footed Booby (Sula nebouxii)",
@@ -1886,8 +1990,9 @@
     "Beak.Index": 0.57,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.bfoboo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/43989121/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Fou à pieds bleus"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/43989121/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Fou à pieds bleus",
+    "Contributor": "Lisa Owens"
   },
   {
     "Name": "African Darter (Anhinga rufa)",
@@ -1904,8 +2009,9 @@
     "Beak.Index": 0.53,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.darter3.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/71148301/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Anhinga d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/71148301/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Anhinga d'Afrique",
+    "Contributor": "Matt Brady"
   },
   {
     "Name": "Great Pied Cormorant (Phalacrocorax varius)",
@@ -1922,8 +2028,9 @@
     "Beak.Index": 0.46,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.piecor1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/349894481/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cormoran varié"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/349894481/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cormoran varié",
+    "Contributor": "Terence Alexander"
   },
   {
     "Name": "Flightless Cormorant (Nannopterum harrisi)",
@@ -1940,8 +2047,9 @@
     "Beak.Index": 0.48,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.flicor1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/306026351/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cormoran aptère"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/306026351/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cormoran aptère",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Imperial Shag (Leucocarbo atriceps)",
@@ -1958,8 +2066,9 @@
     "Beak.Index": 0.43,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.impcor6.01.2",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/73388141/embed\" height=\"515\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cormoran impérial"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/73388141/embed\" height=\"515\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cormoran impérial",
+    "Contributor": "Claudia Brasileiro"
   },
   {
     "Name": "African Sacred Ibis (Threskiornis aethiopicus)",
@@ -1976,8 +2085,9 @@
     "Beak.Index": 0.72,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.sacibi2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/105958921/embed\" height=\"365\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ibis sacré"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/105958921/embed\" height=\"365\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ibis sacré",
+    "Contributor": "Ad Konings"
   },
   {
     "Name": "Scarlet Ibis (Eudocimus ruber)",
@@ -1994,8 +2104,9 @@
     "Beak.Index": 0.76,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.scaibi.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/125281531/embed\" height=\"506\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ibis rouge"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/125281531/embed\" height=\"506\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ibis rouge",
+    "Contributor": "Claudia Brasileiro"
   },
   {
     "Name": "African Spoonbill (Platalea alba)",
@@ -2012,8 +2123,9 @@
     "Beak.Index": 0.8,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.afrspo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/459647251/embed\" height=\"469\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Spatule d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/459647251/embed\" height=\"469\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Spatule d'Afrique",
+    "Contributor": "Pascal De Munck"
   },
   {
     "Name": "Royal Spoonbill (Platalea regia)",
@@ -2030,8 +2142,9 @@
     "Beak.Index": 0.74,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.royspo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/90943231/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Spatule royale"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/90943231/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Spatule royale",
+    "Contributor": "Michael Daley"
   },
   {
     "Name": "Roseate Spoonbill (Platalea ajaja)",
@@ -2048,8 +2161,9 @@
     "Beak.Index": 0.72,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.rosspo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/26491851/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Spatule rosée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/26491851/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Spatule rosée",
+    "Contributor": "Denny Swaby"
   },
   {
     "Name": "Dwarf Bittern (Ixobrychus sturmii)",
@@ -2066,8 +2180,9 @@
     "Beak.Index": 0.54,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.dwabit1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/292750711/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Blongios de Sturm"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/292750711/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Blongios de Sturm",
+    "Contributor": "Niall D Perrins"
   },
   {
     "Name": "Capped Heron (Pilherodius pileatus)",
@@ -2084,8 +2199,9 @@
     "Beak.Index": 0.62,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.capher1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/72073321/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Héron coiffé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/72073321/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Héron coiffé",
+    "Contributor": "David Lang"
   },
   {
     "Name": "Snowy Egret (Egretta thula)",
@@ -2102,8 +2218,9 @@
     "Beak.Index": 0.65,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.snoegr.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/151099841/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Aigrette neigeuse"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/151099841/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Aigrette neigeuse",
+    "Contributor": "Jason Dain"
   },
   {
     "Name": "Grey Heron (Ardea cinerea)",
@@ -2120,8 +2237,9 @@
     "Beak.Index": 0.68,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.graher1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/431655221/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Héron cendré"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/431655221/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Héron cendré",
+    "Contributor": "Alexis Lours"
   },
   {
     "Name": "Goliath Heron (Ardea goliath)",
@@ -2138,8 +2256,9 @@
     "Beak.Index": 0.7,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.golher1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/179265691/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Héron goliath"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/179265691/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Héron goliath",
+    "Contributor": "Maryse Neukomm"
   },
   {
     "Name": "Hamerkop (Scopus umbretta)",
@@ -2156,8 +2275,9 @@
     "Beak.Index": 0.62,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.hamerk1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/624947051/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ombrette africaine"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/624947051/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ombrette africaine",
+    "Contributor": "Julie Edgley"
   },
   {
     "Name": "Shoebill (Balaeniceps rex)",
@@ -2174,8 +2294,9 @@
     "Beak.Index": 0.68,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.shoebi1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44715931/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bec-en-sabot du Nil"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44715931/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bec-en-sabot du Nil",
+    "Contributor": "Emilien Vadam"
   },
   {
     "Name": "Dalmatian Pelican (Pelecanus crispus)",
@@ -2192,8 +2313,9 @@
     "Beak.Index": 0.86,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.dalpel1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204612321/embed\" height=\"465\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pélican frisé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204612321/embed\" height=\"465\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pélican frisé",
+    "Contributor": "Pavel Štěpánek"
   },
   {
     "Name": "Hoatzin (Opisthocomus hoazin)",
@@ -2210,8 +2332,9 @@
     "Beak.Index": 0.28,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.hoatzi1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/140257991/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Hoazin huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/140257991/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Hoazin huppé",
+    "Contributor": "Angus Pritchard"
   },
   {
     "Name": "Andean Condor (Vultur gryphus)",
@@ -2228,8 +2351,9 @@
     "Beak.Index": 0.38,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.andcon1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/421687901/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Condor des Andes"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/421687901/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Condor des Andes",
+    "Contributor": "Mason Maron"
   },
   {
     "Name": "Secretarybird (Sagittarius serpentarius)",
@@ -2246,8 +2370,9 @@
     "Beak.Index": 0.32,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.secret2.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204584121/embed\" height=\"496\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Messager sagittaire"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204584121/embed\" height=\"496\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Messager sagittaire",
+    "Contributor": "Marco Valentini"
   },
   {
     "Name": "Bearded Vulture (Gypaetus barbatus)",
@@ -2264,8 +2389,9 @@
     "Beak.Index": 0.38,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.lammer1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/299617371/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Gypaète barbu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/299617371/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Gypaète barbu",
+    "Contributor": "Marc Gálvez"
   },
   {
     "Name": "Egyptian Vulture (Neophron percnopterus)",
@@ -2282,8 +2408,9 @@
     "Beak.Index": 0.39,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.egyvul1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/553869731/embed\" height=\"442\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Percnoptère d'Égypte"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/553869731/embed\" height=\"442\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Percnoptère d'Égypte",
+    "Contributor": "Peter Alexander"
   },
   {
     "Name": "Red-headed Vulture (Sarcogyps calvus)",
@@ -2300,8 +2427,9 @@
     "Beak.Index": 0.36,
     "Diet": "Scavenger",
     "Doi": "https://doi.org/10.2173/bow.rehvul1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/87806941/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Vautour royal"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/87806941/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Vautour royal",
+    "Contributor": "Kavi Nanda"
   },
   {
     "Name": "Bateleur (Terathopius ecaudatus)",
@@ -2318,8 +2446,9 @@
     "Beak.Index": 0.33,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.batele1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/206029371/embed\" height=\"344\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bateleur des savanes"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/206029371/embed\" height=\"344\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bateleur des savanes",
+    "Contributor": "Lars Petersson | My World of Bird Photography"
   },
   {
     "Name": "Harpy Eagle (Harpia harpyja)",
@@ -2336,8 +2465,9 @@
     "Beak.Index": 0.36,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.hareag1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/486536331/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Harpie féroce"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/486536331/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Harpie féroce",
+    "Contributor": "Luciano Massa"
   },
   {
     "Name": "Bald Eagle (Haliaeetus leucocephalus)",
@@ -2354,8 +2484,9 @@
     "Beak.Index": 0.38,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.baleag.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/500727191/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pygargue à tête blanche"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/500727191/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pygargue à tête blanche",
+    "Contributor": "Brad Imhoff"
   },
   {
     "Name": "White-bellied Sea-eagle (Haliaeetus leucogaster)",
@@ -2372,8 +2503,9 @@
     "Beak.Index": 0.41,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.wbseag1.01.2",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/188661231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pygargue blagre"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/188661231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pygargue blagre",
+    "Contributor": "Ramit Singal"
   },
   {
     "Name": "Snail Kite (Rostrhamus sociabilis)",
@@ -2390,8 +2522,9 @@
     "Beak.Index": 0.35,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.snakit.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/374127301/embed\" height=\"486\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Milan des marais"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/374127301/embed\" height=\"486\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Milan des marais",
+    "Contributor": "Sabina De Lucca"
   },
   {
     "Name": "Common Barn-owl (Tyto alba)",
@@ -2408,8 +2541,9 @@
     "Beak.Index": 0.33,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.webowl1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617370478/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Effraie des clochers"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617370478/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Effraie des clochers",
+    "Contributor": "Nathaniel Dargue"
   },
   {
     "Name": "Elf Owl (Micrathene whitneyi)",
@@ -2426,8 +2560,9 @@
     "Beak.Index": 0.24,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.elfowl.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/239801621/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Chevêchette des saguaros"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/239801621/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Chevêchette des saguaros",
+    "Contributor": "Bryan Calk"
   },
   {
     "Name": "Burrowing Owl (Athene cunicularia)",
@@ -2444,8 +2579,9 @@
     "Beak.Index": 0.32,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.burowl.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/480844991/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Chevêche des terriers"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/480844991/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Chevêche des terriers",
+    "Contributor": "Matt Felperin"
   },
   {
     "Name": "Snowy Owl (Bubo scandiacus)",
@@ -2462,8 +2598,9 @@
     "Beak.Index": 0.29,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.snoowl1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/166573431/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Harfang des neiges"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/166573431/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Harfang des neiges",
+    "Contributor": "pierre martin"
   },
   {
     "Name": "Eurasian Eagle-owl (Bubo bubo)",
@@ -2480,8 +2617,9 @@
     "Beak.Index": 0.3,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.eueowl1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/386018541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand-duc d'Europe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/386018541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand-duc d'Europe",
+    "Contributor": "Ana  Mendes do Carmo"
   },
   {
     "Name": "White-headed Mousebird (Colius leucocephalus)",
@@ -2498,8 +2636,9 @@
     "Beak.Index": 0.24,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.whhmou1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/99369951/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Coliou à tête blanche"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/99369951/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Coliou à tête blanche",
+    "Contributor": "Debra Herst"
   },
   {
     "Name": "Resplendent Quetzal (Pharomachrus mocinno)",
@@ -2516,8 +2655,9 @@
     "Beak.Index": 0.32,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.resque1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/616743565/embed\" height=\"544\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Quetzal resplendissant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/616743565/embed\" height=\"544\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Quetzal resplendissant",
+    "Contributor": "Patrick Maurice"
   },
   {
     "Name": "Common Hoopoe (Upupa epops)",
@@ -2534,8 +2674,9 @@
     "Beak.Index": 0.66,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.hoopoe.02.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/184894361/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Huppe fasciée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/184894361/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Huppe fasciée",
+    "Contributor": "Miriam Baril"
   },
   {
     "Name": "Abyssinian Scimitarbill (Rhinopomastus minor)",
@@ -2552,8 +2693,9 @@
     "Beak.Index": 0.58,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.absbil1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204519581/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Irrisor à cimeterre"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204519581/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Irrisor à cimeterre",
+    "Contributor": "Oliver Fowler"
   },
   {
     "Name": "Southern Yellow-billed Hornbill (Tockus leucomelas)",
@@ -2570,8 +2712,9 @@
     "Beak.Index": 0.67,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.sybhor1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/131034001/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Calao leucomèle"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/131034001/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Calao leucomèle",
+    "Contributor": "Volker Hesse"
   },
   {
     "Name": "Rhinoceros Hornbill (Buceros rhinoceros)",
@@ -2588,8 +2731,9 @@
     "Beak.Index": 0.82,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.rhihor1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/25529751/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Calao rhinocéros"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/25529751/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Calao rhinocéros",
+    "Contributor": "Neoh Hor Kee"
   },
   {
     "Name": "Lilac-breasted Roller (Coracias caudatus)",
@@ -2606,8 +2750,9 @@
     "Beak.Index": 0.52,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.librol2.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/473081541/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Rollier à longs brins"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/473081541/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Rollier à longs brins",
+    "Contributor": "Kojo Baidoo"
   },
   {
     "Name": "European Roller (Coracias garrulus)",
@@ -2624,8 +2769,9 @@
     "Beak.Index": 0.49,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.eurrol1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/41454611/embed\" height=\"547\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Rollier d'Europe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/41454611/embed\" height=\"547\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Rollier d'Europe",
+    "Contributor": "Brooke Miller"
   },
   {
     "Name": "Pitta-like Ground-roller (Atelornis pittoides)",
@@ -2642,8 +2788,9 @@
     "Beak.Index": 0.46,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.plgrol1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/46602251/embed\" height=\"476\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Brachyptérolle pittoïde"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/46602251/embed\" height=\"476\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Brachyptérolle pittoïde",
+    "Contributor": "Nigel Voaden"
   },
   {
     "Name": "Laughing Kookaburra (Dacelo novaeguineae)",
@@ -2660,8 +2807,9 @@
     "Beak.Index": 0.59,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.laukoo1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/50878661/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Martin-chasseur géant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/50878661/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Martin-chasseur géant",
+    "Contributor": "Michael Daley"
   },
   {
     "Name": "Common Kingfisher (Alcedo atthis)",
@@ -2678,8 +2826,9 @@
     "Beak.Index": 0.64,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.comkin1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/391581551/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Martin-pêcheur d'Europe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/391581551/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Martin-pêcheur d'Europe",
+    "Contributor": "Raghavendra  Pai"
   },
   {
     "Name": "Little Kingfisher (Ceyx pusillus)",
@@ -2696,8 +2845,9 @@
     "Beak.Index": 0.6,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.litkin1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/612735891/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Martin-pêcheur poucet"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/612735891/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Martin-pêcheur poucet",
+    "Contributor": "Wasu Vidayanakorn"
   },
   {
     "Name": "Giant Kingfisher (Megaceryle maxima)",
@@ -2714,8 +2864,9 @@
     "Beak.Index": 0.69,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.giakin3.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/145155751/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Martin-pêcheur géant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/145155751/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Martin-pêcheur géant",
+    "Contributor": "Jay McGowan"
   },
   {
     "Name": "Tody Motmot (Hylomanes momotula)",
@@ -2732,8 +2883,9 @@
     "Beak.Index": 0.49,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.todmot1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/103243271/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Motmot nain"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/103243271/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Motmot nain",
+    "Contributor": "Carlos Echeverría"
   },
   {
     "Name": "Little Bee-eater (Merops pusillus)",
@@ -2750,8 +2902,9 @@
     "Beak.Index": 0.59,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.libeat1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/89603621/embed\" height=\"502\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Guêpier nain"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/89603621/embed\" height=\"502\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Guêpier nain",
+    "Contributor": "Michael Woodruff"
   },
   {
     "Name": "Great Jacamar (Jacamerops aureus)",
@@ -2768,8 +2921,9 @@
     "Beak.Index": 0.66,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.grejac2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/435967011/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Jacamar"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/435967011/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Jacamar",
+    "Contributor": "Guillermo Saborío Vega"
   },
   {
     "Name": "White-necked Puffbird (Notharchus hyperrhynchus)",
@@ -2786,8 +2940,9 @@
     "Beak.Index": 0.6,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.whnpuf2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/161128431/embed\" height=\"335\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Tamatia à front blanc"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/161128431/embed\" height=\"335\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Tamatia à front blanc",
+    "Contributor": "Ilya Povalyaev"
   },
   {
     "Name": "Toucan Barbet (Semnornis ramphastinus)",
@@ -2804,8 +2959,9 @@
     "Beak.Index": 0.34,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.toubar1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/391009141/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cabézon toucan"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/391009141/embed\" height=\"480\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cabézon toucan",
+    "Contributor": "Pascal De Munck"
   },
   {
     "Name": "Toco Toucan (Ramphastos toco)",
@@ -2822,8 +2978,9 @@
     "Beak.Index": 0.84,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.toctou1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/68831661/embed\" height=\"348\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Toucan toco"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/68831661/embed\" height=\"348\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Toucan toco",
+    "Contributor": "Luiz Matos"
   },
   {
     "Name": "Acorn Woodpecker (Melanerpes formicivorus)",
@@ -2840,8 +2997,9 @@
     "Beak.Index": 0.41,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.acowoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/645871835/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pic glandivore"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/645871835/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pic glandivore",
+    "Contributor": "Ben Cox"
   },
   {
     "Name": "Gila Woodpecker (Melanerpes uropygialis)",
@@ -2858,8 +3016,9 @@
     "Beak.Index": 0.46,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.gilwoo.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/49697731/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pic des saguaros"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/49697731/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pic des saguaros",
+    "Contributor": "Thomas Anderson"
   },
   {
     "Name": "Eurasian Green Woodpecker (Picus viridis)",
@@ -2876,8 +3035,9 @@
     "Beak.Index": 0.51,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.eugwoo2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/408105141/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pic vert"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/408105141/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pic vert",
+    "Contributor": "Alexis Lours"
   },
   {
     "Name": "Great Slaty Woodpecker (Mulleripicus pulverulentus)",
@@ -2894,8 +3054,9 @@
     "Beak.Index": 0.56,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.grswoo1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/630538752/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pic meunier"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/630538752/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pic meunier",
+    "Contributor": "Ajoy Kumar Dawn"
   },
   {
     "Name": "Crested Caracara (Caracara plancus)",
@@ -2912,8 +3073,9 @@
     "Beak.Index": 0.34,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.y00678.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/437234041/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Caracara huppé"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/437234041/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Caracara huppé",
+    "Contributor": "Mason Maron"
   },
   {
     "Name": "African Pygmy-falcon (Polihierax semitorquatus)",
@@ -2930,8 +3092,9 @@
     "Beak.Index": 0.24,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.pygfal1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636070943/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Fauconnet d'Afrique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636070943/embed\" height=\"443\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Fauconnet d'Afrique",
+    "Contributor": "Andres Vasquez Noboa"
   },
   {
     "Name": "Pied Falconet (Microhierax melanoleucos)",
@@ -2948,8 +3111,9 @@
     "Beak.Index": 0.25,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.piefal2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/205620291/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Fauconnet noir et blanc"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/205620291/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Fauconnet noir et blanc",
+    "Contributor": "Chun Fai LO"
   },
   {
     "Name": "Greater Kestrel (Falco rupicoloides)",
@@ -2966,8 +3130,9 @@
     "Beak.Index": 0.25,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.grekes1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/76194451/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Crécerelle aux yeux blancs"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/76194451/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Crécerelle aux yeux blancs",
+    "Contributor": "Charley Hesse • Naturally Adventurous Podcast"
   },
   {
     "Name": "Peregrine Falcon (Falco peregrinus)",
@@ -2984,8 +3149,9 @@
     "Beak.Index": 0.26,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.perfal.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/288347741/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Faucon pèlerin"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/288347741/embed\" height=\"508\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Faucon pèlerin",
+    "Contributor": "Joshua Stacy"
   },
   {
     "Name": "Kakapo (Strigops habroptilus)",
@@ -3002,8 +3168,9 @@
     "Beak.Index": 0.33,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.kakapo2.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44528421/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Strigops kakapo"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/44528421/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Strigops kakapo",
+    "Contributor": "Maggie Evans"
   },
   {
     "Name": "Grey Parrot (Psittacus erithacus)",
@@ -3020,8 +3187,9 @@
     "Beak.Index": 0.42,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.grepar.01.2",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/121445641/embed\" height=\"478\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Perroquet jaco"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/121445641/embed\" height=\"478\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Perroquet jaco",
+    "Contributor": "Ian Davies"
   },
   {
     "Name": "Burrowing Parrot (Cyanoliseus patagonus)",
@@ -3038,8 +3206,9 @@
     "Beak.Index": 0.35,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.burpar.02.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/38172621/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Conure de Patagonie"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/38172621/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Conure de Patagonie",
+    "Contributor": "Gabriele Vallejos"
   },
   {
     "Name": "Hyacinth Macaw (Anodorhynchus hyacinthinus)",
@@ -3056,8 +3225,9 @@
     "Beak.Index": 0.58,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.hyamac1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/281016771/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ara hyacinthe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/281016771/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ara hyacinthe",
+    "Contributor": "Fernando Farias"
   },
   {
     "Name": "Scarlet Macaw (Ara macao)",
@@ -3074,8 +3244,9 @@
     "Beak.Index": 0.48,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.scamac1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/42752831/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ara rouge"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/42752831/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ara rouge",
+    "Contributor": "Chris Wood"
   },
   {
     "Name": "Pesquet's Parrot (Psittrichas fulgidus)",
@@ -3092,8 +3263,9 @@
     "Beak.Index": 0.35,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.pespar1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/220827481/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Psittrichas de Pesquet"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/220827481/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Psittrichas de Pesquet",
+    "Contributor": "Holger Teichmann"
   },
   {
     "Name": "Crimson Rosella (Platycercus elegans)",
@@ -3110,8 +3282,9 @@
     "Beak.Index": 0.3,
     "Diet": "Herbivore",
     "Doi": "https://doi.org/10.2173/bow.criros2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/467601521/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Perruche de Pennant"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/467601521/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Perruche de Pennant",
+    "Contributor": "Julie Clark"
   },
   {
     "Name": "Mangrove Pitta (Pitta megarhyncha)",
@@ -3128,8 +3301,9 @@
     "Beak.Index": 0.47,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.manpit1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/360304861/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Brève des palétuviers"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/360304861/embed\" height=\"481\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Brève des palétuviers",
+    "Contributor": "Jan-Peter  Kelder"
   },
   {
     "Name": "Superb Lyrebird (Menura novaehollandiae)",
@@ -3146,8 +3320,9 @@
     "Beak.Index": 0.34,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.suplyr1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/322970961/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Ménure superbe"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/322970961/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Ménure superbe",
+    "Contributor": "Chris Murray"
   },
   {
     "Name": "Flame Bowerbird (Sericulus ardens)",
@@ -3164,8 +3339,9 @@
     "Beak.Index": 0.36,
     "Diet": "Fruit",
     "Doi": "https://doi.org/10.2173/bow.flabow2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/514866201/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Jardinier ardent"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/514866201/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Jardinier ardent",
+    "Contributor": "Dubi Shapiro"
   },
   {
     "Name": "Grey Butcherbird (Cracticus torquatus)",
@@ -3182,8 +3358,9 @@
     "Beak.Index": 0.54,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.grybut1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/623699382/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Cassican à collier"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/623699382/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Cassican à collier",
+    "Contributor": "JJ Harrison"
   },
   {
     "Name": "Greater Racquet-tailed Drongo (Dicrurus paradiseus)",
@@ -3200,8 +3377,9 @@
     "Beak.Index": 0.47,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.grtdro1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/414495271/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Drongo à raquettes"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/414495271/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Drongo à raquettes",
+    "Contributor": "Wich’yanan Limparungpatthanakij"
   },
   {
     "Name": "Short-crested Monarch (Hypothymis helenae)",
@@ -3218,8 +3396,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.shcmon1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/392612651/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Tchitrec d'Hélène"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/392612651/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Tchitrec d'Hélène",
+    "Contributor": "Raymond  Dan"
   },
   {
     "Name": "Red-backed Shrike (Lanius collurio)",
@@ -3236,8 +3415,9 @@
     "Beak.Index": 0.39,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.rebshr1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636354540/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pie-grièche écorcheur"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/636354540/embed\" height=\"537\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pie-grièche écorcheur",
+    "Contributor": "Nathaniel Dargue"
   },
   {
     "Name": "Blue Jay (Cyanocitta cristata)",
@@ -3254,8 +3434,9 @@
     "Beak.Index": 0.44,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.blujay.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/188332881/embed\" height=\"445\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Geai bleu"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/188332881/embed\" height=\"445\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Geai bleu",
+    "Contributor": "Diane St-Jacques"
   },
   {
     "Name": "Eurasian Magpie (Pica pica)",
@@ -3272,8 +3453,9 @@
     "Beak.Index": 0.46,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.eurmag1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/427971511/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Pie bavarde"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/427971511/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Pie bavarde",
+    "Contributor": "Alexis Lours"
   },
   {
     "Name": "Cape Crow (Corvus capensis)",
@@ -3290,8 +3472,9 @@
     "Beak.Index": 0.51,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.capcro2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/127676111/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Corneille du Cap"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/127676111/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Corneille du Cap",
+    "Contributor": "Chris Wood"
   },
   {
     "Name": "Common Raven (Corvus corax)",
@@ -3308,8 +3491,9 @@
     "Beak.Index": 0.53,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.comrav.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/27299051/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Grand Corbeau"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/27299051/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Grand Corbeau",
+    "Contributor": "Brian Sullivan"
   },
   {
     "Name": "Brown Sicklebill (Epimachus meyeri)",
@@ -3326,8 +3510,9 @@
     "Beak.Index": 0.68,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.brosic1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/200067511/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Paradisier de Meyer"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/200067511/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Paradisier de Meyer",
+    "Contributor": "Pam Rasmussen"
   },
   {
     "Name": "Twelve-wired Bird-of-paradise (Seleucidis melanoleucus)",
@@ -3344,8 +3529,9 @@
     "Beak.Index": 0.64,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.twwbop1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/588222401/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Paradisier multifil"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/588222401/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Paradisier multifil",
+    "Contributor": "Chris Venetz | Ornis Birding Expeditions"
   },
   {
     "Name": "Pink Robin (Petroica rodinogaster)",
@@ -3362,8 +3548,9 @@
     "Beak.Index": 0.34,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.pinrob1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/190547851/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Miro incarnat"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/190547851/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Miro incarnat",
+    "Contributor": "Laurie Ross | Tracks Birding & Photography Tours"
   },
   {
     "Name": "Great Tit (Parus major)",
@@ -3380,8 +3567,9 @@
     "Beak.Index": 0.3,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.gretit1.02",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204246231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Mésange charbonnière"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204246231/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Mésange charbonnière",
+    "Contributor": "Ivan Sjögren"
   },
   {
     "Name": "Barn Swallow (Hirundo rustica)",
@@ -3398,8 +3586,9 @@
     "Beak.Index": 0.3,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.barswa.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/240409051/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Hirondelle rustique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/240409051/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Hirondelle rustique",
+    "Contributor": "Ryan Sanderson"
   },
   {
     "Name": "Cactus Wren (Campylorhynchus brunneicapillus)",
@@ -3416,8 +3605,9 @@
     "Beak.Index": 0.47,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.cacwre.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/430958611/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Troglodyte des cactus"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/430958611/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Troglodyte des cactus",
+    "Contributor": "Robert Hamilton"
   },
   {
     "Name": "Northern Wren (Troglodytes troglodytes)",
@@ -3434,8 +3624,9 @@
     "Beak.Index": 0.39,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.winwre4.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/278619281/embed\" height=\"450\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Troglodyte mignon"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/278619281/embed\" height=\"450\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Troglodyte mignon",
+    "Contributor": "Kuzey Cem Kulaçoğlu"
   },
   {
     "Name": "Red-billed Oxpecker (Buphagus erythrorynchus)",
@@ -3452,8 +3643,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.reboxp1.01.1",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614635616/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Piqueboeuf à bec rouge"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/614635616/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Piqueboeuf à bec rouge",
+    "Contributor": "Adarsh Nagda"
   },
   {
     "Name": "Eurasian Blackbird (Turdus merula)",
@@ -3470,8 +3662,9 @@
     "Beak.Index": 0.41,
     "Diet": "Vertebrate",
     "Doi": "https://doi.org/10.2173/bow.eurbla.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204244061/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Merle noir"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204244061/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Merle noir",
+    "Contributor": "Ivan Sjögren"
   },
   {
     "Name": "American Robin (Turdus migratorius)",
@@ -3488,8 +3681,9 @@
     "Beak.Index": 0.37,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.amerob.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/125030541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Merle d'Amérique"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/125030541/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Merle d'Amérique",
+    "Contributor": "Kyle Tansley"
   },
   {
     "Name": "Sociable Weaver (Philetairus socius)",
@@ -3506,8 +3700,9 @@
     "Beak.Index": 0.36,
     "Diet": "Omnivore",
     "Doi": "https://doi.org/10.2173/bow.socwea1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204209831/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Républicain social"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/204209831/embed\" height=\"448\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Républicain social",
+    "Contributor": "Megan Perkins"
   },
   {
     "Name": "Australian Zebra Finch (Taeniopygia castanotis)",
@@ -3524,8 +3719,9 @@
     "Beak.Index": 0.29,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.zebfin2.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/110005541/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Diamant mandarin"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/110005541/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Diamant mandarin",
+    "Contributor": "Richard and Margaret Alcorn"
   },
   {
     "Name": "Broad-tailed Paradise-whydah (Vidua obtusa)",
@@ -3542,8 +3738,9 @@
     "Beak.Index": 0.28,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.btpwhy1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/215829301/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Veuve de Chapin"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/215829301/embed\" height=\"492\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Veuve de Chapin",
+    "Contributor": "Niall D Perrins"
   },
   {
     "Name": "White Wagtail (Motacilla alba)",
@@ -3560,8 +3757,9 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.whiwag.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617731673/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bergeronnette grise"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/617731673/embed\" height=\"300\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bergeronnette grise",
+    "Contributor": "Alexis Lours"
   },
   {
     "Name": "Snow Bunting (Plectrophenax nivalis)",
@@ -3578,8 +3776,9 @@
     "Beak.Index": 0.23,
     "Diet": "Granivore",
     "Doi": "https://doi.org/10.2173/bow.snobun.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/413362291/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Bruant des neiges"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/413362291/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Bruant des neiges",
+    "Contributor": "Ryan Sanderson"
   },
   {
     "Name": "Ovenbird (Seiurus aurocapilla)",
@@ -3596,7 +3795,8 @@
     "Beak.Index": 0.36,
     "Diet": "Invertebrate",
     "Doi": "https://doi.org/10.2173/bow.ovenbi1.01",
-    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77396941/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Fr.Name": "Paruline couronnée"
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/77396941/embed\" height=\"466\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
+    "Fr.Name": "Paruline couronnée",
+    "Contributor": "Ryan Schain"
   }
 ]

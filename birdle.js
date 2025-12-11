@@ -2,6 +2,7 @@
 //  GLOBAL GAME STATE
 //-------------------------------------------------------
 let birds = [];
+let todayPool = [];
 let targetBird = null;
 let guessesRemaining = 10;
 let usedNames = new Set();
@@ -195,10 +196,60 @@ function pickDailyBird(seed) {
     return birds[index];
 }
 
+
+function buildDailyBirdPool(seed, targetBird) {
+    const rand = mulberry32(seed);
+
+    const MAX_PER_ORDER = 10;
+    const MAX_HABITAT_SHARE = 0.33;   // 33% of the pool
+    const POOL_SIZE = 100;
+
+    let pool = [targetBird];
+
+    const orderCount = { [targetBird.Order]: 1 };
+    const habitatCount = { [targetBird.Habitat]: 1 };
+
+    function incrementCounts(bird) {
+        orderCount[bird.Order] = (orderCount[bird.Order] || 0) + 1;
+        habitatCount[bird.Habitat] = (habitatCount[bird.Habitat] || 0) + 1;
+    }
+
+    let attempts = 0;
+
+    while (pool.length < POOL_SIZE && attempts < birds.length * 10) {
+        attempts++;
+
+        const candidate = birds[Math.floor(rand() * birds.length)];
+        if (pool.includes(candidate)) continue;
+
+        // RULE A: max 10 per order
+        const oc = orderCount[candidate.Order] || 0;
+        if (oc >= MAX_PER_ORDER) continue;
+
+        // RULE B: prevent habitat domination
+        const habShare = (habitatCount[candidate.Habitat] || 0) / pool.length;
+        if (habShare > MAX_HABITAT_SHARE) continue;
+
+        // Accept
+        pool.push(candidate);
+        incrementCounts(candidate);
+    }
+
+    // Fallback fill
+    while (pool.length < POOL_SIZE) {
+        const c = birds[Math.floor(rand() * birds.length)];
+        if (!pool.includes(c)) pool.push(c);
+    }
+
+    return pool;
+}
+
+
+
 //-------------------------------------------------------
 //  LOAD BIRDS.JSON
 //-------------------------------------------------------
-fetch("birds.json")
+fetch("birds_with_contributors.json")
   .then(res => res.json())
   .then(data => {
     birds = data;
@@ -214,17 +265,20 @@ fetch("birds.json")
 document.getElementById("randomBtn").addEventListener("click", () => {
     if (gameOver) return;
 
-    // Pick random bird
-    const randomBird = birds[Math.floor(Math.random() * birds.length)];
+    const unusedBirds = todayPool.filter(b => !usedNames.has(b.Name));
+    if (unusedBirds.length === 0) return;
 
-    // Set input value
-    const input = document.getElementById("guessInput");
-    input.value = `${randomBird[LANG_MAP[currentLang]]} (${randomBird.Sname})`;
-    input.dataset.fromSuggestion = "true";
+    const randomBird =
+        unusedBirds[Math.floor(Math.random() * unusedBirds.length)];
 
-    // Submit guess automatically
     handleGuess(randomBird.Name);
+
+    const input = document.getElementById("guessInput");
+    input.value = "";
+    input.dataset.fromSuggestion = "false";
+    document.getElementById("autocomplete-list").style.display = "none";
 });
+
 
 // ------------------------
 // RULES MODAL SYSTEM
@@ -471,7 +525,7 @@ attrTiles.forEach(tile => {
 });
 
 //-------------------------------------------------------
-//  EXTRACT IMAGE FROM ML
+//  EXTRACT IMAGE FROM ML & METADATA
 //-------------------------------------------------------
 function extractMLImage(iframeHtml) {
   if (!iframeHtml) return null;
@@ -486,6 +540,66 @@ function extractMLCode(iframeHtml) {
   const match = iframeHtml.match(/asset\/(\d+)\//);
   return match ? match[1] : null;
 }
+
+// Extract contributor name directly from the embed HTML as fallback
+function extractContributorFromEmbed(html) {
+    if (!html) return null;
+
+    // ML embed captions usually contain "© Name"
+    const cleaned = html.replace(/\s+/g, " ");
+    const match = cleaned.match(/©\s*([^<\|;]+)/);
+
+    return match ? match[1].trim() : null;
+}
+
+async function fetchContributorName(mlCode, pictureHtml) {
+
+  console.log("FETCHING CONTRIBUTOR FOR", mlCode);
+
+const res = await fetch(url);
+console.log("API STATUS:", res.status);
+
+let data;
+try {
+    data = await res.json();
+    console.log("API JSON:", data);
+} catch(e) {
+    console.error("JSON PARSE ERROR:", e);
+}
+
+console.log("Local fallback parse result:", extractContributorFromEmbed(pictureHtml));
+
+    // ---- 1) Try ML API (may fail due to CORS) ----
+    if (mlCode) {
+        try {
+            const url = `https://macaulaylibrary.org/api/v2/assets/${mlCode}`;
+            const res = await fetch(url);
+
+            if (res.ok) {
+                const data = await res.json();
+
+                // The API uses one of these depending on asset type
+                const fromApi =
+                    data.contributors?.[0]?.fullName ||
+                    data.representativeContributor?.displayName;
+
+                if (fromApi) return fromApi;
+            } else {
+                console.warn("ML API returned status", res.status);
+            }
+        } catch (err) {
+            console.warn("ML API fetch failed:", err);
+        }
+    }
+
+    // ---- 2) Fallback: parse contributor from embed iframe snippet ----
+    const local = extractContributorFromEmbed(pictureHtml);
+    if (local) return local;
+
+    return null;
+}
+
+
 
 //-------------------------------------------------------
 //  START / RESET GAME
@@ -510,6 +624,8 @@ function startGame() {
 
   // Pick deterministic daily bird
   targetBird = pickDailyBird(seed);
+   // Pick 100 birds pool
+  todayPool = buildDailyBirdPool(seed, targetBird);
 
   // Try loading previous game state
   const stored = loadGameState();
@@ -723,7 +839,7 @@ function handleGuess(choice) {
   
   if (!choice || usedNames.has(choice)) return;
 
-  const guess = birds.find(b => b.Name === choice);
+  const guess = todayPool.find(b => b.Name === choice);
   if (!guess) return;
 
   usedNames.add(choice);
@@ -846,6 +962,7 @@ function handleGuess(choice) {
 
 }
 
+
 //-------------------------------------------------------
 //  DISPLAY GUESS BLOCK (LANGUAGE-AWARE)
 //-------------------------------------------------------
@@ -869,29 +986,16 @@ function displayGuess(name, tiles) {
           <span class="scientific-name"><i>(${sciName})</i></span>
         </div>
 
+        <div class="image-wrapper">
         ${(() => {
-          const img = extractMLImage(bird.Picture);
-          return img ? `<img class="bird-photo" src="${img}" />` : "<div>No image</div>";
+        const img = extractMLImage(bird.Picture);
+        return img ? `<img class="bird-photo" src="${img}" />` : "<div>No image</div>";
         })()}
-
         <button class="info-toggle"><i class="bi bi-info-circle-fill"></i></button>
+        </div>
 
         <div class="extra-info hidden">
-          ${(() => {
-            const mlCode = extractMLCode(bird.Picture);
-            const mlPart = mlCode
-              ? `<a href="https://macaulaylibrary.org/asset/${mlCode}" target="_blank" class="info-link">ML${mlCode}</a>`
-              : "";
-
-            const doiPart = bird.Doi
-              ? `<a href="${bird.Doi}" target="_blank" class="info-link">Birds of the World.</a>`
-              : "";
-
-            if (mlPart || doiPart) {
-              return `<p>Credits: ${mlPart}${mlPart && doiPart ? ". " : ""}${doiPart}</p>`;
-            }
-            return "";
-          })()}
+            <p class="credits-line"></p>
         </div>
 
       </div>
@@ -927,12 +1031,37 @@ function displayGuess(name, tiles) {
   });
 
   row.querySelector(".info-toggle").addEventListener("click", (e) => {
-    const panel = e.currentTarget.parentElement.querySelector(".extra-info");
+    const container = e.currentTarget.closest(".image-section");
+    const panel = container.querySelector(".extra-info");
     panel.classList.toggle("hidden");
   });
 
+  // Insert into page
   history.prepend(row);
+
+  // -------------------------------------------------------
+  // BUILD CREDITS FROM LOCAL JSON (NO ASYNC FETCH ANYMORE)
+  // -------------------------------------------------------
+  const contributor = bird.Contributor || "Unknown";
+  const localizedCommon = bird[field];
+
+  const mlCode = extractMLCode(bird.Picture);
+  const mlLink = mlCode
+      ? `<a href="https://macaulaylibrary.org/asset/${mlCode}" target="_blank" class="info-link">(ML${mlCode})</a>`
+      : "";
+
+  const botwLink = bird.Doi
+      ? `<a href="${bird.Doi}" target="_blank" class="info-link">Birds of the World</a>`
+      : "";
+
+  const creditText =
+      `${localizedCommon} © ${contributor}; ` +
+      `Cornell Lab of Ornithology | Macaulay Library ${mlLink}; ${botwLink}.`;
+
+  row.querySelector(".credits-line").innerHTML = creditText;
 }
+
+
 
 //-------------------------------------------------------
 //  FINAL REVEAL (LANGUAGE-AWARE)
@@ -1010,10 +1139,12 @@ function setupAutocomplete() {
 
     let matches;
     if (!q) {
-    matches = birds;   
+    matches = todayPool.filter(b => !usedNames.has(b.Name)); 
     } else {
-      matches = birds
-   .filter(b => getDisplayName(b).toLowerCase().includes(q));
+      matches = todayPool.filter(b =>
+      !usedNames.has(b.Name) &&
+      getDisplayName(b).toLowerCase().includes(q)
+      );
     }
 
     if (matches.length === 0) {
@@ -1024,12 +1155,11 @@ function setupAutocomplete() {
     renderList(matches, q);
   });
 
-  // Show full list when focusing an empty input
   input.addEventListener("focus", () => {
     const q = input.value.trim();
 
     if (q === "") {
-        const matches = birds;  // show first 50 birds
+        const matches = todayPool.filter(b => !usedNames.has(b.Name));
         renderList(matches, "");
         list.style.display = "block";
     }
@@ -1042,7 +1172,7 @@ function setupAutocomplete() {
     const item = e.target.closest(".autocomplete-item");
     if (!item) return;
 
-    const bird = birds.find(b => b.Name === item.dataset.name);
+    const bird = todayPool.find(b => b.Name === item.dataset.name);
     if (!bird) return;
 
     // Immediately submit the guess
@@ -1079,7 +1209,7 @@ function setupAutocomplete() {
       const activeItem = items[activeIndex];
       activeItem.classList.add("active");
 
-      const bird = birds.find(b => b.Name === activeItem.dataset.name);
+      const bird = todayPool.find(b => b.Name === activeItem.dataset.name);
       input.value = getDisplayName(bird);
       input.dataset.fromSuggestion = "true";
       return;
@@ -1095,7 +1225,7 @@ function setupAutocomplete() {
       const activeItem = items[activeIndex];
       activeItem.classList.add("active");
 
-      const bird = birds.find(b => b.Name === activeItem.dataset.name);
+      const bird = todayPool.find(b => b.Name === activeItem.dataset.name);
       input.value = getDisplayName(bird);
       input.dataset.fromSuggestion = "true";
       return;
@@ -1107,7 +1237,7 @@ function setupAutocomplete() {
       const disp = input.value.trim();
       if (!disp) return;
 
-      const matchBird = birds.find(b =>
+      const matchBird = todayPool.find(b =>
         getDisplayName(b).toLowerCase() === disp.toLowerCase()
       );
 
@@ -1146,22 +1276,38 @@ document.getElementById("rulesBtn").onclick = () => {
 //  LANGUAGE SELECT MENU
 //-------------------------------------------------------
 document.getElementById("langSelect").addEventListener("change", (e) => {
-  currentLang = e.target.value;
+    currentLang = e.target.value;
 
-  document.getElementById("guessInput").placeholder =
-    currentLang === "en" ? "Type a guess..." :
-    currentLang === "fr" ? "Cherche un oiseau..." :
-    "Type a guess...";
+    // Resort birds alphabetically based on selected language
+    birds.sort((a, b) => {
+        const field = LANG_MAP[currentLang];
+        return a[field].localeCompare(b[field]);
+    });
 
-  document.getElementById("guessInput").dispatchEvent(new Event("input"));
+    // Resort today's 100-bird pool alphabetically in selected language
+    todayPool.sort((a, b) => {
+        const field = LANG_MAP[currentLang];
+        return a[field].localeCompare(b[field]);
+    });
 
-  rerenderHistoryInCurrentLanguage();
+    // Update placeholder text
+    document.getElementById("guessInput").placeholder =
+        currentLang === "en" ? "Type a guess..." :
+        currentLang === "fr" ? "Cherche un oiseau..." :
+        "Type a guess...";
 
-  if (targetBird && document.getElementById("reveal").children.length > 0) {
-    const reveal = document.getElementById("reveal");
-    reveal.innerHTML = "";
-    revealFinal();
-  }
+    // Refresh autocomplete list
+    document.getElementById("guessInput").dispatchEvent(new Event("input"));
+
+    // Re-render history names in selected language
+    rerenderHistoryInCurrentLanguage();
+
+    // Re-render the reveal if visible
+    if (targetBird && document.getElementById("reveal").children.length > 0) {
+        const reveal = document.getElementById("reveal");
+        reveal.innerHTML = "";
+        revealFinal();
+    }
 });
 
 //-------------------------------------------------------
@@ -1185,4 +1331,52 @@ function rerenderHistoryInCurrentLanguage() {
     if (nameBoxCommon) nameBoxCommon.innerHTML = `<b>${commonName}</b>`;
     if (nameBoxSci) nameBoxSci.innerHTML = `<i>(${sciName})</i>`;
   });
+}
+
+
+//-------------------------------------------------------
+//  SIMULATE NEXT 60 DAYS — ANALYZE DAILY POOLS
+//-------------------------------------------------------
+async function simulateDailyPools(days = 60) {
+    if (!birds.length) {
+        console.error("Birds database not loaded yet.");
+        return;
+    }
+
+    console.log("=== SIMULATION: NEXT " + days + " DAYS ===");
+
+    const results = [];
+
+    for (let i = 0; i < days; i++) {
+        const seed = getDailySeed() + i;
+
+        // Pick a deterministic bird for that day
+        const target = pickDailyBird(seed);
+
+        // Build the 100-bird pool for that day
+        const pool = buildDailyBirdPool(seed, target);
+
+        // Count by Order
+        const orderCount = {};
+        pool.forEach(b => {
+            orderCount[b.Order] = (orderCount[b.Order] || 0) + 1;
+        });
+
+        // Count by Habitat
+        const habitatCount = {};
+        pool.forEach(b => {
+            habitatCount[b.Habitat] = (habitatCount[b.Habitat] || 0) + 1;
+        });
+
+        results.push({
+            day: seed,
+            target: target.Name,
+            orderCount,
+            habitatCount
+        });
+    }
+
+    console.log("=== SIMULATION RESULTS ===");
+    console.log(results);
+    return results;
 }

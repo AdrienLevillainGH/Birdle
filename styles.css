@@ -484,22 +484,35 @@ body {
 }
 
 /* Info button */
-.info-toggle {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: none;
-  color: white;
-  border: #1A1A1A;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
+.image-wrapper .info-toggle {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 20;
+    bottom: 5px;
+    right: 5px;
+    background: none;
+    color: white;
+    border: #1A1A1A;
+    border-radius: 50%;
+   width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
 
 .info-toggle i {
   font-size: 22px;
