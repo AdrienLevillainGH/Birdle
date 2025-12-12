@@ -92,16 +92,6 @@ function startNextBirdleCountdown() {
     setInterval(update, 1000);
 }
 
-let currentLang = "en";   // default language
-
-// Language → field mapping in birds.json
-const LANG_MAP = {
-  en: "Vname",
-  fr: "Fr.Name"
-  // Add more languages later:
-  // es: "Es.Name",
-  // de: "De.Name"
-};
 
 const MASS_CATEGORIES = [
   { max: 100, label: "0-100" },
@@ -109,6 +99,30 @@ const MASS_CATEGORIES = [
   { max: 3000, label: "1000-3000" },
   { max: Infinity, label: ">3000" }
 ];
+
+// -------------------------------
+// Languages (simple version)
+// -------------------------------
+let LANG_MAP = {};       // "English" → "English"
+let currentLang = "English";  // default
+
+function buildLanguageMapFromData(birds) {
+    const langs = new Set();
+
+    birds.forEach(b => {
+        if (b.commonNames) {
+            Object.keys(b.commonNames).forEach(l => langs.add(l));
+        }
+    });
+
+    LANG_MAP = {};
+    [...langs].forEach(l => LANG_MAP[l] = l);
+
+    // Default to English if present
+    if (LANG_MAP["English"]) currentLang = "English";
+    else currentLang = Object.keys(LANG_MAP)[0];
+}
+
 
 // -------------------------------------------------------
 //  SMART DAILY BIRD PICKER (no repeats, no same Order twice)
@@ -249,13 +263,69 @@ function buildDailyBirdPool(seed, targetBird) {
 //-------------------------------------------------------
 //  LOAD BIRDS.JSON
 //-------------------------------------------------------
-fetch("birds_with_contributors.json")
-  .then(res => res.json())
+fetch("birds_with_contributors_and_names.json")
+  .then(res => {
+      console.log("JSON status:", res.status);
+      return res.json();
+  })
   .then(data => {
-    birds = data;
-    birds.sort((a, b) => a.Name.localeCompare(b.Name));
-    setupAutocomplete();
-  });
+      console.log("Loaded birds:", data.length);
+
+      birds = data;
+
+      console.log("Sample bird:", birds[0]);
+      console.log("commonNames keys of first bird:", birds[0]?.commonNames && Object.keys(birds[0].commonNames));
+
+      buildLanguageMapFromData(birds);
+      console.log("LANG_MAP after build:", LANG_MAP);
+
+      buildLanguageMenu();
+      console.log("menu children:", document.getElementById("langMenu").children.length);
+
+      birds.sort(sortByCurrentLanguage);
+      setupAutocomplete();
+  })
+  .catch(err => console.error("JSON LOAD ERROR:", err));
+
+  function buildLanguageMenu() {
+    const menu = document.getElementById("langMenu");
+    const select = document.getElementById("langSelect");
+
+    menu.innerHTML = "";
+    select.innerHTML = "";
+
+    Object.keys(LANG_MAP).forEach(lang => {
+        const div = document.createElement("div");
+        div.dataset.lang = lang;
+        div.textContent = lang;
+        menu.appendChild(div);
+
+        const opt = document.createElement("option");
+        opt.value = lang;
+        opt.textContent = lang;
+        select.appendChild(opt);
+    });
+
+    // Ensure dropdown shows current language
+    select.value = currentLang;
+}
+
+
+
+ function getCommonName(bird) {
+    const lang = currentLang;
+
+    if (bird.commonNames?.[lang]) {
+        return bird.commonNames[lang];
+    }
+
+    return bird.commonNames?.["English"] || bird.Vname || bird.Name;
+}
+
+function sortByCurrentLanguage(a, b) {
+    return getCommonName(a).localeCompare(getCommonName(b));
+}
+
 
 
 // ------------------------
@@ -319,16 +389,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Decompte & DOI dans la final tile
-    document.addEventListener("DOMContentLoaded", () => {
-    const botw = document.getElementById("botwButton");
-
-    if (botw) {
-        botw.addEventListener("click", () => {
+const botw = document.getElementById("botwButton");
+if (botw) {
+    botw.addEventListener("click", () => {
         const link = targetBird.Doi || "https://birdsoftheworld.org";
-    window.open(link, "_blank");
-      });
-    }
+        window.open(link, "_blank");
     });
+}
   });
 
 
@@ -383,8 +450,7 @@ function showFinalModal() {
     const imgUrl = extractMLImage(bird.Picture);
 
     // bird name according to language
-    const field = LANG_MAP[currentLang];
-    const commonName = bird[field];
+    const commonName = getCommonName(bird);
     const sci = bird.Sname;
 
     box.innerHTML = `
@@ -552,51 +618,37 @@ function extractContributorFromEmbed(html) {
     return match ? match[1].trim() : null;
 }
 
+
 async function fetchContributorName(mlCode, pictureHtml) {
 
-  console.log("FETCHING CONTRIBUTOR FOR", mlCode);
-
-const res = await fetch(url);
-console.log("API STATUS:", res.status);
-
-let data;
-try {
-    data = await res.json();
-    console.log("API JSON:", data);
-} catch(e) {
-    console.error("JSON PARSE ERROR:", e);
-}
-
-console.log("Local fallback parse result:", extractContributorFromEmbed(pictureHtml));
+    console.log("FETCHING CONTRIBUTOR FOR", mlCode);
 
     // ---- 1) Try ML API (may fail due to CORS) ----
     if (mlCode) {
         try {
             const url = `https://macaulaylibrary.org/api/v2/assets/${mlCode}`;
             const res = await fetch(url);
+            console.log("API STATUS:", res.status);
 
             if (res.ok) {
                 const data = await res.json();
+                console.log("API JSON:", data);
 
-                // The API uses one of these depending on asset type
                 const fromApi =
                     data.contributors?.[0]?.fullName ||
                     data.representativeContributor?.displayName;
 
                 if (fromApi) return fromApi;
-            } else {
-                console.warn("ML API returned status", res.status);
             }
         } catch (err) {
             console.warn("ML API fetch failed:", err);
         }
     }
 
-    // ---- 2) Fallback: parse contributor from embed iframe snippet ----
-    const local = extractContributorFromEmbed(pictureHtml);
-    if (local) return local;
+    console.log("Local fallback parse:", extractContributorFromEmbed(pictureHtml));
 
-    return null;
+    // ---- 2) Local fallback ----
+    return extractContributorFromEmbed(pictureHtml) || null;
 }
 
 
@@ -626,6 +678,7 @@ function startGame() {
   targetBird = pickDailyBird(seed);
    // Pick 100 birds pool
   todayPool = buildDailyBirdPool(seed, targetBird);
+  todayPool.sort(sortByCurrentLanguage);
 
   // Try loading previous game state
   const stored = loadGameState();
@@ -973,8 +1026,7 @@ function displayGuess(name, tiles) {
   row.dataset.birdName = name;
 
   const bird = birds.find(b => b.Name === name);
-  const field = LANG_MAP[currentLang];
-  const commonName = bird[field];
+  const commonName = getCommonName(bird);
   const sciName = bird.Sname;
 
   row.innerHTML = `
@@ -1043,7 +1095,7 @@ function displayGuess(name, tiles) {
   // BUILD CREDITS FROM LOCAL JSON (NO ASYNC FETCH ANYMORE)
   // -------------------------------------------------------
   const contributor = bird.Contributor || "Unknown";
-  const localizedCommon = bird[field];
+  const localizedCommon = getCommonName(bird);
 
   const mlCode = extractMLCode(bird.Picture);
   const mlLink = mlCode
@@ -1101,9 +1153,8 @@ function setupAutocomplete() {
   let activeIndex = -1;
 
   function getDisplayName(bird) {
-    const field = LANG_MAP[currentLang];
-    const common = bird[field];
-    return `${common} (${bird.Sname})`;
+    const common = getCommonName(bird);
+  return `${common} (${bird.Sname})`;
   }
 
   //---------------------------------------------------
@@ -1278,59 +1329,41 @@ document.getElementById("rulesBtn").onclick = () => {
 document.getElementById("langSelect").addEventListener("change", (e) => {
     currentLang = e.target.value;
 
-    // Resort birds alphabetically based on selected language
-    birds.sort((a, b) => {
-        const field = LANG_MAP[currentLang];
-        return a[field].localeCompare(b[field]);
-    });
+    document.getElementById("guessInput").placeholder = "Type a bird name...";
 
-    // Resort today's 100-bird pool alphabetically in selected language
-    todayPool.sort((a, b) => {
-        const field = LANG_MAP[currentLang];
-        return a[field].localeCompare(b[field]);
-    });
+    todayPool.sort(sortByCurrentLanguage);
 
-    // Update placeholder text
-    document.getElementById("guessInput").placeholder =
-        currentLang === "en" ? "Type a guess..." :
-        currentLang === "fr" ? "Cherche un oiseau..." :
-        "Type a guess...";
-
-    // Refresh autocomplete list
-    document.getElementById("guessInput").dispatchEvent(new Event("input"));
-
-    // Re-render history names in selected language
     rerenderHistoryInCurrentLanguage();
 
-    // Re-render the reveal if visible
+    // Re-render final reveal if visible
     if (targetBird && document.getElementById("reveal").children.length > 0) {
-        const reveal = document.getElementById("reveal");
-        reveal.innerHTML = "";
+        document.getElementById("reveal").innerHTML = "";
         revealFinal();
     }
+
+    // Refresh autocomplete
+    document.getElementById("guessInput").dispatchEvent(new Event("input"));
 });
+
 
 //-------------------------------------------------------
 //  RE-RENDER HISTORY
 //-------------------------------------------------------
 function rerenderHistoryInCurrentLanguage() {
-  const historyEl = document.getElementById("history");
-  const rows = Array.from(historyEl.children);
+    const rows = Array.from(document.getElementById("history").children);
 
-  rows.forEach(row => {
-    const name = row.dataset.birdName;
-    const bird = birds.find(b => b.Name === name);
+    rows.forEach(row => {
+        const name = row.dataset.birdName;
+        const bird = birds.find(b => b.Name === name);
 
-    const field = LANG_MAP[currentLang];
-    const commonName = bird[field];
-    const sciName = bird.Sname;
+        const common = getCommonName(bird);
 
-    const nameBoxCommon = row.querySelector(".bird-name-display .common-name");
-    const nameBoxSci = row.querySelector(".bird-name-display .scientific-name");
+        const nameBoxCommon = row.querySelector(".bird-name-display .common-name");
+        const nameBoxSci = row.querySelector(".bird-name-display .scientific-name");
 
-    if (nameBoxCommon) nameBoxCommon.innerHTML = `<b>${commonName}</b>`;
-    if (nameBoxSci) nameBoxSci.innerHTML = `<i>(${sciName})</i>`;
-  });
+        if (nameBoxCommon) nameBoxCommon.innerHTML = `<b>${common}</b>`;
+        if (nameBoxSci) nameBoxSci.innerHTML = `<i>(${bird.Sname})</i>`;
+    });
 }
 
 

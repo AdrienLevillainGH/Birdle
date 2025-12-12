@@ -81,7 +81,7 @@ body {
     right: 0;
     left: 0; /* ensures full width */
     width: 100%;
-    height: 45px;
+    height: 55px;
 
     display: flex;
     justify-content: flex-end;
@@ -102,16 +102,23 @@ body {
 
 .lang-menu {
     position: absolute;
-    top: 60px;          /* appears below header */
+    top: 60px;
     right: 20px;
+
     background: white;
     color: black;
     border-radius: 10px;
-    overflow: hidden;
+
+    max-height: 300px;       /* ← limit vertical space */
+    overflow-y: auto;        /* ← enable scrolling */
+    overflow-x: hidden;      /* optional: hide horizontal scroll */
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     font-size: 15px;
     z-index: 20000;
+    scroll-behavior: smooth;
 }
+
 
 .lang-menu div {
     padding: 10px 15px;
@@ -121,10 +128,6 @@ body {
 
 .lang-menu div:hover {
     background: #eee;
-}
-
-.lang-menu.hidden {
-    display: none;
 }
 
 .title {
@@ -156,7 +159,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* above the top-buttons */
+  z-index: 20000; /* above the top-buttons */
 }
 
 .hidden {
@@ -341,8 +344,8 @@ body {
    ICON BUTTON (restart, help, language)
 --------------------------------------- */
 .icon-btn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: white;
   color: black;
@@ -355,7 +358,7 @@ body {
 }
 
 .icon-btn i {
-  font-size: 20px;
+  font-size: 26px;
   color: black;
 }
 
@@ -412,7 +415,6 @@ body {
   font-size: 13px;
 }
 
-.hidden { display: none; }
 
 /* Bird names */
 .bird-name-display {
