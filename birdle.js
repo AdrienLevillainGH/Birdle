@@ -123,6 +123,29 @@ function buildLanguageMapFromData(birds) {
     else currentLang = Object.keys(LANG_MAP)[0];
 }
 
+// Language → flag-icons country code
+const LANG_FLAGS = {
+    "Bulgarian": "bg",
+    "Catalan": "es-ct",                 // fallback to Spain 🇪🇸
+    "Croatian": "hr",
+    "Danish": "dk",
+    "Dutch": "nl",
+    "English": "gb",
+    "English (AVI)": "gb",
+    "English (United States)": "us",
+    "Estonian": "ee",
+    "French": "fr",
+    "German": "de",
+    "Norwegian": "no",
+    "Polish": "pl",
+    "Serbian": "rs",
+    "Slovak": "sk",
+    "Spanish": "es",
+    "Spanish (Spain)": "es",
+    "Swedish": "se",
+    "Turkish": "tr",
+    "Ukrainian": "ua"
+};
 
 // -------------------------------------------------------
 //  SMART DAILY BIRD PICKER (no repeats, no same Order twice)
@@ -297,8 +320,19 @@ fetch("birds_with_contributors_and_names.json")
     Object.keys(LANG_MAP).forEach(lang => {
         const div = document.createElement("div");
         div.dataset.lang = lang;
-        div.textContent = lang;
-        menu.appendChild(div);
+
+        const flagCode = LANG_FLAGS[lang];
+        const flagHtml = flagCode
+        ? `<span class="fi fi-${flagCode}"></span>`
+        : "";
+
+      div.innerHTML = `
+      ${flagHtml}
+       <span class="lang-label">${lang}</span>
+      `;
+
+      menu.appendChild(div);
+
 
         const opt = document.createElement("option");
         opt.value = lang;

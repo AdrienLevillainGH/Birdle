@@ -105,7 +105,7 @@ body {
     top: 60px;
     right: 20px;
 
-    background: white;
+    background: #f5f6f7;
     color: black;
     border-radius: 10px;
 
@@ -124,10 +124,24 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .lang-menu div:hover {
     background: #eee;
+}
+
+.lang-menu .fi {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.lang-label {
+    white-space: nowrap;
 }
 
 .title {
