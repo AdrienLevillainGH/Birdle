@@ -625,8 +625,8 @@
     "IUCN": "LC",
     "Beak.Index": 0.04,
     "Diet": "Invertebrate",
-    "Doi": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen><\/iframe>",
-    "Picture": "https://doi.org/10.2173/bow.whitre1.01",
+    "Doi": "https://doi.org/10.2173/bow.whitre1.01",
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
     "Fr.Name": "Hémiprocné coiffé"
   },
   {

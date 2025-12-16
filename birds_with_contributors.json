@@ -146,7 +146,7 @@
     "IUCN": "LC",
     "Beak.Index": 0.25,
     "Diet": "Herbivore",
-    "Doi": "https://doi.org/10.2173/bow.horscr1.02",
+    "Doi": "https://doi.org/10.2173/bow.horscr1.01",
     "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/419704291/embed\" height=\"510\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
     "Fr.Name": "Kamichi cornu",
     "Contributor": "Joshua van der Meulen"
@@ -659,10 +659,10 @@
     "IUCN": "LC",
     "Beak.Index": 0.04,
     "Diet": "Invertebrate",
-    "Doi": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
-    "Picture": "https://doi.org/10.2173/bow.whitre1.01",
+    "Doi": "https://doi.org/10.2173/bow.whitre1.01",
+    "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/454381071/embed\" height=\"552\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
     "Fr.Name": "Hémiprocné coiffé",
-    "Contributor": ""
+    "Contributor": "Dave Bakewell"
   },
   {
     "Name": "Common Swift (Apus apus)",
@@ -3037,8 +3037,8 @@
     "Doi": "https://doi.org/10.2173/bow.eugwoo2.01",
     "Picture": "<iframe src=\"https://macaulaylibrary.org/asset/408105141/embed\" height=\"507\" width=\"640\" frameborder=\"0\" allowfullscreen></iframe>",
     "Fr.Name": "Pic vert",
-    "Contributor": "Alexis Lours"
-  },
+    "Contributor": "Alexis Lours"},
+
   {
     "Name": "Great Slaty Woodpecker (Mulleripicus pulverulentus)",
     "Sname": "Mulleripicus pulverulentus",

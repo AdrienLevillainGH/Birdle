@@ -585,7 +585,8 @@ const ATTRIBUTE_INFO = {
   },
   nest: {
     title: "Nest",
-    desc: "Open / Closed / Cavity (Tree cavity, Burrow, Crevices) / Mound / Other (Brood Parasitism, Absence of nest).",
+    desc: "Open / Closed / Cavity (Tree cavity, Burrow, Crevices) / Other (Mound, Nest or Brood Parasitism, Absence of nest).",
+    image: "assets/rules/nest_types.png",
     buttons: [
       { cls: "incorrect", label: "Incorrect" },
       { cls: "correct", label: "Correct" }
@@ -610,19 +611,104 @@ attrTiles.forEach(tile => {
     tile.classList.add("active");
 
     const info = ATTRIBUTE_INFO[key];
+     if (!info) return;
 
     rulesDetails.classList.remove("hidden");
+
     rulesDetails.innerHTML = `
-      <h3>${info.title}</h3>
-      <p>${info.desc.replace(/\n/g, "<br>")}</p>
-      <div class="rule-detail-buttons">
-        ${info.buttons
-            .map(b => `<div class="rule-button ${b.cls}">${b.label.replace(/\n/g, "<br>")}</div>`)
-            .join("")}
+    <h3>${info.title}</h3>
+    <p>${info.desc.replace(/\n/g, "<br>")}</p>
+
+    
+    ${key === "nest" ? `
+  <div class="rules-examples">
+    <div class="rules-example">
+      <div class="rules-example-img">
+        <img src="assets/rules/open.png" alt="Open">
       </div>
+      <div class="rules-example-label">Open</div>
+    </div>
+
+    <div class="rules-example">
+      <div class="rules-example-img">
+        <img src="assets/rules/closed.png" alt="Closed">
+      </div>
+      <div class="rules-example-label">Closed</div>
+    </div>
+
+    <div class="rules-example">
+      <div class="rules-example-img">
+        <img src="assets/rules/cavity.png" alt="Cavity">
+      </div>
+      <div class="rules-example-label">Cavity</div>
+    </div>
+  </div>
+` : ""}
+
+      ${key === "realm" ? `
+  <div class="realm-map-wrapper">
+    <div class="realm-label">Click a realm</div>
+    <div class="realm-map-container"></div>
+  </div>
+` : ""}
+
+
+    <div class="rule-detail-buttons">
+    ${info.buttons
+        .map(b => `<div class="rule-button ${b.cls}">${b.label.replace(/\n/g, "<br>")}</div>`)
+        .join("")}
+    </div>
     `;
-  });
-});
+
+// -------------------------------
+// REALM SVG INTERACTIVITY
+// -------------------------------
+if (key === "realm") {
+  const container = rulesDetails.querySelector(".realm-map-container");
+  const label = rulesDetails.querySelector(".realm-label");
+
+  fetch("assets/rules/realm.svg")
+    .then(res => res.text())
+    .then(svg => {
+      container.innerHTML = svg;
+
+      // Ensure the SVG has the class your CSS expects
+      const svgEl = container.querySelector("svg");
+      if (svgEl) svgEl.classList.add("realm-map");
+      svgEl.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+      const realms = container.querySelectorAll("g.realm");
+
+      // Default label
+      label.textContent = "Click a realm";
+
+      realms.forEach(realm => {
+        realm.style.cursor = "pointer";
+
+        realm.addEventListener("click", () => {
+          const wasActive = realm.classList.contains("active");
+
+          // Single-select: clear everything first
+          realms.forEach(r => r.classList.remove("active"));
+
+          // If it wasn't active, activate it; otherwise leave all cleared
+          if (!wasActive) {
+            realm.classList.add("active");
+            label.textContent = realm.dataset.name || realm.id || "Realm";
+          } else {
+            label.textContent = "Click a realm";
+          }
+        });
+      });
+    })
+    .catch(err => {
+      console.error("Failed to load Realm.svg", err);
+      container.textContent = "Map unavailable";
+    });
+}
+
+  }); // ← closes tile.addEventListener("click", ...)
+});   // ← closes attrTiles.forEach(...)
 
 //-------------------------------------------------------
 //  EXTRACT IMAGE FROM ML & METADATA
