@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ2J83F5LD"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FZ2J83F5LD');
+    </script>
+
+    <script src="birdle.js" defer></script>
+
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta charset="UTF-8">
+    <title>🦜 Birdle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+<!-- FIXED HEADER (matches your CSS .top-buttons rules) -->
+<div class="top-buttons">
+
+    <button id="rulesBtn" class="icon-btn" title="Rules">
+        <i class="bi bi-question"></i>
+    </button>
+
+    <button id="themeBtn" class="icon-btn" title="Toggle theme">
+    <i class="bi bi-lightbulb"></i>
+    </button>
+
+    <button id="langBtn" class="icon-btn" title="Change language">
+    <i class="bi bi-translate"></i>
+    </button>
+
+    <select id="langSelect" style="display:none;"></select>
+
+    <div id="langMenu" class="lang-menu hidden"></div>
+
+</div>
+
+<!-- FINAL RESULT MODAL -->
+<div id="finalModal" class="modal-overlay hidden">
+
+  <div class="modal-content">
+      <button id="closeFinal" class="close-btn">
+          <i class="bi bi-x-lg"></i>
+      </button>
+
+      <h2>Today's mystery bird was...</h2>
+
+      <div id="finalBirdBox" style="text-align:center; margin-top:15px;"></div>
+
+        <button id="bowLinkBtn" class="modal-btn botw-btn">Birds of the World</button>
+
+        <div id="nextBirdleTimer" class="next-birdle-timer">Next Birdle: <span id="countdown">--:--:--</span></div>
+  </div>
+
+</div>
+
+<!-- RULES PANEL -->
+<div id="rulesModal" class="modal-overlay hidden">
+
+  <div class="modal-content">
+      <button id="closeRules" class="close-btn">
+          <i class="bi bi-x-lg"></i>
+      </button>
+
+      <h2>HOW TO PLAY?</h2>
+      <h3>Guess the bird in 10 tries.</h3>
+      <p class="rules-text"><i class="bi bi-dice-5-fill"></i> Guess a random bird.</p>
+      <p class="rules-text">Each guess reveal the attributes of birds. <span style="font-weight:600;">Select any attribute to learn more.</p>
+
+      <div class="rules-attribute-grid">
+          <div class="rules-attr-tile" data-attr="taxa">Taxa</div>
+          <div class="rules-attr-tile" data-attr="mass">Mass</div>
+          <div class="rules-attr-tile" data-attr="beak">Beak</div>
+          <div class="rules-attr-tile" data-attr="realm">Realm</div>
+          <div class="rules-attr-tile" data-attr="habitat">Habitat</div>
+          <div class="rules-attr-tile" data-attr="migration">Migration</div>
+          <div class="rules-attr-tile" data-attr="nest">Nest</div>
+          <div class="rules-attr-tile" data-attr="diet">Diet</div>
+      </div>
+
+      <!-- EXPANDED ATTRIBUTE PANEL -->
+      <div id="rulesDetails" class="rules-details hidden"></div>
+
+  </div>
+
+</div>
+
+<!-- LANDING SCREEN -->
+<div id="landingScreen" class="landing-screen">
+    <div class="landing-content">
+        <h1 class="landing-title">🦜 BIRDLE</h1>
+        <p class="landing-subtitle">10 guesses, 100 random birds</p>
+        <p class="landing-subtitle">Can you find today's mystery bird?</p>
+
+        <button id="startPlayBtn" class="landing-play-btn">
+            PLAY
+        </button>
+    </div>
+</div>
+
+<!-- GAME SCREEN -->
+<div id="gameScreen" class="hidden">
+
+<div class="hero">
+
+    <div id="search-block">
+        <div class="input-row">
+            <div class="autocomplete-container">
+            <!-- SEARCH ICON (left) -->
+            <span class="search-icon">
+    <i class="bi bi-search"></i>
+  </span>
+
+  <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+
+  <!-- DICE BUTTON (right) -->
+  <button id="randomBtn" class="input-icon-btn">
+    <i class="bi bi-dice-5-fill"></i>
+  </button>
+</div>
+        </div>
+
+        <div id="status">Guesses remaining...</div>
+    </div>
+</div>
+
+
+<div id="history"></div>
+<div id="reveal"></div>
+
+</div>
+
+</body>
+</html>
