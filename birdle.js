@@ -43,6 +43,27 @@ function loadGameState() {
     }
 }
 
+function applyTheme(theme) {
+  document.body.classList.toggle("light-theme", theme === "light");
+  localStorage.setItem("birdle_theme", theme);
+}
+
+function loadTheme() {
+  const saved = localStorage.getItem("birdle_theme") || "dark";
+  applyTheme(saved);
+}
+
+function renderMLIframe(iframeHtml) {
+  if (!iframeHtml) return "";
+
+  return iframeHtml
+    // remove fixed sizing from Macaulay embed
+    .replace(/height="[^"]*"/gi, "")
+    .replace(/width="[^"]*"/gi, "")
+    // inject our class
+    .replace(/<iframe /i, '<iframe class="bird-iframe" ');
+}
+
 // Deterministic pseudo-random generator (Mulberry32)
 function mulberry32(seed) {
     return function () {
@@ -388,6 +409,16 @@ document.getElementById("randomBtn").addEventListener("click", () => {
 // RULES MODAL SYSTEM
 // ------------------------
 document.addEventListener("DOMContentLoaded", () => {
+    loadTheme();
+
+    const themeBtn = document.getElementById("themeBtn");
+    if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+    const isLight = document.body.classList.contains("light-theme");
+    applyTheme(isLight ? "dark" : "light");
+    });
+    }
+
     const rulesModal = document.getElementById("rulesModal");
     const rulesBtn = document.getElementById("rulesBtn");
     const closeRules = document.getElementById("closeRules");
@@ -483,27 +514,41 @@ function showFinalModal() {
 
     const imgUrl = extractMLImage(bird.Picture);
 
-    // bird name according to language
     const commonName = getCommonName(bird);
     const sci = bird.Sname;
 
     box.innerHTML = `
-        <div style="font-size:18px; font-weight:500; margin-bottom:0px;">${commonName}</div>
-        <div style="font-size:18px; font-weight:500; font-style:italic; opacity:1; margin-bottom:6px;">(${sci})</div>
+        <div style="font-size:18px; font-weight:600; margin-bottom:2px;">
+            ${commonName}
+        </div>
 
-        ${imgUrl 
-            ? `<img src="${imgUrl}" style="width:100%; max-width:350px; border-radius:12px;">`
-            : "<div>No image available</div>"
+        <div style="font-size:16px; font-style:italic; margin-bottom:10px;">
+            (${sci})
+        </div>
+
+        ${
+          imgUrl
+            ? `<img 
+                src="${imgUrl}" 
+                style="
+                  width:100%;
+                  max-width:420px;
+                  max-height:60vh;
+                  object-fit:contain;
+                  border-radius:12px;
+                "
+              >`
+            : `<div>No image available</div>`
         }
     `;
-    
+
     const bowBtn = document.getElementById("bowLinkBtn");
     bowBtn.onclick = () => window.open(bird.Doi, "_blank");
 
-
     document.getElementById("finalModal").classList.remove("hidden");
-    startNextBirdleCountdown(); 
+    startNextBirdleCountdown();
 }
+
 
 // ---------------------------------------
 // Landing screen
@@ -778,14 +823,12 @@ async function fetchContributorName(mlCode, pictureHtml) {
 //-------------------------------------------------------
 
 function disableSearchBar() {
-  const input = document.getElementById("guessInput");
-  const list = document.getElementById("autocomplete-list");
+  const searchBlock = document.getElementById("search-block");
 
-  input.classList.add("disabled");
-  input.setAttribute("disabled", "true");
-
-  list.classList.add("disabled");
-  document.getElementById("status").classList.add("disabled");
+  // Hide the entire search area (input + dice + status)
+  if (searchBlock) {
+    searchBlock.style.display = "none";
+  }
 }
 
 function startGame() {
@@ -1153,28 +1196,34 @@ function displayGuess(name, tiles) {
     <div class="guess-container">
       <div class="image-section">
 
-        <div class="bird-name-display centered-name">
-          <span class="common-name"><b>${commonName}</b></span>
-          <span class="scientific-name"><i>(${sciName})</i></span>
+        <!-- HEADER (always visible) -->
+        <div class="bird-header">
+          <button class="collapse-btn" aria-label="Toggle bird details">
+            <i class="bi bi-caret-down-fill"></i>
+          </button>
+
+          <div class="bird-name-display centered-name">
+            <span class="common-name"><b>${commonName}</b></span>
+            <span class="scientific-name"><i>(${sciName})</i></span>
+          </div>
         </div>
 
-        <div class="image-wrapper">
-        ${(() => {
-        const img = extractMLImage(bird.Picture);
-        return img ? `<img class="bird-photo" src="${img}" />` : "<div>No image</div>";
-        })()}
-        <button class="info-toggle"><i class="bi bi-info-circle-fill"></i></button>
-        </div>
+        <!-- COLLAPSIBLE CONTENT -->
+        <div class="bird-details">
+          <div class="image-wrapper">
+            ${renderMLIframe(bird.Picture)}
+          </div>
 
-        <div class="extra-info hidden">
+          <div class="extra-info hidden">
             <p class="credits-line"></p>
+          </div>
+
+          <div class="tile-grids-wrapper">
+            <div class="tile-grid grid-top"></div>
+            <div class="tile-grid grid-bottom"></div>
+          </div>
         </div>
 
-      </div>
-
-      <div class="tile-grids-wrapper">
-        <div class="tile-grid grid-top"></div>
-        <div class="tile-grid grid-bottom"></div>
       </div>
     </div>
   `;
@@ -1202,36 +1251,44 @@ function displayGuess(name, tiles) {
       </div>`;
   });
 
-  row.querySelector(".info-toggle").addEventListener("click", (e) => {
-    const container = e.currentTarget.closest(".image-section");
-    const panel = container.querySelector(".extra-info");
-    panel.classList.toggle("hidden");
-  });
-
   // Insert into page
   history.prepend(row);
 
+  // Collapse toggle
+  const collapseBtn = row.querySelector(".collapse-btn");
+  collapseBtn.addEventListener("click", () => {
+    row.classList.toggle("collapsed");
+
+    const icon = collapseBtn.querySelector("i");
+    icon.className = row.classList.contains("collapsed")
+      ? "bi bi-caret-right-fill"
+      : "bi bi-caret-down-fill";
+  });
+
   // -------------------------------------------------------
   // BUILD CREDITS FROM LOCAL JSON (NO ASYNC FETCH ANYMORE)
+  // (still computed, but you already hide .extra-info in CSS)
   // -------------------------------------------------------
   const contributor = bird.Contributor || "Unknown";
   const localizedCommon = getCommonName(bird);
 
   const mlCode = extractMLCode(bird.Picture);
   const mlLink = mlCode
-      ? `<a href="https://macaulaylibrary.org/asset/${mlCode}" target="_blank" class="info-link">(ML${mlCode})</a>`
-      : "";
+    ? `<a href="https://macaulaylibrary.org/asset/${mlCode}" target="_blank" class="info-link">(ML${mlCode})</a>`
+    : "";
 
   const botwLink = bird.Doi
-      ? `<a href="${bird.Doi}" target="_blank" class="info-link">Birds of the World</a>`
-      : "";
+    ? `<a href="${bird.Doi}" target="_blank" class="info-link">Birds of the World</a>`
+    : "";
 
   const creditText =
-      `${localizedCommon} © ${contributor}; ` +
-      `Cornell Lab of Ornithology | Macaulay Library ${mlLink}; ${botwLink}.`;
+    `${localizedCommon} © ${contributor}; ` +
+    `Cornell Lab of Ornithology | Macaulay Library ${mlLink}; ${botwLink}.`;
 
-  row.querySelector(".credits-line").innerHTML = creditText;
+  const creditEl = row.querySelector(".credits-line");
+  if (creditEl) creditEl.innerHTML = creditText;
 }
+
 
 
 

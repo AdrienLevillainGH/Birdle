@@ -25,13 +25,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="light-theme">
+
 
 <!-- FIXED HEADER (matches your CSS .top-buttons rules) -->
 <div class="top-buttons">
 
     <button id="rulesBtn" class="icon-btn" title="Rules">
         <i class="bi bi-question"></i>
+    </button>
+
+    <button id="themeBtn" class="icon-btn" title="Toggle theme">
+    <i class="bi bi-lightbulb"></i>
     </button>
 
     <button id="langBtn" class="icon-btn" title="Change language">
@@ -115,13 +120,18 @@
     <div id="search-block">
         <div class="input-row">
             <div class="autocomplete-container">
-            <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+            <!-- SEARCH ICON (left) -->
+            <span class="search-icon">
+    <i class="bi bi-search"></i>
+  </span>
 
-            <!-- DICE BUTTON INSIDE THE INPUT BAR -->
-            <button id="randomBtn" class="input-icon-btn">
-            <i class="bi bi-dice-5-fill"></i>
-            </button>
-            </div>
+  <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+
+  <!-- DICE BUTTON (right) -->
+  <button id="randomBtn" class="input-icon-btn">
+    <i class="bi bi-dice-5-fill"></i>
+  </button>
+</div>
         </div>
 
         <div id="status">Guesses remaining...</div>

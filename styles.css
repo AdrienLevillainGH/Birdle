@@ -1,13 +1,49 @@
-@font-face {
-    font-family: 'Geist';
-    src: url('Geist-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900; 
-    font-style: normal;
+:root {
+  --bg-main: #111111;
+  --bg-card: #1a1a1a;
+  --bg-tile: #333333;
+  --bg-modal: #ffffff;
+
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+  --text-dark: #000000;
+
+  --accent-green: #2ecc71;
+  --accent-yellow: #f1c40f;
+  --accent-blue: #1b73e8;
+  --accent-wrong: #444444;
+
+  --border-subtle: #333333;
+
+  --caret-space: 28px;
+
+}
+
+body.light-theme {
+  --bg-main: #f4f5f7;
+  --bg-card: #ffffff;
+  --bg-tile: #e6e8eb;
+  --bg-modal: #ffffff;
+
+  --text-main: #111111;
+  --text-muted: #555555;
+  --text-dark: #000000;
+
+  --accent-green: #2ecc71;
+  --accent-yellow:  #f1c40f;
+  --accent-blue: #1b73e8;
+  --accent-wrong: #d6d9dd;
+
+  --border-subtle: #d0d3d8;
+}
+
+body.light-theme .wrong {
+  color: #000000
 }
 
 body {
-  background: #111;
-  color: white;
+  background: var(--bg-main);
+  color: var(--text-main);
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -31,6 +67,11 @@ body {
 
     z-index: 9998;
     text-align: center;
+}
+
+.landing-screen,
+.landing-screen * {
+  color: #ffffff !important;
 }
 
 .landing-title {
@@ -468,7 +509,7 @@ body {
 
 .icon-btn i {
   font-size: 26px;
-  color: black;
+  color: inherit;
 }
 
 .icon-btn:hover {
@@ -550,6 +591,12 @@ body {
   opacity: 1;
 }
 
+body.light-theme .bird-name-display,
+body.light-theme .bird-name-display .common-name,
+body.light-theme .bird-name-display .scientific-name {
+  color: var(--text-main);
+}
+
 /* Guess rows */
 .guess-row {
   background: #1A1A1A;
@@ -560,9 +607,22 @@ body {
   width: 100%;
 }
 
+body.light-theme .guess-row {
+  background: var(--bg-card);
+}
+
 .reveal-row {
   background: #2ECC71;
   color: black;
+}
+
+body.light-theme .reveal-row {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+body.light-theme .reveal-title {
+  color: var(--text-main);
 }
 
 /* Container layout */
@@ -571,9 +631,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 350px;
   margin: 0 auto;
-  gap: 15px;
+  gap: 10px;
 }
 
 /* Image */
@@ -584,17 +643,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0;
+  height: fit-content;
 }
 
 .bird-photo {
   width: 100%;
-  max-width: 260px;
+  max-width: 350px;
   border-radius: 10px;
   height: auto;
   display: block;
 }
 
+.bird-iframe {
+  width: 100%;
+  max-width: 350px;
+  height: 375px;            /* 🔥 IMPORTANT */
+  max-height: none;        /* 🔥 CRITICAL */
+  border: none;
+  border-radius: 10px;
+  display: block;
+  overflow: hidden;
+}
+
 /* Info button */
+
 .image-wrapper {
     position: relative;
     width: 100%;
@@ -654,21 +727,27 @@ body {
   opacity: 0.75;
 }
 
+/* Disable info icon + credits panel (credits now in embed) */
+.image-wrapper .info-toggle,
+.extra-info {
+  display: none !important;
+}
+
 /* Tile grids */
 .tile-grids-wrapper {
   width: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grid-top,
 .grid-bottom {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, auto);
   gap: 8px;
 }
+
 
 .grid-bottom {
   margin-top: 8px;
@@ -679,12 +758,14 @@ body {
   padding: 10px;
   border-radius: 8px;
   min-height: 70px;
-  background: #333;
+  background: var(--bg-tile);
+  color: var(--text-main);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .tile-content {
@@ -706,9 +787,10 @@ body {
 }
 
 /* Tile colors */
-.correct { background: #2ECC71 !important; }
-.partial { background: #F1C40F !important; }
-.wrong   { background: #444 !important; }
+.correct { background: var(--accent-green) !important; }
+.partial { background: var(--accent-yellow) !important; }
+.wrong { background: var(--accent-wrong) !important; }
+
 
 /* Reveal box */
 .reveal-box {
@@ -745,7 +827,7 @@ body {
     max-width: 80vw;            /* responsive */
     height: 50px;
     padding: 0 16px;
-    border: none;
+     border: 1px solid var(--border-subtle);
     outline: none;
     border-radius: 25px;
     font-size: 16px;
@@ -788,6 +870,22 @@ body {
   max-width: 600px;
   margin: 0 auto;
   overflow: visible !important;
+}
+
+/* Left search icon */
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #333;
+  pointer-events: none;
+}
+
+/* Push text so it doesn't overlap the icon */
+#guessInput {
+  padding-left: 44px; /* space for search icon */
 }
 
 /* The dropdown aligned perfectly under the input */
@@ -860,6 +958,46 @@ body {
     }
 }
 
+/* Header: does not reserve space for caret */
+.bird-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+/* Caret: overlay, does NOT affect layout */
+.collapse-btn {
+  position: absolute;
+  left: 10px;             /* adjust to taste */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;             /* sits above */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-main);
+}
+
+.collapse-btn i {
+  font-size: 18px;
+}
+
+/* Collapsible content wrapper */
+.bird-details {
+  width: 100%;
+}
+
+/* Collapsed state */
+.guess-row.collapsed .bird-details {
+  display: none;
+}
+
+
+
 /* -------------------------------------
    MOBILE LAYOUT
 -------------------------------------- */
@@ -893,7 +1031,7 @@ body {
     max-width: 360px;
     height: 40px;
     font-size: 16px;
-    padding: 0 16px;
+    padding: 0 0px 0 44px;
     border-radius: 25px;
     margin: 0 auto;
   }
@@ -921,11 +1059,26 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 15px;
+    align-items: stretch;
   }
 
   .guess-container {
     max-width: 360px;
   }
+
+  .image-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .bird-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
   .bird-photo {
     width: 260px;
