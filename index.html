@@ -94,12 +94,12 @@
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        How does the game work?
+        How does the game work ?
       </div>
       <div class="faq-answer">
         Every day, 100 birds are randomly drawn from a larger pool.
         Among these birds, only one is the mystery bird. You have 10 tries to find it.
-        I also implemented some rules to ensure that each attribute is balanced every day,
+        I also implemented some rules to ensure that the game is always balanced,
         but I should not reveal more.
         <br><br>
         Each guess gives you hints about the mystery bird’s attributes.
@@ -110,7 +110,7 @@
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        Are the birds' attributes reliable?
+        Are the birds' attributes reliable ?
       </div>
       <div class="faq-answer">
         Information on birds is drawn from the AVONET and BIRDBASE databases,
@@ -118,16 +118,13 @@
         These databases are open access and have been the subject of scientific publications
         (Tobias et al., 2022; Şekercioğlu et al., 2025).
         <br><br>
-        However, I had to simplify each attribute in order to make the game playable.
+        However, I had to simplify some attributes in order to make the game playable (Habitat, Primary Diet and Nest).
         When an attribute is heavily segmented, the player becomes less likely to receive
         meaningful hints with each guess.
         <br><br>
         For instance, the BIRDBASE database classifies habitat into 15 categories.
         I therefore reclassified habitats into five categories:
-        Marine, Wetland, Forest, Grassland, and Dry plains. For example, the new “Dry plains” category includes the following habitats: plains, shrub and desert.
-        <br><br>
-        This logic applies to the following attributes:
-        Habitat, Primary Diet and Nest.
+        Marine, Wetland, Forest, Grassland, and Dry plains. The new “Dry plains” category includes the following habitats: plains, shrub and desert.
 
         <br><br>
         Tobias, J. A., Sheard, C., Pigot, A. L., Devenish, A. J. M., Yang, J., Sayol, F., Neate-Clegg, M. H. C., Alioravainen, N., Weeks, T. L., Barber, R. A., Walkden, P. A., MacGregor, H. E. A., Jones, S. E. I., Vincent, C., Phillips, A. G., Marples, N. M., Montaño-Centellas, F. A., Leandro-Silva, V., Claramunt, S., … Schleuning, M. (2022). AVONET: morphological, ecological and geographical data for all birds. Ecology Letters, 25(3), 581–597. https://doi.org/10.1111/ele.13898
@@ -140,37 +137,36 @@
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        How were birds chosen?
+        How were the birds chosen ?
       </div>
       <div class="faq-answer">
         First, the main goal was to ensure that each attribute is as balanced as possible.
-        For example, ~60% of known bird species belong to the order Passeriformes,
-        which would make the game very difficult and rather boring.
+        For example, ~60% of known bird species are Passeriformes,
+        which would result in a very difficult and rather boring game.
         <br><br>
-        I therefore ensured that no avian order represents more than 20%
-        of the birds in the database. This logic applies to the other attributes.
+        I therefore ensured that no avian order is over-represented.
+        This logic also applies to the other attributes.
         <br><br>
         Second, I can only select birds for which reliable, published data are available
         for all relevant attributes.
         <br><br>
-        Finally, I chose birds that I personally find particularly cool!
+        Finally, I chose birds that I personally find very cool!
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        What does the Beak attribute represent?
+        What does the Beak attribute represent ?
       </div>
       <div class="faq-answer">
         The Beak attribute represents an index of beak length relative to a bird’s body mass.
         It ranges from 0 to 1.
-        The higher the value, the longer the beak relative to the bird’s body mass.
+        The higher the value, the longer the beak relative to his body mass.
         <br><br>
         This index was computed using AVONET data on bird body mass and beak length (from the culmen to the tip of the beak). Briefly, I used the residuals of a linear regression between body mass and beak length, which I then converted into an index ranging from 0 to 1.
         <br><br>
-        Model used:
-        lm(log(Beak Length) ~ log(Mass)).<br>
+        Model used: lm(log(Beak Length) ~ log(Mass)).<br>
         R² = 0.61, p-value &lt; 0.001, n = 10.700
         <br><br>
         <!-- INSERT PICTURE HERE -->
@@ -180,23 +176,18 @@
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        Why are credits displayed in this way?
+        Why are credits displayed in this way ?
       </div>
       <div class="faq-answer">
-        Bird images are selected from the Macaulay Library.
-        The use of these images requires the embed function provided by the Macaulay Library,
-        which restricts how they can be displayed.
-        <br><br>
-        Displaying the credits in a more concise format would require purchasing a usage license.
-        Since this game is purely educational and generates no revenue,
-        I cannot afford to purchase such licenses.
+        Bird images are imported from the Macaulay Library. 
+        For legal reasons, I have to use the embed function provided by the Macaulay Library, which restricts how they can be displayed.
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        Why are some languages not supported?
+        Why are some languages not supported ?
       </div>
       <div class="faq-answer">
         I used the Birds of the World database to extract bird names in as many languages
@@ -209,12 +200,22 @@
     <div class="faq-item">
       <div class="faq-question">
         <i class="bi bi-caret-right-fill"></i>
-        How can I contact you?
+        Who am I ?
       </div>
       <div class="faq-answer">
-        If you have feedback, suggestions, or encounter any issues,
-        please feel free to contact me at:
-        <b>INSERT EMAIL ADDRESS</b>
+    I am a PhD in ecology and physiology.
+    I recently published my PhD thesis and I developped this game as a side project.
+
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <i class="bi bi-caret-right-fill"></i>
+        Any questions ?
+      </div>
+      <div class="faq-answer">
+    This game is not perfect by any means. If you have feedback, suggestions, or encounter any issues, please feel free to contact me at the following email address: INSERT EMAIL ADRESS.
       </div>
     </div>
 
@@ -232,7 +233,7 @@
 
       <h2>HOW TO PLAY?</h2>
       <h3>Guess the bird in 10 tries.</h3>
-      <p class="rules-text"><i class="bi bi-dice-5-fill"></i> Guess a random bird.</p>
+      <p class="rules-text"><i class="bi bi-dice-5-fill"></i> Using the dice randomly guess a bird.</p>
       <p class="rules-text">Each guess reveal the attributes of birds. <span style="font-weight:600;">Select any attribute to learn more.</p>
 
       <div class="rules-attribute-grid">

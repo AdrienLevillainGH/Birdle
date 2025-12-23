@@ -583,11 +583,11 @@ function showFinalModal() {
 
      box.innerHTML = `
 
-        <div style="font-size:18px; font-weight:600; margin-bottom:2px;">
+        <div style="font-size:22px; font-weight:600; margin-bottom:-5px;">
             ${commonName}
         </div>
 
-        <div style="font-size:18px; font-weight:400; font-style:italic; margin-bottom:10px;">
+        <div style="font-size:22px; font-weight:400; font-style:italic; margin-bottom:5px;">
             (${sci})
         </div>
 

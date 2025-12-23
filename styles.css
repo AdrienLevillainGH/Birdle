@@ -351,6 +351,8 @@ body {
 .modal-content h2 {
   margin-top: 2px;
   text-align: center;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 /* Fine control of line spacing inside Rules modal */
