@@ -113,6 +113,26 @@ function startNextBirdleCountdown() {
     setInterval(update, 1000);
 }
 
+function isInAppBrowser() {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
+}
+
+function showToast(message) {
+  let toast = document.getElementById("toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}
 
 const MASS_CATEGORIES = [
   { max: 100, label: "0-100" },
@@ -918,18 +938,18 @@ function showScoreBanner() {
 
   // Share score (same behavior as final modal)
   shareBtn.onclick = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({ text: shareText });
-      } catch {
-        /* user cancelled */
-      }
+  try {
+    if (navigator.share && !isInAppBrowser()) {
+      await navigator.share({ text: shareText });
     } else {
-      // fallback: copy
       await navigator.clipboard.writeText(shareText);
-      alert("Score copied to clipboard!");
+      showToast("Score copied to clipboard");
     }
-  };
+  } catch {
+    await navigator.clipboard.writeText(shareText);
+    showToast("Score copied to clipboard");
+  }
+};
 
   banner.classList.remove("hidden");
 }
