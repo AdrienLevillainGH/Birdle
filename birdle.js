@@ -538,7 +538,7 @@ const won = final && final.result === "win";
       ? `🦜 Birdle #${dayId} ✅ ${guessesUsed}/10`
       : `🦜 Birdle #${dayId} 🟥 11/10`;
 
-    const shareText = `${scoreText}\n\nCan you find today’s mystery bird?`;
+    const shareText = `${scoreText}`;
 
     if (navigator.share) {
         navigator.share({
