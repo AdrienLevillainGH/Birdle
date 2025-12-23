@@ -168,6 +168,17 @@ const LANG_FLAGS = {
     "Ukrainian": "ua"
 };
 
+// Update the language button icon (flag)
+function updateLanguageIcon(lang) {
+    const icon = document.getElementById("langIcon");
+    const flagCode = LANG_FLAGS[lang];
+
+    if (!icon || !flagCode) return;
+
+    icon.className = `fi fi-${flagCode}`;
+}
+
+
 // -------------------------------------------------------
 //  SMART DAILY BIRD PICKER (no repeats, no same Order twice)
 // -------------------------------------------------------
@@ -363,6 +374,8 @@ fetch("birds_with_contributors_and_names.json")
 
     // Ensure dropdown shows current language
     select.value = currentLang;
+    // Update flag icon on initial load
+    updateLanguageIcon(currentLang);
 }
 
 
@@ -506,6 +519,37 @@ document.getElementById("bowLinkBtn").onclick = () => {
       }
     };
 
+
+// Button SHARE
+document.getElementById("shareBtn").onclick = () => {
+
+    const dayId = getDailySeed();
+    const guessesUsed = guessHistory.length;
+    let final = null;
+for (let i = guessHistory.length - 1; i >= 0; i--) {
+  if (guessHistory[i].finalReveal) {
+    final = guessHistory[i];
+    break;
+  }
+}
+const won = final && final.result === "win";
+
+    const scoreText = won
+      ? `🦜 Birdle #${dayId} ✅ ${guessesUsed}/10`
+      : `🦜 Birdle #${dayId} 🟥 11/10`;
+
+    const shareText = `${scoreText}\n\nCan you find today’s mystery bird?`;
+
+    if (navigator.share) {
+        navigator.share({
+            text: shareText
+        }).catch(() => {});
+    } else {
+        navigator.clipboard.writeText(shareText);
+        alert("Score copied to clipboard!");
+    }
+};
+
 // Reval mystery bird modal tile
 
 function showFinalModal() {
@@ -517,12 +561,13 @@ function showFinalModal() {
     const commonName = getCommonName(bird);
     const sci = bird.Sname;
 
-    box.innerHTML = `
+     box.innerHTML = `
+
         <div style="font-size:18px; font-weight:600; margin-bottom:2px;">
             ${commonName}
         </div>
 
-        <div style="font-size:16px; font-style:italic; margin-bottom:10px;">
+        <div style="font-size:18px; font-weight:400; font-style:italic; margin-bottom:10px;">
             (${sci})
         </div>
 
@@ -822,14 +867,87 @@ async function fetchContributorName(mlCode, pictureHtml) {
 //  START / RESET GAME
 //-------------------------------------------------------
 
-function disableSearchBar() {
-  const searchBlock = document.getElementById("search-block");
+function getScoreLine() {
+  const dayId = getDailySeed();
 
-  // Hide the entire search area (input + dice + status)
-  if (searchBlock) {
-    searchBlock.style.display = "none";
+  // Find the final result entry (last finalReveal)
+  let final = null;
+  for (let i = guessHistory.length - 1; i >= 0; i--) {
+    if (guessHistory[i].finalReveal) {
+      final = guessHistory[i];
+      break;
+    }
   }
+
+  // If game isn't finished yet
+  if (!final) return `🦜 Birdle #${dayId}`;
+
+  if (final.result === "loss") {
+    return `🦜 Birdle #${dayId} 🟥 11/10`;
+  }
+
+  // WIN: guesses used = number of guesses made, including the final correct guess
+  const guessesUsed = guessHistory.length;
+  return `🦜 Birdle #${dayId} ✅ ${guessesUsed}/10`;
 }
+
+
+function showScoreBanner() {
+  const banner = document.getElementById("scoreBanner");
+  const textEl = document.getElementById("scoreText");
+  const copyBtn = document.getElementById("copyScoreBtn");
+  const shareBtn = document.getElementById("shareScoreBtn");
+
+  if (!banner || !textEl || !copyBtn || !shareBtn) return;
+
+  const score = getScoreLine();
+  const shareText = `${score}\n\nCan you find today’s mystery bird?`;
+
+  textEl.textContent = score;
+
+  // Copy score
+  copyBtn.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(score);
+      copyBtn.classList.add("copied");
+      setTimeout(() => copyBtn.classList.remove("copied"), 800);
+    } catch {
+      alert("Could not copy score");
+    }
+  };
+
+  // Share score (same behavior as final modal)
+  shareBtn.onclick = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ text: shareText });
+      } catch {
+        /* user cancelled */
+      }
+    } else {
+      // fallback: copy
+      await navigator.clipboard.writeText(shareText);
+      alert("Score copied to clipboard!");
+    }
+  };
+
+  banner.classList.remove("hidden");
+}
+
+
+
+function disableSearchBar() {
+  // Show score where the search bar used to be
+  showScoreBanner();
+
+  // Hide only the input row + status (but keep the whole block visible)
+  const inputRow = document.querySelector("#search-block .input-row");
+  if (inputRow) inputRow.style.display = "none";
+
+  const status = document.getElementById("status");
+  if (status) status.style.display = "none";
+}
+
 
 function startGame() {
 
@@ -1084,7 +1202,8 @@ function handleGuess(choice) {
     guessHistory.push({
         name: bird.Name,
         tiles: finalTiles,
-        finalReveal: true
+        finalReveal: true,
+        result: "win"
     });
 
     saveGameState();
@@ -1156,7 +1275,8 @@ function handleGuess(choice) {
     guessHistory.push({
         name: targetBird.Name,
         tiles: finalTiles,
-        finalReveal: true
+        finalReveal: true,
+        result: "loss"
     });
 
     saveGameState();
@@ -1313,6 +1433,7 @@ function revealFinal() {
   container.innerHTML = "";
 
   displayGuess(bird.Name, tiles);
+
 }
 
 //-------------------------------------------------------
@@ -1505,6 +1626,7 @@ document.getElementById("rulesBtn").onclick = () => {
 //-------------------------------------------------------
 document.getElementById("langSelect").addEventListener("change", (e) => {
     currentLang = e.target.value;
+    updateLanguageIcon(currentLang);
 
     document.getElementById("guessInput").placeholder = "Type a bird name...";
 
@@ -1590,3 +1712,68 @@ async function simulateDailyPools(days = 60) {
     console.log(results);
     return results;
 }
+
+
+// ------------------------
+// SPOTLE-STYLE MENU SHEET
+// ------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menuBtn = document.getElementById("menuBtn");
+  const menuSheet = document.getElementById("menuSheet");
+  const faqModal = document.getElementById("faqModal");
+
+  if (!menuBtn || !menuSheet) return;
+
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuSheet.classList.toggle("open");
+  });
+
+  document.getElementById("openFaq").onclick = () => {
+    menuSheet.classList.remove("open");
+    faqModal.classList.remove("hidden");
+  };
+
+  // Close menu when clicking outside
+  document.addEventListener("click", () => {
+    menuSheet.classList.remove("open");
+  });
+
+  // Prevent closing when clicking inside menu
+  menuSheet.addEventListener("click", e => {
+    e.stopPropagation();
+  });
+
+});
+
+// ------------------------
+// FAQ MODAL INTERACTIONS
+// ------------------------
+document.addEventListener("DOMContentLoaded", () => {
+
+  const faqModal = document.getElementById("faqModal");
+  const closeFaq = document.getElementById("closeFaq");
+
+  // Close FAQ modal with ❌
+  if (closeFaq && faqModal) {
+    closeFaq.addEventListener("click", () => {
+      faqModal.classList.add("hidden");
+    });
+  }
+
+  // Close FAQ when clicking outside content
+  faqModal?.addEventListener("click", (e) => {
+    if (e.target === faqModal) {
+      faqModal.classList.add("hidden");
+    }
+  });
+
+  // FAQ accordion (questions)
+  document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+      question.parentElement.classList.toggle("open");
+    });
+  });
+
+});

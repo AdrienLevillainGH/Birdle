@@ -20,7 +20,7 @@
 }
 
 body.light-theme {
-  --bg-main: #F0F0F0;
+  --bg-main: #f4f5f7;
   --bg-card: #ffffff;
   --bg-tile: #e6e8eb;
   --bg-modal: #ffffff;
@@ -201,6 +201,113 @@ body {
     font-weight: 300;     /* light/clean look */
 }
 
+/* MENU DROPDOWN */
+.info-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #f5f6f7;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  min-width: 240px;
+  z-index: 20000;
+}
+
+.info-menu div {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.info-menu div:hover {
+  background: #eee;
+}
+
+.info-footer {
+  font-size: 13px;
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ---------------------------------------------------
+   SPOTLE-STYLE MENU SHEET
+--------------------------------------------------- */
+.menu-sheet {
+  position: fixed;
+  top: 55px; /* same height as .top-buttons */
+  left: 0;
+  width: 100%;
+  z-index: 15000;
+
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-sheet.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-sheet-content {
+  max-width: 420px;
+  margin: 0 0 0 20px;
+  background: #f5f6f7;
+  color: black;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  padding: 10px 0;
+}
+
+.menu-sheet-content > div {
+  padding: 14px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu-sheet-content > div:hover {
+  background: #e9eaeb;
+}
+
+/* FAQ ACCORDION */
+.faq-item {
+  margin-top: 12px;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  margin-left: 26px;
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(90deg);
+}
+
+/* Menu button only: move to left */
+#menuBtn {
+  position: absolute;
+  left: 20px;
+  color: inherit;
+}
+
 /* ---------------------------------------------------
    SPOTLE-STYLE FULLSCREEN MODAL
 --------------------------------------------------- */
@@ -236,6 +343,11 @@ body {
   align-items: center;
 }
 
+.modal-content h2 {
+  margin-top: 2px;
+  text-align: center;
+}
+
 /* Fine control of line spacing inside Rules modal */
 
 
@@ -251,8 +363,8 @@ body {
 /* Close icon */
 .close-btn {
   position: sticky;
-  top: 15px;
-  right: 15px;
+  top: 0px;
+  right: 0px;
   margin-left: auto;
   display: block;
   background: none;
@@ -393,10 +505,16 @@ body {
 }
 
 .botw-btn {
-    background-color: #1b73e8; /* Google blue */
+    background-color: #1b73e8; 
     border: none;
     margin: 0 auto; 
     margin-top: 4px;
+}
+
+.share-btn {
+  background-color: #2ecc71; 
+  border: none;
+  margin: 6px auto 0 auto;
 }
 
 .next-birdle-timer {
@@ -497,7 +615,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
+  background: #f5f6f7;
   color: black;
   border: 0px solid black;
   display: flex;
@@ -521,6 +639,12 @@ body {
   font-size: 26px;
 }
 
+#langIcon {
+  width: 24px;
+  height: 18px;
+  border-radius: 3px;
+}
+
 /* -------------------------------
    STANDARD BUTTON (unchanged)
 -------------------------------- */
@@ -541,6 +665,44 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Score banner */
+.score-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  margin: 8px auto 0 auto;
+  color: #000;
+}
+
+.score-line {
+  font-weight: 800;
+  font-size: 18px;
+  text-align: center;
+}
+
+.score-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.score-actions-label {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.score-action-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.score-action-btn i {
+  font-size: 16px;
 }
 
 /* Search block layout */
@@ -1127,3 +1289,10 @@ body.light-theme .reveal-title {
 
 
 
+@media (max-width: 480px) {
+  .menu-sheet-content {
+    margin-left: 12px;
+    margin-right: 12px;
+    max-width: none;
+  }
+}
