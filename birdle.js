@@ -911,14 +911,14 @@ function getScoreLine() {
     }
   }
 
-  if (!final) return `🦜 Birdex #${displayDate}`;
+  if (!final) return `🦜 BirdL #${displayDate}`;
 
   if (final.result === "loss") {
-    return `🦜 Birdex #${displayDate} 🟥 11/10`;
+    return `🦜 BirdL #${displayDate} 🟥 11/10`;
   }
 
   const guessesUsed = guessHistory.length;
-  return `🦜 Birdex #${displayDate} ✅ ${guessesUsed}/10`;
+  return `🦜 BirdL #${displayDate} ✅ ${guessesUsed}/10`;
 }
 
 
