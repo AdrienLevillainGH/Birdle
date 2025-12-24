@@ -54,7 +54,7 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: "Geist", sans-serif;
+  /*/ font-family: "Lexend Deca", sans-serif;/*/
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -292,10 +292,11 @@ body {
 
 .faq-answer {
   display: none;
-  margin-left: 26px;
+  margin-left: 0px;
   margin-top: 6px;
   font-size: 15px;
   line-height: 1.45;
+  padding: 0 8px;
 }
 
 .faq-item.open .faq-answer {
@@ -686,7 +687,7 @@ body {
 }
 
 .score-line {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
   text-align: center;
 }
@@ -699,7 +700,7 @@ body {
 }
 
 .score-actions-label {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
 }
 

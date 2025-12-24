@@ -583,11 +583,11 @@ function showFinalModal() {
 
      box.innerHTML = `
 
-        <div style="font-size:22px; font-weight:600; margin-bottom:-5px;">
+        <div style="font-size:20px; font-weight:600; margin-bottom:0px;">
             ${commonName}
         </div>
 
-        <div style="font-size:22px; font-weight:400; font-style:italic; margin-bottom:5px;">
+        <div style="font-size:20px; font-weight:400; font-style:italic; margin-bottom:5px;">
             (${sci})
         </div>
 
@@ -900,15 +900,15 @@ function getScoreLine() {
   }
 
   // If game isn't finished yet
-  if (!final) return `🦜 Birdle #${dayId}`;
+  if (!final) return `🦜 Birdex #${dayId}`;
 
   if (final.result === "loss") {
-    return `🦜 Birdle #${dayId} 🟥 11/10`;
+    return `🦜 Birdex #${dayId} 🟥 11/10`;
   }
 
   // WIN: guesses used = number of guesses made, including the final correct guess
   const guessesUsed = guessHistory.length;
-  return `🦜 Birdle #${dayId} ✅ ${guessesUsed}/10`;
+  return `🦜 Birdex #${dayId} ✅ ${guessesUsed}/10`;
 }
 
 

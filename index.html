@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
 <html lang="en">
@@ -21,7 +26,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <meta charset="UTF-8">
-    <title>🦜 Birdle</title>
+    <title>🦜 Birdex</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -39,9 +44,9 @@
     <i class="bi bi-question"></i>
     </button>
 
-    <button id="themeBtn" class="icon-btn" title="Toggle theme">
+    <!-- <button id="themeBtn" class="icon-btn" title="Toggle theme">
     <i class="bi bi-lightbulb"></i>
-    </button>
+    </button> -->
 
     <button id="langBtn" class="icon-btn" title="Change language">
     <span id="langIcon" class="fi fi-gb"></span>
@@ -113,7 +118,7 @@
         Are the birds' attributes reliable ?
       </div>
       <div class="faq-answer">
-        Information on birds is drawn from the AVONET and BIRDBASE databases,
+        Information on birds is extracted from the AVONET and BIRDBASE databases,
         with the exception of the beak length index, which I computed myself.
         These databases are open access and have been the subject of scientific publications
         (Tobias et al., 2022; Şekercioğlu et al., 2025).
@@ -123,8 +128,10 @@
         meaningful hints with each guess.
         <br><br>
         For instance, the BIRDBASE database classifies habitat into 15 categories.
+        As a result, a player could use all 10 guesses and still ignore the habitat of the mystery bird.
         I therefore reclassified habitats into five categories:
-        Marine, Wetland, Forest, Grassland, and Dry plains. The new “Dry plains” category includes the following habitats: plains, shrub and desert.
+        Marine, Wetland, Forest, Grassland, and Dry plains.
+        The new “Dry plains” category includes the following habitats: plains, shrub and desert.
 
         <br><br>
         Tobias, J. A., Sheard, C., Pigot, A. L., Devenish, A. J. M., Yang, J., Sayol, F., Neate-Clegg, M. H. C., Alioravainen, N., Weeks, T. L., Barber, R. A., Walkden, P. A., MacGregor, H. E. A., Jones, S. E. I., Vincent, C., Phillips, A. G., Marples, N. M., Montaño-Centellas, F. A., Leandro-Silva, V., Claramunt, S., … Schleuning, M. (2022). AVONET: morphological, ecological and geographical data for all birds. Ecology Letters, 25(3), 581–597. https://doi.org/10.1111/ele.13898
@@ -145,7 +152,7 @@
         which would result in a very difficult and rather boring game.
         <br><br>
         I therefore ensured that no avian order is over-represented.
-        This logic also applies to the other attributes.
+        This logic also applies to other attributes.
         <br><br>
         Second, I can only select birds for which reliable, published data are available
         for all relevant attributes.
@@ -233,7 +240,7 @@
 
       <h2>HOW TO PLAY?</h2>
       <h3>Guess the bird in 10 tries.</h3>
-      <p class="rules-text"><i class="bi bi-dice-5-fill"></i> Using the dice randomly guess a bird.</p>
+      <p class="rules-text"><i class="bi bi-dice-5-fill"></i> Clicking the dice randomly guess a bird.</p>
       <p class="rules-text">Each guess reveal the attributes of birds. <span style="font-weight:600;">Select any attribute to learn more.</p>
 
       <div class="rules-attribute-grid">
@@ -257,7 +264,7 @@
 <!-- LANDING SCREEN -->
 <div id="landingScreen" class="landing-screen">
     <div class="landing-content">
-        <h1 class="landing-title">🦜 BIRDLE</h1>
+        <h1 class="landing-title">🦜 BIRDEX</h1>
         <p class="landing-subtitle">10 guesses, 100 random birds</p>
         <p class="landing-subtitle">Can you find today's mystery bird?</p>
 
