@@ -43,6 +43,16 @@ function loadGameState() {
     }
 }
 
+function getFormattedTodayUTC() {
+  const d = new Date();
+
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(d.getUTCDate()).padStart(2, "0");
+
+  return `${y}-${m}-${day}`;
+}
+
 function applyTheme(theme) {
   document.body.classList.toggle("light-theme", theme === "light");
   localStorage.setItem("birdle_theme", theme);
@@ -117,6 +127,7 @@ function isInAppBrowser() {
   const ua = navigator.userAgent || navigator.vendor || window.opera;
   return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
 }
+
 
 function showToast(message) {
   let toast = document.getElementById("toast");
@@ -554,9 +565,11 @@ for (let i = guessHistory.length - 1; i >= 0; i--) {
 }
 const won = final && final.result === "win";
 
+const formattedDay = getFormattedTodayUTC;
+
     const scoreText = won
-      ? `🦜 Birdle #${dayId} ✅ ${guessesUsed}/10`
-      : `🦜 Birdle #${dayId} 🟥 11/10`;
+      ? `🦜 Birdle #${displayDate} ✅ ${guessesUsed}/10`
+      : `🦜 Birdle #${displayDate} 🟥 11/10`;
 
     const shareText = `${scoreText}`;
 
@@ -888,9 +901,8 @@ async function fetchContributorName(mlCode, pictureHtml) {
 //-------------------------------------------------------
 
 function getScoreLine() {
-  const dayId = getDailySeed();
+  const displayDate = getFormattedTodayUTC();
 
-  // Find the final result entry (last finalReveal)
   let final = null;
   for (let i = guessHistory.length - 1; i >= 0; i--) {
     if (guessHistory[i].finalReveal) {
@@ -899,16 +911,14 @@ function getScoreLine() {
     }
   }
 
-  // If game isn't finished yet
-  if (!final) return `🦜 Birdex #${dayId}`;
+  if (!final) return `🦜 Birdex #${displayDate}`;
 
   if (final.result === "loss") {
-    return `🦜 Birdex #${dayId} 🟥 11/10`;
+    return `🦜 Birdex #${displayDate} 🟥 11/10`;
   }
 
-  // WIN: guesses used = number of guesses made, including the final correct guess
   const guessesUsed = guessHistory.length;
-  return `🦜 Birdex #${dayId} ✅ ${guessesUsed}/10`;
+  return `🦜 Birdex #${displayDate} ✅ ${guessesUsed}/10`;
 }
 
 
@@ -921,7 +931,7 @@ function showScoreBanner() {
   if (!banner || !textEl || !copyBtn || !shareBtn) return;
 
   const score = getScoreLine();
-  const shareText = `${score}\n\nCan you find today’s mystery bird?`;
+  const shareText = `${score}`;
 
   textEl.textContent = score;
 
