@@ -565,7 +565,7 @@ for (let i = guessHistory.length - 1; i >= 0; i--) {
 }
 const won = final && final.result === "win";
 
-const formattedDay = getFormattedTodayUTC;
+const displayDate = getFormattedTodayUTC();
 
     const scoreText = won
       ? `🦜 Birdle #${displayDate} ✅ ${guessesUsed}/10`
