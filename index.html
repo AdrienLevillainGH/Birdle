@@ -62,7 +62,7 @@
 <div id="menuSheet" class="menu-sheet">
   <div class="menu-sheet-content">
     <div id="openFaq">Learn More (FAQ)</div>
-    <div class="info-footer">Made by Adrien Levillain<br>Contact: INSERT EMAIL</div>
+    <div class="info-footer">Made by Adrien Levillain<br>Contact: birdldaily@gmail.com</div>
   </div>
 </div>
 
@@ -124,15 +124,15 @@
         These databases are open access and have been the subject of scientific publications
         (Tobias et al., 2022; Şekercioğlu et al., 2025).
         <br><br>
-        However, I had to simplify some attributes in order to make the game playable (Habitat, Primary Diet and Nest).
+        However, I had to simplify some attributes in order to make the game playable (Habitat, Primary Diet, Realm and Nest).
         When an attribute is heavily segmented, the player becomes less likely to receive
         meaningful hints with each guess.
         <br><br>
         For instance, the BIRDBASE database classifies habitat into 15 categories.
-        As a result, a player could use all 10 guesses and still ignore the habitat of the mystery bird.
+        As a result, a player could use all 10 guesses and still ignore the correct one.
         I therefore reclassified habitats into five categories:
         Marine, Wetland, Forest, Grassland, and Dry plains.
-        The new “Dry plains” category includes the following habitats: plains, shrub and desert.
+        As an example, the new “Dry plains” category includes the following habitats: plains, shrub and desert.
 
         <br><br>
         Tobias, J. A., Sheard, C., Pigot, A. L., Devenish, A. J. M., Yang, J., Sayol, F., Neate-Clegg, M. H. C., Alioravainen, N., Weeks, T. L., Barber, R. A., Walkden, P. A., MacGregor, H. E. A., Jones, S. E. I., Vincent, C., Phillips, A. G., Marples, N. M., Montaño-Centellas, F. A., Leandro-Silva, V., Claramunt, S., … Schleuning, M. (2022). AVONET: morphological, ecological and geographical data for all birds. Ecology Letters, 25(3), 581–597. https://doi.org/10.1111/ele.13898
@@ -148,17 +148,14 @@
         How were the birds chosen ?
       </div>
       <div class="faq-answer">
-        First, I tried to ensure that each attribute is as balanced as possible.
-        For example, ~60% of known bird species are Passeriformes,
-        which would result in a very difficult and rather boring game.
-        <br><br>
-        I therefore ensured that no avian order is over-represented.
-        This logic also applies to other attributes.
-        <br><br>
-        Second, only birds for which reliable, published data were available
+        First, only birds for which reliable, published data were available
         for all relevant attributes were selected.
         <br><br>
-        Finally, I chose birds that I personally find very cool!
+        Second, I tried to ensure that each attribute is as balanced as possible.
+        For example, ~60% of known bird species are Passeriformes,
+        which would result in a very difficult and rather boring game.
+        I therefore ensured that no avian order is over-represented.
+        This logic also applies to other attributes.
       </div>
     </div>
 
@@ -168,18 +165,19 @@
         What does the Beak attribute represent ?
       </div>
       <div class="faq-answer">
-        The Beak attribute represents an index of beak length relative to a bird’s body mass.
+        The Beak attribute is an index of beak length relative to a bird’s body mass.
+        It correspond to the intuitive perception of its length.
+        The higher the value, the longer the beak.
         It ranges from 0 to 1.
-        The higher the value, the longer the beak relative to his body mass.
         <br><br>
-        This index was computed using AVONET data on bird body mass and beak length (from the culmen to the tip of the beak). Briefly, I used the residuals of a linear regression between body mass and beak length, which I then converted into an index ranging from 0 to 1.
+        This index was computed using AVONET data on bird body mass and beak length. Briefly, I used the residuals of a linear regression between body mass and beak length, which I then converted into an index ranging from 0 to 1.
         <br><br>
         Model used: lm(log(Beak Length) ~ log(Mass)).<br>
         R² = 0.61, p-value &lt; 0.001, n = 10.700
         <br><br>
 
         Note that I did not use body size but rather body mass here. This is because tarsus length and wing length are the only measures of body size available for most birds.
-        These measure are less intuitive and can be strongly influenced by species-specific biology (e.g., wetland birds usually have long tarsi, flightless birds have very short wings...).
+        These measure are less intuitive and can be strongly influenced by species-specific biology (e.g., wetland birds have long tarsi, flightless birds have short wings...).
         <br><br>
 
       </div>
@@ -202,6 +200,8 @@
         Why are some languages not supported ?
       </div>
       <div class="faq-answer">
+        Translating this game in different languages would take an ridiculous amount of time. I therefore only provide a translation for the bird names.
+        <br><br>
         I used the Birds of the World database to extract bird names in as many languages
         as possible.
         Unfortunately, I can only include languages for which the dataset is complete
@@ -227,7 +227,7 @@
         Any questions ?
       </div>
       <div class="faq-answer">
-    This game is not perfect by any means. If you have feedback, suggestions, or encounter any issues, please feel free to contact me at the following email address: INSERT EMAIL ADRESS.
+    This game is not perfect by any means. If you have feedback, suggestions, or encounter any issues, please feel free to contact me at the following email address: birdldaily@gmail.com.
       </div>
     </div>
 
@@ -299,6 +299,7 @@
       <i class="bi bi-share"></i>
     </button>
   </div>
+
 </div>
 
         <div class="input-row">
@@ -308,8 +309,9 @@
     <i class="bi bi-search"></i>
   </span>
 
-  <input id="guessInput" type="text" placeholder="Type a bird name..." autocomplete="off">
+  <input id="guessInput" type="text" placeholder="Type or scroll..." autocomplete="off">
 
+  
   <!-- DICE BUTTON (right) -->
   <button id="randomBtn" class="input-icon-btn">
     <i class="bi bi-dice-5-fill"></i>
@@ -322,8 +324,24 @@
 </div>
 
 
+
 <div id="history"></div>
 <div id="reveal"></div>
+
+<!-- MATCH LEGEND (always visible) -->
+<div id="matchLegend" class="match-legend">
+  <div class="legend-tiles">
+    <div class="legend-tile wrong">No match</div>
+    <div class="legend-tile partial">Close match</div>
+    <div class="legend-tile correct">Match</div>
+  </div>
+
+  <div class="legend-text">
+    Find the mystery bird in 10 tries.<br>
+    Use the matching attributes for next guesses.<br>
+    Click the '?' icon if you need any help.
+  </div>
+</div>
 
 </div>
 

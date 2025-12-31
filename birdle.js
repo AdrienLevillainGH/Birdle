@@ -434,6 +434,13 @@ function sortByCurrentLanguage(a, b) {
 document.getElementById("randomBtn").addEventListener("click", () => {
     if (gameOver) return;
 
+    const btn = document.getElementById("randomBtn");
+
+    // 🔁 Trigger dice animation (even on fast clicks)
+    btn.classList.remove("animate");
+    void btn.offsetWidth; // force reflow
+    btn.classList.add("animate");
+
     const unusedBirds = todayPool.filter(b => !usedNames.has(b.Name));
     if (unusedBirds.length === 0) return;
 
@@ -623,7 +630,21 @@ function showFinalModal() {
     const bowBtn = document.getElementById("bowLinkBtn");
     bowBtn.onclick = () => window.open(bird.Doi, "_blank");
 
-    document.getElementById("finalModal").classList.remove("hidden");
+    const modal = document.getElementById("finalModal");
+const content = modal.querySelector(".modal-content");
+
+// Reset animation state
+content.classList.remove("show");
+content.classList.add("flip");
+
+modal.classList.remove("hidden");
+
+// Force reflow so animation restarts every time
+void content.offsetWidth;
+
+// Trigger animation
+content.classList.add("show");
+
     startNextBirdleCountdown();
 }
 
@@ -1658,7 +1679,7 @@ document.getElementById("langSelect").addEventListener("change", (e) => {
     currentLang = e.target.value;
     updateLanguageIcon(currentLang);
 
-    document.getElementById("guessInput").placeholder = "Type a bird name...";
+    document.getElementById("guessInput").placeholder = "Type or scroll...";
 
     todayPool.sort(sortByCurrentLanguage);
 
