@@ -4,21 +4,11 @@
 let birds = [];
 let todayPool = [];
 let targetBird = null;
+let BIRDS_READY = false;
 let guessesRemaining = 10;
 let usedNames = new Set();
 let guessHistory = [];
 let gameOver = false;
-
-// -------------------------------------------------------
-//  BIRD HISTORY (to enforce non-repeat rules)
-// -------------------------------------------------------
-function loadBirdHistory() {
-    return JSON.parse(localStorage.getItem("bird_history") || "{}");
-}
-
-function saveBirdHistory(history) {
-    localStorage.setItem("bird_history", JSON.stringify(history));
-}
 
 
 // -------------------------
@@ -88,12 +78,14 @@ function mulberry32(seed) {
 // Convert today's date → integer seed
 function getDailySeed() {
     const today = new Date();
-    const y = today.getUTCFullYear();
-    const m = today.getUTCMonth() + 1;
-    const d = today.getUTCDate();
 
-    return parseInt(`${y}${m}${d}`);  
+    const y = today.getUTCFullYear();
+    const m = String(today.getUTCMonth() + 1).padStart(2, "0");
+    const d = String(today.getUTCDate()).padStart(2, "0");
+
+    return Number(`${y}${m}${d}`);
 }
+
 
 function startNextBirdleCountdown() {
     function update() {
@@ -210,90 +202,34 @@ function updateLanguageIcon(lang) {
 }
 
 
-// -------------------------------------------------------
-//  SMART DAILY BIRD PICKER (no repeats, no same Order twice)
-// -------------------------------------------------------
+//-------------------------------------------------------
+//  DAILY BIRD SCHEDULE (precomputed, global)
+//-------------------------------------------------------
+let DAILY_BIRDS = {};
+let DAILY_BIRDS_READY = false;
 
-// Require at least N days before same Order can appear again
-const MIN_DAYS_BETWEEN_SAME_ORDER = 3;   // eg. passer; X; X; X; passer can be drawn again
-const MIN_DAYS_BETWEEN_SAME_FAMILY = 13;   // 2 weeks between each "same family pick"; avoid that we get many up to 3 spoonbills in 8 days.
+fetch("dailyBirds.json")
+  .then(res => res.json())
+  .then(data => {
+      DAILY_BIRDS = data;
+      DAILY_BIRDS_READY = true;
+      console.log("Daily bird schedule loaded");
+  })
+  .catch(err => console.error("Failed to load dailyBirds.json", err));
 
-
-function pickDailyBird(seed) {
-    const rand = mulberry32(seed);
-
-    // Deterministic initial index
-    let index = Math.floor(rand() * birds.length);
-
-    const history = loadBirdHistory();
-
-    // Last 60 days
-    const last60 = new Set();
-    for (let i = 1; i <= 60; i++) {
-        const pastDay = seed - i; // works because seed uses YYYYMMDD
-        if (history[pastDay]) last60.add(history[pastDay]);
+  function pickDailyBird(seed) {
+    if (!DAILY_BIRDS_READY) {
+        console.error("Daily bird schedule not loaded yet");
+        return null;
     }
 
-    // Prevent same Order within past X days
-    function violatesOrderBan(candidate, history, seed) {
-    for (let i = 1; i <= MIN_DAYS_BETWEEN_SAME_ORDER; i++) {
-        const pastDay = seed - i;
-        const pastName = history[pastDay];
-        if (!pastName) continue;
-
-        const pastBird = birds.find(b => b.Name === pastName);
-        if (pastBird && pastBird.Order === candidate.Order) {
-            return true; // violation
-        }
-    }
-    return false;
+    const name = DAILY_BIRDS[seed];
+    if (!name) {
+        console.error("No daily bird for seed:", seed);
+        return null;
     }
 
-
-    // Try deterministic candidates until one fits rules
-    for (let attempts = 0; attempts < birds.length; attempts++) {
-    const candidate = birds[index];
-
-    const repeated = last60.has(candidate.Name);
-
-    // ORDER rule
-    let sameOrder = false;
-    for (let i = 1; i <= MIN_DAYS_BETWEEN_SAME_ORDER; i++) {
-        const pastName = history[seed - i];
-        if (!pastName) continue;
-        const pastBird = birds.find(b => b.Name === pastName);
-        if (pastBird && pastBird.Order === candidate.Order) {
-            sameOrder = true;
-            break;
-        }
-    }
-
-    // FAMILY rule
-    let sameFamily = false;
-    for (let i = 1; i <= MIN_DAYS_BETWEEN_SAME_FAMILY; i++) {
-        const pastName = history[seed - i];
-        if (!pastName) continue;
-        const pastBird = birds.find(b => b.Name === pastName);
-        if (pastBird && pastBird.Family === candidate.Family) {
-            sameFamily = true;
-            break;
-        }
-    }
-
-    // ACCEPT candidate only if it satisfies all constraints
-    if (!repeated && !sameOrder && !sameFamily) {
-        history[seed] = candidate.Name;
-        saveBirdHistory(history);
-        return candidate;
-    }
-
-    index = (index + 1) % birds.length;
-    }
-
-    // Fallback (should never be used)
-    history[seed] = birds[index].Name;
-    saveBirdHistory(history);
-    return birds[index];
+    return birds.find(b => b.Name === name);
 }
 
 
@@ -370,6 +306,10 @@ fetch("birds_with_contributors_and_names.json")
 
       birds.sort(sortByCurrentLanguage);
       setupAutocomplete();
+
+      BIRDS_READY = true;   // ✅ ADD THIS
+      console.log("Birds database loaded");
+
   })
   .catch(err => console.error("JSON LOAD ERROR:", err));
 
@@ -1002,12 +942,27 @@ function disableSearchBar() {
 
 function startGame() {
 
+  if (!BIRDS_READY || !DAILY_BIRDS_READY) {
+      console.warn("Waiting for data to load...");
+      setTimeout(startGame, 50);
+      return;
+  }
+  
   // Daily seed
   const seed = getDailySeed();
+  console.log("Seed:", seed);
+  console.log("Daily bird name:", DAILY_BIRDS[seed]);
+
   const rand = mulberry32(seed);
 
   // Pick deterministic daily bird
   targetBird = pickDailyBird(seed);
+
+  if (!targetBird) {
+    console.error("❌ No target bird for seed", seed);
+    return;
+}
+
    // Pick 100 birds pool
   todayPool = buildDailyBirdPool(seed, targetBird);
   todayPool.sort(sortByCurrentLanguage);
@@ -1080,97 +1035,6 @@ function startGame() {
       list.classList.remove("disabled");
       document.getElementById("status").classList.remove("disabled");
   }
-}
-
-// -------------------------------------------------------
-//  TEST TOOL: Simulate N days and check rule validity
-//  Uses MIN_DAYS_BETWEEN_SAME_ORDER and real history
-// -------------------------------------------------------
-function testBirdSelection(daysToSimulate = 200) {
-    const results = [];
-    const history = loadBirdHistory();  // Use real history as a starting point
-
-    for (let offset = 0; offset < daysToSimulate; offset++) {
-        const simulatedSeed = getDailySeed() + offset;
-
-        // Temporarily use simulated history inside pickDailyBird
-        const tempLoad = () => history;
-        const tempSave = (h) => Object.assign(history, h);
-
-        const originalLoad = loadBirdHistory;
-        const originalSave = saveBirdHistory;
-
-        loadBirdHistory = tempLoad;
-        saveBirdHistory = tempSave;
-
-        // Pick candidate for this simulated day
-        const bird = pickDailyBird(simulatedSeed);
-
-        // Restore real functions
-        loadBirdHistory = originalLoad;
-        saveBirdHistory = originalSave;
-
-        const name = bird.Name;
-        const order = bird.Order;
-
-        // -------------------------
-        // Rule 1 — Check repeat ban
-        // -------------------------
-        let repeatViolation = false;
-        for (let d = 1; d <= 60; d++) {
-            if (history[simulatedSeed - d] === name) {
-                repeatViolation = true;
-                break;
-            }
-        }
-
-        // -------------------------
-        // Rule 2 — Check Order ban
-        // -------------------------
-        let orderViolation = false;
-        for (let i = 1; i <= MIN_DAYS_BETWEEN_SAME_ORDER; i++) {
-            const pastName = history[simulatedSeed - i];
-            if (!pastName) continue;
-
-            const pastBird = birds.find(b => b.Name === pastName);
-            if (pastBird && pastBird.Order === order) {
-                orderViolation = true;
-                break;
-            }
-        }
-
-        // Rule 3 - FAMILY RULE CHECK
-        let familyViolation = false;
-        for (let i = 1; i <= MIN_DAYS_BETWEEN_SAME_FAMILY; i++) {
-        const pastName = history[simulatedSeed - i];
-        if (!pastName) continue;
-
-        const pastBird = birds.find(b => b.Name === pastName);
-        if (pastBird && pastBird.Family === bird.Family) {
-        familyViolation = true;
-        break;
-         }
-        }
-
-        // Record simulated result
-        results.push({
-        day: simulatedSeed,
-        bird: name,
-        order,
-        family: bird.Family,
-        repeatViolation,
-        orderViolation,
-        familyViolation
-        });
-
-        // Update simulated history
-        history[simulatedSeed] = name;
-    }
-
-    console.table(results);
-    console.log(
-        `✔ If all values in 'repeatViolation' and 'orderViolation' are false, your rules work (Order ban = ${MIN_DAYS_BETWEEN_SAME_ORDER} days).`
-    );
 }
 
 function updateStatus() {
@@ -1716,53 +1580,6 @@ function rerenderHistoryInCurrentLanguage() {
     });
 }
 
-
-//-------------------------------------------------------
-//  SIMULATE NEXT 60 DAYS — ANALYZE DAILY POOLS
-//-------------------------------------------------------
-async function simulateDailyPools(days = 60) {
-    if (!birds.length) {
-        console.error("Birds database not loaded yet.");
-        return;
-    }
-
-    console.log("=== SIMULATION: NEXT " + days + " DAYS ===");
-
-    const results = [];
-
-    for (let i = 0; i < days; i++) {
-        const seed = getDailySeed() + i;
-
-        // Pick a deterministic bird for that day
-        const target = pickDailyBird(seed);
-
-        // Build the 100-bird pool for that day
-        const pool = buildDailyBirdPool(seed, target);
-
-        // Count by Order
-        const orderCount = {};
-        pool.forEach(b => {
-            orderCount[b.Order] = (orderCount[b.Order] || 0) + 1;
-        });
-
-        // Count by Habitat
-        const habitatCount = {};
-        pool.forEach(b => {
-            habitatCount[b.Habitat] = (habitatCount[b.Habitat] || 0) + 1;
-        });
-
-        results.push({
-            day: seed,
-            target: target.Name,
-            orderCount,
-            habitatCount
-        });
-    }
-
-    console.log("=== SIMULATION RESULTS ===");
-    console.log(results);
-    return results;
-}
 
 
 // ------------------------
