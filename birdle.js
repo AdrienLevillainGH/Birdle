@@ -501,31 +501,17 @@ document.getElementById("bowLinkBtn").onclick = () => {
 // Button SHARE
 document.getElementById("shareBtn").onclick = () => {
 
-    const dayId = getDailySeed();
-    const guessesUsed = guessHistory.length;
-    let final = null;
-for (let i = guessHistory.length - 1; i >= 0; i--) {
-  if (guessHistory[i].finalReveal) {
-    final = guessHistory[i];
-    break;
-  }
-}
-const won = final && final.result === "win";
-
-const displayDate = getFormattedTodayUTC();
-
     const shareText = getShareScoreLine();
 
-
     if (navigator.share) {
-        navigator.share({
-            text: shareText
-        }).catch(() => {});
+        navigator.share({ text: shareText }).catch(() => {});
     } else {
         navigator.clipboard.writeText(shareText);
         alert("Score copied to clipboard!");
     }
 };
+
+console.log(getShareScoreLine());
 
 // Reval mystery bird modal tile
 
