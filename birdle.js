@@ -505,20 +505,21 @@ document.getElementById("bowLinkBtn").onclick = () => {
 
 // Button SHARE
 // Button SHARE
+// Button SHARE (Wordle-style: text only)
 document.getElementById("shareBtn").onclick = async () => {
 
-  const text = getShareScoreText();
-  const url  = getShareUrl();
-  const safeUrl = getNonLinkifiedUrl(url);
-  const combined = `${text}\n${safeUrl}`;
+  const text = getScoreLine(); // ⬅️ TEXT ONLY
 
   if (navigator.share) {
-    navigator.share({ text, url }).catch(async () => {
-      await navigator.clipboard.writeText(combined);
+    try {
+      await navigator.share({ text });
+    } catch {
+      // fallback to clipboard (still text only)
+      await navigator.clipboard.writeText(text);
       alert("Score copied to clipboard!");
-    });
+    }
   } else {
-    await navigator.clipboard.writeText(combined);
+    await navigator.clipboard.writeText(text);
     alert("Score copied to clipboard!");
   }
 };
@@ -912,22 +913,19 @@ function showScoreBanner() {
 };
 
 
-  // Share score (same behavior as final modal)
+// Share score (Wordle-style: text only)
 shareBtn.onclick = async () => {
-  const text = getShareScoreText();
-  const url  = getShareUrl();
-  const safeUrl = getNonLinkifiedUrl(url);
-  const combined = `${text}\n${safeUrl}`;
+  const text = getScoreLine();
 
   try {
     if (navigator.share && !isInAppBrowser()) {
-      await navigator.share({ text, url });
+      await navigator.share({ text });
     } else {
-      await navigator.clipboard.writeText(combined);
+      await navigator.clipboard.writeText(text);
       showToast("Score copied to clipboard");
     }
   } catch {
-    await navigator.clipboard.writeText(combined);
+    await navigator.clipboard.writeText(text);
     showToast("Score copied to clipboard");
   }
 };
