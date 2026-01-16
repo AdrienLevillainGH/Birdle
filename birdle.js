@@ -514,11 +514,8 @@ const won = final && final.result === "win";
 
 const displayDate = getFormattedTodayUTC();
 
-    const scoreText = won
-      ? `🦜 Birdle #${displayDate} ✅ ${guessesUsed}/10`
-      : `🦜 Birdle #${displayDate} 🟥 11/10`;
+    const shareText = getShareScoreLine();
 
-    const shareText = `${scoreText}`;
 
     if (navigator.share) {
         navigator.share({
@@ -882,6 +879,9 @@ function getScoreLine() {
   return `🦜 BirdL #${displayDate} ✅ ${guessesUsed}/10`;
 }
 
+function getShareScoreLine() {
+  return `${getScoreLine()}\nhttps://birdl.online`;
+}
 
 function showScoreBanner() {
   const banner = document.getElementById("scoreBanner");
@@ -892,14 +892,14 @@ function showScoreBanner() {
   if (!banner || !textEl || !copyBtn || !shareBtn) return;
 
   const score = getScoreLine();
-  const shareText = `${score}`;
+  const shareText = getShareScoreLine();
 
   textEl.textContent = score;
 
   // Copy score
   copyBtn.onclick = async () => {
     try {
-      await navigator.clipboard.writeText(score);
+      await navigator.clipboard.writeText(shareText);
       copyBtn.classList.add("copied");
       setTimeout(() => copyBtn.classList.remove("copied"), 800);
     } catch {
@@ -972,7 +972,7 @@ function startGame() {
   const isSameDay = stored && stored.day === seed;
 
   if (isSameDay) {
-      console.log("Restoring previous Birdle...");
+      console.log("Restoring previous Birdl...");
 
       // Restore guess history
       guessHistory = stored.guesses || [];
@@ -1009,7 +1009,7 @@ function startGame() {
       }
 
   } else {
-      console.log("New Birdle day — starting fresh");
+      console.log("New BirdL day — starting fresh");
 
       // Reset for fresh game
       guessHistory = [];
