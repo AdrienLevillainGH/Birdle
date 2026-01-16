@@ -501,17 +501,16 @@ document.getElementById("bowLinkBtn").onclick = () => {
 // Button SHARE
 document.getElementById("shareBtn").onclick = () => {
 
-    const shareText = getShareScoreLine();
+    const text = getShareScoreText();
+    const url  = getShareUrl();
 
     if (navigator.share) {
-        navigator.share({ text: shareText }).catch(() => {});
+        navigator.share({ text, url }).catch(() => {});
     } else {
-        navigator.clipboard.writeText(shareText);
+        navigator.clipboard.writeText(`${text}\n${url}`);
         alert("Score copied to clipboard!");
     }
 };
-
-console.log(getShareScoreLine());
 
 // Reval mystery bird modal tile
 
@@ -865,8 +864,12 @@ function getScoreLine() {
   return `🦜 BirdL #${displayDate} ✅ ${guessesUsed}/10`;
 }
 
-function getShareScoreLine() {
-  return `${getScoreLine()}\nhttps://birdl.online`;
+function getShareScoreText() {
+  return getScoreLine();
+}
+
+function getShareUrl() {
+  return "https://birdl.online";
 }
 
 function showScoreBanner() {
@@ -878,35 +881,43 @@ function showScoreBanner() {
   if (!banner || !textEl || !copyBtn || !shareBtn) return;
 
   const score = getScoreLine();
-  const shareText = getShareScoreLine();
+  const text = getScoreLine();
+  const url = "https://birdl.online";
 
   textEl.textContent = score;
 
   // Copy score
   copyBtn.onclick = async () => {
-    try {
-      await navigator.clipboard.writeText(shareText);
-      copyBtn.classList.add("copied");
-      setTimeout(() => copyBtn.classList.remove("copied"), 800);
-    } catch {
-      alert("Could not copy score");
-    }
-  };
+  try {
+    const text = getShareScoreText();
+    const url  = getShareUrl();
+    await navigator.clipboard.writeText(`${text}\n${url}`);
+    copyBtn.classList.add("copied");
+    setTimeout(() => copyBtn.classList.remove("copied"), 800);
+  } catch {
+    alert("Could not copy score");
+  }
+};
+
 
   // Share score (same behavior as final modal)
-  shareBtn.onclick = async () => {
+shareBtn.onclick = async () => {
+  const text = getShareScoreText();
+  const url  = getShareUrl();
+
   try {
     if (navigator.share && !isInAppBrowser()) {
-      await navigator.share({ text: shareText });
+      await navigator.share({ text, url });
     } else {
-      await navigator.clipboard.writeText(shareText);
+      await navigator.clipboard.writeText(`${text}\n${url}`);
       showToast("Score copied to clipboard");
     }
   } catch {
-    await navigator.clipboard.writeText(shareText);
+    await navigator.clipboard.writeText(`${text}\n${url}`);
     showToast("Score copied to clipboard");
   }
 };
+
 
   banner.classList.remove("hidden");
 }
