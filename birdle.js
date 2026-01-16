@@ -120,6 +120,11 @@ function isInAppBrowser() {
   return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
 }
 
+function isMessenger() {
+  const ua = navigator.userAgent || "";
+  return /Messenger/i.test(ua);
+}
+
 
 function showToast(message) {
   let toast = document.getElementById("toast");
@@ -499,17 +504,29 @@ document.getElementById("bowLinkBtn").onclick = () => {
 
 
 // Button SHARE
-document.getElementById("shareBtn").onclick = () => {
+// Button SHARE
+document.getElementById("shareBtn").onclick = async () => {
 
-    const text = getShareScoreText();
-    const url  = getShareUrl();
+  const text = getShareScoreText();
+  const url  = getShareUrl();
+  const combined = `${text}\n${url}`;
 
-    if (navigator.share) {
-        navigator.share({ text, url }).catch(() => {});
-    } else {
-        navigator.clipboard.writeText(`${text}\n${url}`);
-        alert("Score copied to clipboard!");
-    }
+  // 🚫 Messenger breaks Web Share — use clipboard instead
+  if (isMessenger()) {
+    await navigator.clipboard.writeText(combined);
+    alert("Score copied to clipboard!");
+    return;
+  }
+
+  if (navigator.share) {
+    navigator.share({ text, url }).catch(async () => {
+      await navigator.clipboard.writeText(combined);
+      alert("Score copied to clipboard!");
+    });
+  } else {
+    await navigator.clipboard.writeText(combined);
+    alert("Score copied to clipboard!");
+  }
 };
 
 // Reval mystery bird modal tile
@@ -894,6 +911,7 @@ function showScoreBanner() {
     await navigator.clipboard.writeText(`${text}\n${url}`);
     copyBtn.classList.add("copied");
     setTimeout(() => copyBtn.classList.remove("copied"), 800);
+    alert("Score copied to clipboard!");
   } catch {
     alert("Could not copy score");
   }
@@ -904,20 +922,26 @@ function showScoreBanner() {
 shareBtn.onclick = async () => {
   const text = getShareScoreText();
   const url  = getShareUrl();
+  const combined = `${text}\n${url}`;
+
+  if (isMessenger()) {
+    await navigator.clipboard.writeText(combined);
+    showToast("Score copied to clipboard");
+    return;
+  }
 
   try {
     if (navigator.share && !isInAppBrowser()) {
       await navigator.share({ text, url });
     } else {
-      await navigator.clipboard.writeText(`${text}\n${url}`);
+      await navigator.clipboard.writeText(combined);
       showToast("Score copied to clipboard");
     }
   } catch {
-    await navigator.clipboard.writeText(`${text}\n${url}`);
+    await navigator.clipboard.writeText(combined);
     showToast("Score copied to clipboard");
   }
 };
-
 
   banner.classList.remove("hidden");
 }
