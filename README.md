@@ -1,6 +1,6 @@
 # 🦜 BirdL — Can you find today’s mystery bird?
 
-**BirdL** is a daily bird guessing game inspired by *Wordle*.
+**BirdL** is a daily guessing game inspired by *Wordle*.
 
 Each day, one secret bird is selected from a curated global dataset.  
 You have **10 guesses** to find it using ecological and biological hints revealed after each attempt.
@@ -13,4 +13,4 @@ There are no wrong answers — only birds to discover.
 🌍 The puzzle resets every day at **UTC midnight**.
 
 👉 **Can you make it today?**  
-https://adrienlevillaingh.github.io/Birdle/
+https://birdl.online/
