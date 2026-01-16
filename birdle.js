@@ -53,6 +53,11 @@ function loadTheme() {
   applyTheme(saved);
 }
 
+function getNonLinkifiedUrl(url) {
+  // Insert zero-width space after the first dot
+  return url.replace(".", ".\u200B");
+}
+
 function renderMLIframe(iframeHtml) {
   if (!iframeHtml) return "";
 
@@ -118,11 +123,6 @@ function startNextBirdleCountdown() {
 function isInAppBrowser() {
   const ua = navigator.userAgent || navigator.vendor || window.opera;
   return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
-}
-
-function isMessenger() {
-  const ua = navigator.userAgent || "";
-  return /Messenger/i.test(ua);
 }
 
 
@@ -509,14 +509,8 @@ document.getElementById("shareBtn").onclick = async () => {
 
   const text = getShareScoreText();
   const url  = getShareUrl();
-  const combined = `${text}\n${url}`;
-
-  // 🚫 Messenger breaks Web Share — use clipboard instead
-  if (isMessenger()) {
-    await navigator.clipboard.writeText(combined);
-    alert("Score copied to clipboard!");
-    return;
-  }
+  const safeUrl = getNonLinkifiedUrl(url);
+  const combined = `${text}\n${safeUrl}`;
 
   if (navigator.share) {
     navigator.share({ text, url }).catch(async () => {
@@ -922,13 +916,8 @@ function showScoreBanner() {
 shareBtn.onclick = async () => {
   const text = getShareScoreText();
   const url  = getShareUrl();
-  const combined = `${text}\n${url}`;
-
-  if (isMessenger()) {
-    await navigator.clipboard.writeText(combined);
-    showToast("Score copied to clipboard");
-    return;
-  }
+  const safeUrl = getNonLinkifiedUrl(url);
+  const combined = `${text}\n${safeUrl}`;
 
   try {
     if (navigator.share && !isInAppBrowser()) {
