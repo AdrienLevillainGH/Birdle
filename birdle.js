@@ -503,26 +503,18 @@ document.getElementById("bowLinkBtn").onclick = () => {
     };
 
 
-// Button SHARE
-// Button SHARE
-// Button SHARE (Wordle-style: text only)
+// Button SHARE (acts like Copy: score + URL)
 document.getElementById("shareBtn").onclick = async () => {
-
-  const text = getScoreLine(); // ⬅️ TEXT ONLY
-
-  if (navigator.share) {
-    try {
-      await navigator.share({ text });
-    } catch {
-      // fallback to clipboard (still text only)
-      await navigator.clipboard.writeText(text);
-      alert("Score copied to clipboard!");
-    }
-  } else {
-    await navigator.clipboard.writeText(text);
+  try {
+    const text = getScoreLine();
+    const url  = getShareUrl();
+    await navigator.clipboard.writeText(`${text}\n${url}`);
     alert("Score copied to clipboard!");
+  } catch {
+    alert("Could not copy score");
   }
 };
+
 
 // Reval mystery bird modal tile
 
@@ -890,7 +882,13 @@ function showScoreBanner() {
   const copyBtn = document.getElementById("copyScoreBtn");
   const shareBtn = document.getElementById("shareScoreBtn");
 
-  if (!banner || !textEl || !copyBtn || !shareBtn) return;
+// 🔥 Permanently remove the Share button from the banner
+if (shareBtn) {
+  shareBtn.remove();
+}
+
+if (!banner || !textEl || !copyBtn) return;
+
 
   const score = getScoreLine();
   const text = getScoreLine();
@@ -909,24 +907,6 @@ function showScoreBanner() {
     alert("Score copied to clipboard!");
   } catch {
     alert("Could not copy score");
-  }
-};
-
-
-// Share score (Wordle-style: text only)
-shareBtn.onclick = async () => {
-  const text = getScoreLine();
-
-  try {
-    if (navigator.share && !isInAppBrowser()) {
-      await navigator.share({ text });
-    } else {
-      await navigator.clipboard.writeText(text);
-      showToast("Score copied to clipboard");
-    }
-  } catch {
-    await navigator.clipboard.writeText(text);
-    showToast("Score copied to clipboard");
   }
 };
 
