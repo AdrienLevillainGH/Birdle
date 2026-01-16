@@ -1,40 +1,63 @@
 <!DOCTYPE html>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
 <html lang="en">
-  
 <head>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ2J83F5LD"></script>
-    <script>
+  <meta charset="UTF-8">
+
+  <title>BirdL – Daily Bird Guessing Game</title>
+
+  <meta name="description"
+        content="BirdL is a daily bird guessing game inspired by Wordle. Each day, one mystery bird must be found in 10 tries using ecological and biological clues." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="canonical" href="https://birdl.online/" />
+
+  <!-- Google verification -->
+  <meta name="google-site-verification"
+        content="wf_WnsZxpv4Amwlm6DNNiU23VaeRazlnbEOplmQIKb4" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+        rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BirdL – Daily Bird Guessing Game">
+  <meta property="og:description"
+        content="Can you guess today's mystery bird? A daily Wordle-inspired game for bird lovers.">
+  <meta property="og:url" content="https://birdl.online/">
+  <meta property="og:image" content="https://birdl.online/og-image.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ2J83F5LD"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-FZ2J83F5LD');
-    </script>
+  </script>
 
-    <script src="birdle.js" defer></script>
+  <!-- Game logic -->
+  <script src="birdle.js" defer></script>
 
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="google-site-verification" content="wf_WnsZxpv4Amwlm6DNNiU23VaeRazlnbEOplmQIKb4" />
-    <meta charset="UTF-8">
-    <title>🦜 BirdL</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<h1 class="hidden"> BirdL – Daily Bird Guessing Game</h1>
 
 <!-- FIXED HEADER (matches your CSS .top-buttons rules) -->
 <div class="top-buttons">
