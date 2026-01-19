@@ -14,6 +14,11 @@ let gameOver = false;
 // -------------------------
 // LOCAL STORAGE HELPERS
 // -------------------------
+function track(event, params = {}) {
+  if (typeof gtag !== "function") return;
+  gtag("event", event, params);
+}
+
 function saveGameState() {
     const state = {
         day: getDailySeed(),
@@ -377,6 +382,13 @@ function sortByCurrentLanguage(a, b) {
 // ------------------------
 
 document.getElementById("randomBtn").addEventListener("click", () => {
+
+    track("dice_used", {
+    guess_index: guessHistory.length + 1,
+    date: getFormattedTodayUTC(),
+    mystery_bird: getMysteryBirdId()
+  });
+
     if (gameOver) return;
 
     const btn = document.getElementById("randomBtn");
@@ -425,8 +437,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     rulesBtn.onclick = () => {
-      rulesModal.classList.remove("hidden");
+    rulesModal.classList.remove("hidden");
+
+    track("help_opened", {
+    date: getFormattedTodayUTC(),
+    mystery_bird: getMysteryBirdId()
+    });
     };
+
 
     closeRules.onclick = () => {
       rulesModal.classList.add("hidden");
@@ -998,6 +1016,12 @@ function startGame() {
 
   } else {
       console.log("New BirdL day — starting fresh");
+      track("game_start", {
+      date: getFormattedTodayUTC(),
+      mystery_bird: getMysteryBirdId(),
+      mystery_bird_data: getMysteryBirdMeta()
+
+      });
 
       // Reset for fresh game
       guessHistory = [];
@@ -1028,6 +1052,21 @@ function startGame() {
 function updateStatus() {
   document.getElementById("status").innerText =
     `Guesses remaining: ${guessesRemaining}`;
+}
+
+function getMysteryBirdId() {
+  return targetBird?.Name || "unknown";
+}
+
+function getMysteryBirdMeta() {
+  if (!targetBird) return {};
+  return {
+    mystery_bird: targetBird.Name,
+    order: targetBird.Order,
+    family: targetBird.Family,
+    habitat: targetBird.Habitat,
+    mass_class: massCategory(targetBird.Mass)
+  };
 }
 
 
@@ -1083,6 +1122,12 @@ function handleGuess(choice) {
   guessesRemaining--;
   updateStatus();
 
+  track("guess_made", {
+  guess_index: guessHistory.length + 1,
+  date: getFormattedTodayUTC(),
+  mystery_bird: getMysteryBirdId()
+  });
+
   // -----------------------------------------
   // CHECK IF CORRECT BIRD → END GAME
   // -----------------------------------------
@@ -1115,10 +1160,13 @@ function handleGuess(choice) {
     revealFinal(true);
 
     // SEND ANALYTICS EVENT — PLAYER WON
-  gtag('event', 'win', {
-  guesses_used: 10 - guessesRemaining,
-  day: getDailySeed()
+  track("win", {
+  guesses_used: guessHistory.length,
+  date: getFormattedTodayUTC(),
+  mystery_bird: getMysteryBirdId(),
+  mystery_bird_data: getMysteryBirdMeta()
   });
+
 
     // 3️⃣ Lock game & show modal
     gameOver = true;
@@ -1188,10 +1236,13 @@ function handleGuess(choice) {
     revealFinal();
     
     // SEND ANALYTICS EVENT — PLAYER LOST
-    gtag('event', 'loss', {
+    track("loss", {
     guesses_used: 10,
-    day: getDailySeed()
+    date: getFormattedTodayUTC(),
+    mystery_bird: getMysteryBirdId(),
+    mystery_bird_data: getMysteryBirdMeta()
     });
+
 
     // 4️⃣ Lock game
     gameOver = true;
@@ -1201,6 +1252,20 @@ function handleGuess(choice) {
 
 }
 
+//-------------------------------------------------------
+//  TRACK ABANDONED GAMES
+//-------------------------------------------------------
+window.addEventListener("beforeunload", () => {
+  if (!gameOver && guessHistory.length > 0) {
+    track("game_abandoned", {
+      guesses_used: guessHistory.length,
+      date: getFormattedTodayUTC(),
+      mystery_bird: getMysteryBirdId(),
+      mystery_bird_data: getMysteryBirdMeta()
+
+    });
+  }
+});
 
 //-------------------------------------------------------
 //  DISPLAY GUESS BLOCK (LANGUAGE-AWARE)
