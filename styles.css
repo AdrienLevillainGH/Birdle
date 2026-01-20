@@ -117,6 +117,31 @@ body {
     text-align: center;
 }
 
+.seo-text {
+  max-width: 700px;
+  margin: 0px auto;
+  padding: 0 0px;
+  font-size: 16px;
+  opacity: 1;
+  position: absolute;
+  left: -9999px;
+}
+
+/* SEO-friendly H1 enhancement */
+.seo-h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text visible to Google, hidden from users */
+.seo-h1 .seo-subtitle {
+  font-size: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
 
 /* ---------------------------------------------------
       FIXED HEADBAND (like Spotle)
