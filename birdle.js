@@ -1,4 +1,33 @@
 //-------------------------------------------------------
+//  PLAYER IDENTIFIER (PERSISTENT PER BROWSER)
+//-------------------------------------------------------
+const PLAYER_ID_KEY = "birdle_player_id";
+
+function getPlayerId() {
+  let id = localStorage.getItem(PLAYER_ID_KEY);
+
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem(PLAYER_ID_KEY, id);
+  }
+
+  return id;
+}
+
+//-------------------------------------------------------
+//  GAME STATE MACHINE
+//-------------------------------------------------------
+const GAME_STATES = {
+  NOT_STARTED: "not_started",
+  IN_PROGRESS: "in_progress",
+  WON: "won",
+  LOST: "lost",
+};
+
+let gameState = GAME_STATES.NOT_STARTED;
+
+
+//-------------------------------------------------------
 //  GLOBAL GAME STATE
 //-------------------------------------------------------
 let birds = [];
@@ -9,6 +38,7 @@ let guessesRemaining = 10;
 let usedNames = new Set();
 let guessHistory = [];
 let gameOver = false;
+let hasEnteredInProgress = false;
 
 
 // -------------------------
@@ -384,6 +414,8 @@ function sortByCurrentLanguage(a, b) {
 document.getElementById("randomBtn").addEventListener("click", () => {
 
     track("dice_used", {
+    player_id: getPlayerId(),
+    state: gameState,
     guess_index: guessHistory.length + 1,
     date: getFormattedTodayUTC(),
     mystery_bird: getMysteryBirdId()
@@ -440,6 +472,8 @@ document.addEventListener("DOMContentLoaded", () => {
     rulesModal.classList.remove("hidden");
 
     track("help_opened", {
+    player_id: getPlayerId(),
+    state: gameState,
     date: getFormattedTodayUTC(),
     mystery_bird: getMysteryBirdId()
     });
@@ -1017,6 +1051,8 @@ function startGame() {
   } else {
       console.log("New BirdL day — starting fresh");
       track("game_start", {
+      player_id: getPlayerId(),
+      state: gameState,
       date: getFormattedTodayUTC(),
       mystery_bird: getMysteryBirdId(),
       mystery_bird_data: getMysteryBirdMeta()
@@ -1122,11 +1158,19 @@ function handleGuess(choice) {
   guessesRemaining--;
   updateStatus();
 
-  track("guess_made", {
-  guess_index: guessHistory.length + 1,
-  date: getFormattedTodayUTC(),
-  mystery_bird: getMysteryBirdId()
+  // Fire game_in_progress once, on first valid guess
+  if (!hasEnteredInProgress) {
+  hasEnteredInProgress = true;
+  gameState = GAME_STATES.IN_PROGRESS;
+  console.log("[STATE]", gameState);
+
+  track("game_in_progress", {
+    player_id: getPlayerId(),
+    date: getFormattedTodayUTC(),
+    mystery_bird: getMysteryBirdId()
   });
+}
+
 
   // -----------------------------------------
   // CHECK IF CORRECT BIRD → END GAME
@@ -1160,7 +1204,12 @@ function handleGuess(choice) {
     revealFinal(true);
 
     // SEND ANALYTICS EVENT — PLAYER WON
+  gameState = GAME_STATES.WON;
+  console.log("[STATE]", gameState);
+
   track("win", {
+  player_id: getPlayerId(),
+  state: gameState,
   guesses_used: guessHistory.length,
   date: getFormattedTodayUTC(),
   mystery_bird: getMysteryBirdId(),
@@ -1203,6 +1252,15 @@ function handleGuess(choice) {
   guessHistory.push({ name: choice, tiles });
   saveGameState();
 
+  track("guess_made", {
+  player_id: getPlayerId(),
+  state: gameState,
+  guesses_used: guessHistory.length,
+  date: getFormattedTodayUTC(),
+  mystery_bird: getMysteryBirdId()
+});
+
+
   // -----------------------------------------
   // CHECK IF OUT OF GUESSES → END GAME
   // -----------------------------------------
@@ -1235,9 +1293,14 @@ function handleGuess(choice) {
     // 3️⃣ Show UI version (this calls displayGuess)
     revealFinal();
     
+    gameState = GAME_STATES.LOST;
+    console.log("[STATE]", gameState);
+
     // SEND ANALYTICS EVENT — PLAYER LOST
     track("loss", {
-    guesses_used: 10,
+    guesses_used: 11,
+    player_id: getPlayerId(),
+    state: gameState,
     date: getFormattedTodayUTC(),
     mystery_bird: getMysteryBirdId(),
     mystery_bird_data: getMysteryBirdMeta()
@@ -1256,16 +1319,18 @@ function handleGuess(choice) {
 //  TRACK ABANDONED GAMES
 //-------------------------------------------------------
 window.addEventListener("beforeunload", () => {
-  if (!gameOver && guessHistory.length > 0) {
+  if (gameState === GAME_STATES.IN_PROGRESS) {
     track("game_abandoned", {
+      player_id: getPlayerId(),
+      state: gameState,
       guesses_used: guessHistory.length,
       date: getFormattedTodayUTC(),
       mystery_bird: getMysteryBirdId(),
       mystery_bird_data: getMysteryBirdMeta()
-
     });
   }
 });
+
 
 //-------------------------------------------------------
 //  DISPLAY GUESS BLOCK (LANGUAGE-AWARE)
